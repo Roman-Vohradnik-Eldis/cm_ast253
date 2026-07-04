@@ -1,0 +1,131 @@
+[CM_Connection]
+  ExtSections=Ext_Variables,Ext_Definition,Ext_MUP_Functions
+
+[Ext_MUP_Functions]
+  include(MUPARSER-functions.part)
+
+[Ext_Variables]
+#  AILAN_A__WindSpeedMy   = 30,0.2,NYN,float       ,              ,  4.0,  15.0, 0.1                         , 0.0
+  GUI__WindSpeed         = 30,0.2,NNN,float       ,              ,  0.0, 150.0, 0.1                         , 0.0
+  GUI__RqRevolTime       = 30,0.2,NYN,float       ,              ,  4.0,  15.0, 0.1                         , 0.0
+  GUI__NUM_TO_STATUS     =  5,0.1,NNN,s           ,              ,               500                        , "E:???"
+  GUI__NUM2_TO_STATUS    =  5,0.1,NNN,s           ,              ,               500                        , "E:???"
+  GUI__CALLSIGN          = 85,0.1,NYN,string      ,              ,                7                         , "?"
+  Sim_A__CALLSIGN        = 85,0.1,NYN,string      ,              ,                7                         , "?"
+  Sim_A__still_STATUS    =  5,0.1,NNN,s           ,              ,               500                        , "E:Unknown"
+  Sim_A__STATUS_CH       =  5,0.1,NNN,s           ,              ,                 1                        , "E"
+  Sim_A__still_STATUS_CH =  5,0.1,NNN,s           ,              ,                 1                        , "E"
+  Sim_A__STATUS_CH2      =  5,0.1,NNN,s           ,              ,                 1                        , "E"
+  Sim_A__still_STATUS_CH2=  5,0.1,NNN,s           ,              ,                 1                        , "E"
+  GUI__STATUS_NUM_CH     =  5,0.1,NNN,s           ,              ,                 1                        , "E"
+  GUI__STATUS_IS_ERROR   =  5,0.1,NNN,bool        ,                                                         , true
+  GUI__MeaPwrOmegaTFSS   = 92,0.2,NNN,float       ,  8=0.0       ,  0.0,  128.0, 0.5                        , 0.0
+  TxG_A__SW_ALL_DISABLED = 15,0.1,NNN,bool        ,                                                         , true
+  TxG_A__SW_ALL_ENABLED  = 15,0.1,NNN,bool        ,                                                         , true
+  CmExtW____BDSvalid     = 15,0.1,NNN,bool        ,                                                         , false
+  GUI__RqRPMavg          = 25,0.2,NNN,float       ,              ,  1.0,   25.0, 0.01                       , 0.0
+  Sim_A__MEA_RPM_half_AVG= 25,0.2,NNN,float       ,              ,  0.0,   25.0, 0.01                       , 0.0
+
+[Ext_Definition]
+  GUI__CALLSIGN/tmp                 = CmExtW____BDSvalid # mozna by mohla byt definovana nahore, aby se vedel typ a hlavne, aby slo array (mozna i nepovinne)
+  GUI__CALLSIGN/eval                = Eval,{CmExtW____BDSvalid=(((GUI__BDS20>>(6*8))&0xff)==0x20)}
+  GUI__CALLSIGN/eval                = Eval,{((CmExtW____BDSvalid) ? (CmBDS20_to_CallSign(GUI__BDS20)) : ("--INV--"))}
+  GUI__CALLSIGN/reverse             = Eval,{GUI__BDS20=CmBDS20_from_CallSign(GUI__CALLSIGN)}
+
+  Sim_A__CALLSIGN/tmp               = CmExtW____BDSvalid # mozna by mohla byt definovana nahore, aby se vedel typ a hlavne, aby slo array (mozna i nepovinne)
+  Sim_A__CALLSIGN/eval              = Eval,{CmExtW____BDSvalid=(((Sim_A__BDS20>>(6*8))&0xff)==0x20)}
+  Sim_A__CALLSIGN/eval              = Eval,"((CmExtW____BDSvalid) ? (CmBDS20_to_CallSign(Sim_A__BDS20)) : (\"--INV--\"))"
+  Sim_A__CALLSIGN/reverse           = Eval,Sim_A__BDS20=CmBDS20_from_CallSign(Sim_A__CALLSIGN)
+
+  GUI__WindSpeed/exist              = Eval, {(exist(GUI__BUFFER[25]) ? (GUI__BUFFER[25] < 150) : false)}
+  GUI__WindSpeed/eval               = Eval, {GUI__BUFFER[25] / 2}
+
+  GUI__RqRevolTime/eval             = Eval,{((GUI__RqRPM != 0) ? (60 / GUI__RqRPM) : 0)}
+  GUI__RqRevolTime/reverse          = Eval,{GUI__RqRPM = (60 / GUI__RqRevolTime)}
+
+  Sim_A__still_STATUS/exist         = Eval,true
+  Sim_A__still_STATUS/eval          = Eval,{(exist(Sim_A__STATUS) ? Sim_A__STATUS : "E:Not Connected")}
+
+  Sim_A__STATUS_CH/exist            = Eval,true
+  Sim_A__STATUS_CH/eval             = Eval,"CmWorstStatus(Sim_A__STATUS,\"E\",\"E\",\"EWO\")"
+
+  Sim_A__still_STATUS_CH/exist      = Eval,"true"
+  Sim_A__still_STATUS_CH/eval       = Eval,{CmWorstStatus(Sim_A__still_STATUS,"E","E","EWO")}
+
+  GUI__NUM_TO_STATUS/exist          = Eval,true
+  GUI__NUM_TO_STATUS/eval           = Eval,{CmByteStatusToStr_AILAN(GUI__NUM_TO_STATUS, GUI__STATUS_NUM)}
+
+  GUI__NUM_TO_STATUS/exist          = Eval,"true"
+  GUI__NUM_TO_STATUS/eval           = Eval,"CmByteStatusToStr_AILAN(GUI__NUM_TO_STATUS, GUI__STATUS_NUM)"
+
+
+  GUI__STATUS_NUM_CH/exist          = Eval,true
+  GUI__STATUS_NUM_CH/eval           = Eval,CmWorstStatus(GUI__NUM_TO_STATUS,"E","E","EWO")
+
+  GUI__STATUS_IS_ERROR/eval         = Eval,{(GUI__STATUS_NUM_CH=="E")}
+
+  TxG_A__SW_ALL_DISABLED/tmp        = CmExtW____TMP
+  TxG_A__SW_ALL_DISABLED/exist      = Eval, {CmExtW____TMP=false}
+  TxG_A__SW_ALL_DISABLED/exist      = ForEval, 1, X,{M1,M2,M3,MC,M4,M3O,MCO,M3S,MCS,UF11,UF11_M3O,UF11_MCO,ROLL,3K1,3K2,3K3}, {CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_$X$)}
+  TxG_A__SW_ALL_DISABLED/eval       = Eval, {CmExtW____TMP=false}
+  TxG_A__SW_ALL_DISABLED/eval       = ForEval, 1, X,{M1,M2,M3,MC,M4,M3O,MCO,M3S,MCS,UF11,UF11_M3O,UF11_MCO,ROLL,3K1,3K2,3K3}, {CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_$X$) ? TxG_A__SW_$X$ : false)}
+  TxG_A__SW_ALL_DISABLED/eval       = Eval, {(CmExtW____TMP ? false : true)}
+
+  TxG_A__SW_ALL_ENABLED/tmp         = CmExtW____TMP
+  TxG_A__SW_ALL_ENABLED/exist       = Eval, "CmExtW____TMP=false"
+  TxG_A__SW_ALL_ENABLED/exist       = ForEval, 1, "X","M1,M2,M3,MC,M4,M3O,MCO,M3S,MCS,UF11,UF11_M3O,UF11_MCO,ROLL,3K1,3K2,3K3", "CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_$X$)"
+  TxG_A__SW_ALL_ENABLED/eval        = Eval, "CmExtW____TMP=true"
+  TxG_A__SW_ALL_ENABLED/eval        = ForEval, 1, "X","M1,M2,M3,MC,M4,M3O,MCO,M3S,MCS,UF11,UF11_M3O,UF11_MCO,ROLL,3K1,3K2,3K3", "CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_$X$) ? TxG_A__SW_$X$ : true)"
+
+  Sim_A__still_STATUS_CH2/exist     = Eval,true
+  Sim_A__still_STATUS_CH2/eval      = WorstStatus,"Sim_A__still_STATUS",E,E,EWO
+
+
+  Sim_A__STATUS_CH2/exist           = Eval,"true"
+  Sim_A__STATUS_CH2/eval            = WorstStatus,"Sim_A__STATUS",E,E,EWO
+
+
+# Integrovana funkce Int2Str - podobna, jako je v Muparserx CmByteStatusToStr
+# parametry: 1) MUPARSER vyraz vracejici INT hodnotu , 2) string:pokud promenne neexistuje, 3) string pri neznamem cislu statusu, 4) assign MUP variable (muze byt prazdne)
+# parametry  3),4),5)  .... x),y),z)   jako v CmByteStatusToStr
+# CmByteStatusToStr(a,b,c,d, x1,y2,z3, ... xN,yN,zN) -  a=InVarStringPrevious (string:can be undefined),  b=InValByteAct(int:can be undefined, then output will be "c"),  
+#     c=StatusUndefInVal(string:must be defined and used, when "b" is undefined),  d=StatusUnknown(string:must be defined and used, when value will not produce any result) ;
+#     xyz[N] :  x=Type_and_mask=(int) ((& 0x100==0x100 ? temporary : master)  (& 0x0ff==0 ? simple_state : multi bit mask)) ,  
+#       y=(int)compare_value ,  z=(string)output_status
+
+  GUI__NUM2_TO_STATUS/exist         = Eval,"true"
+      # AILAN
+  GUI__NUM2_TO_STATUS/eval          = Int2Str,"GUI__STATUS_NUM","E:Off","E:Unknown status (0x%02X)",,0x100,0x03,"O:Command executed",0x100,0x08,"E:Unknown command",0x100,0x0C,"E:Cannot execute command",0    ,0xCD,"E:AI error",0    ,0xCE,"E:SSR Receiver error",0    ,0xCF,"E:Motor power supply off",0    ,0xD0,"W:Internal start-up test",0    ,0xD1,"E:Converter communication error",0    ,0xD2,"E:Converter error",0    ,0xD3,"E:HF relay error",0    ,0xD4,"E:Antenna blocked",0    ,0xD5,"O:Operation OK"
+#      # SSREx
+#  GUI__NUM2_TO_STATUS/eval          = Int2Str,"GUI__STATUS_NUM","E:Off","E:Unknown status (0x%02X)",,0x100,0xC1,"O:Commnad done",0x100,0xC2,"W:Command Bad Length",0    ,0xC0,"O:OK",0    ,0x00,"W:Inic",0    ,0x01,"E:Inic STC File Error",0    ,0x02,"E:Inic Calib File Error",0    ,0x03,"E:Inic Status File Error",0    ,0x05,"E:Inic Test Pattern File Error",0    ,0x06,"E:Inic Driver Buffer Error",0    ,0x07,"E:Driver Buffer Memory Error",0    ,0x08,"E:Driver Buffer Misc Error",0x0C4,0x84,"W:Interference Warning",0x0C1,0x41,"E:AI Error",0x0C2,0x42,"E:Optic Error",0x0C4,0x44,"E:PCIEA Error",0x0D0,0x50,"E:PCIEA Data Error",0x0E0,0x60,"E:Period Error",0x0C8,0x48,"E:Data Miss Error"
+
+
+
+#  Average,1) InValFloat,  2) AvgType( AVG )  3) AvgMinPeriod(for_exist) 4) AvgStandadPeriod  5) RecalculationIdlePeriod   6) ChangeThresholt for fullcall
+#          7)  TimeUpdatePrecision pokud je hodnota jina, ale "delsi dobu" neprekrocila Threshold, tak se zavola fullcall,8) assign MUP variable (muze byt prazdne)
+#  Sim_A__MEA_RPM_half_AVG/exist     = Eval,"true"
+  Sim_A__MEA_RPM_half_AVG/tmp       = halfvalue
+  Sim_A__MEA_RPM_half_AVG/eval      = Eval, {halfvalue=Sim_A__MEA_RPM/2}
+  Sim_A__MEA_RPM_half_AVG/eval      = Average, halfvalue, AVG, 20.0, 60.0, 0.5, 0.2, 1.0
+
+#  GUI__RqRPMavg/exist               = Eval,"true"
+  GUI__RqRPMavg/eval                = Average, GUI__RqRPM, AVG, 10.0, 60.0, 0.5, 0.2, 1.0
+
+
+###################################################################
+#
+#    #GUI__MeaPwrOmegaTFSS/eval         = Eval, "GUI__MeaPwrOmegaTFSS[0] = GUI__BUFFER[4+0] / 2";
+#    #GUI__MeaPwrOmegaTFSS/eval         = Eval, "GUI__MeaPwrOmegaTFSS[1] = GUI__BUFFER[4+1] / 2";
+#    #GUI__MeaPwrOmegaTFSS/eval         = Eval, "GUI__MeaPwrOmegaTFSS[2] = GUI__BUFFER[4+2] / 2";
+#    #GUI__MeaPwrOmegaTFSS/eval         = Eval, "GUI__MeaPwrOmegaTFSS[3] = GUI__BUFFER[4+3] / 2";
+#    #GUI__MeaPwrOmegaTFSS/eval         = Eval, "GUI__MeaPwrOmegaTFSS[4] = GUI__BUFFER[4+4] / 2";
+#    #GUI__MeaPwrOmegaTFSS/eval         = Eval, "GUI__MeaPwrOmegaTFSS[5] = GUI__BUFFER[4+5] / 2";
+#    #GUI__MeaPwrOmegaTFSS/eval         = Eval, "GUI__MeaPwrOmegaTFSS[6] = GUI__BUFFER[4+6] / 2";
+#    #GUI__MeaPwrOmegaTFSS/eval         = Eval, "GUI__MeaPwrOmegaTFSS[7] = GUI__BUFFER[4+7] / 2";
+#  ===>>>
+#     GUI__MeaPwrOmegaTFSS/eval         = ForEval, 1, "X","0-7", "GUI__MeaPwrOmegaTFSS[$X$] = GUI__BUFFER[4+$X$] / 2";
+##### o dost slozitejsi 2 dimenzionalni a jeste vycet hodnot PARU - ale logicky to je kravina, protoze by jsme meli pracovat pouze s GUI__MeaPwrOmegaTFSS
+##  GUI__MeaPwrOmegaTFSS/eval         = ForEval, 2, "X","0-7", "Y,Z","SumTMOS,19,OmegaTMOS,27,SumTFSS,35,OmegaTFSS,43", "GUI__MeaPwr$Y$[$X$] = GUI__BUFFER[$Z$+$X$] / 2";
+#
+###################################################################
+

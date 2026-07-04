@@ -1,0 +1,7 @@
+#!/bin/bash
+
+bin/Decode253 FD 00 00 8B 20 31 BC 00 03 02 54 D6 C1
+bin/Decode253 FD 00 00 8B 20 31 C7 00 03 02 54 F8 0E
+bin/Decode253 FD 00 00 8B 30 31 C7 00 03 13 57 6C C2 04 10 01 00 
+
+

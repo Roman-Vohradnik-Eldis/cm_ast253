@@ -1,0 +1,4 @@
+name:AstMerge
+version_file: main.cc
+version_string: #define ASTMERGE_VERSION_NUMBER
+changelog_file:

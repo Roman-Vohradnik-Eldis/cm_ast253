@@ -1,0 +1,3 @@
+
+file ..\*\\.(cmfun|CmFun|CMFUN)$ CmFunExt_with_MUParserX\sfunction
+include cmfun.syntax

@@ -1,0 +1,4164 @@
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:23.498669624 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:24.294563832 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bb225]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B B2 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:24.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:24.295821261 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bb22503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B B2 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:24.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:24.296256394 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:24.297613113 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bba26032001100807ea0703081d28]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B BA 26 03 20 01 10 08 07 EA 07 03 08 1D 28]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:40.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 28TIME=2026-07-03 08:29:40
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:24.507523489 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:25.294334990 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bb2a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B B2 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:25.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:25.296126687 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bbaa5032001100807ea0703081d29]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B BA A5 03 20 01 10 08 07 EA 07 03 08 1D 29]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:41.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 29TIME=2026-07-03 08:29:41
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:25.296149557 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:25.548213090 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:26.011041533 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bbb01]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B BB 01]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:42.007
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:26.294722957 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bb325]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B B3 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:26.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:26.296076760 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bb32503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B B3 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:26.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:26.296543179 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:26.298138923 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bbb26032001100807ea0703081d2a]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B BB 26 03 20 01 10 08 07 EA 07 03 08 1D 2A]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:42.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 2ATIME=2026-07-03 08:29:42
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:26.548896656 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:27.294689387 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bb3a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B B3 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:27.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:27.296466048 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bbba5032001100807ea0703081d2b]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B BB A5 03 20 01 10 08 07 EA 07 03 08 1D 2B]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:43.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 2BTIME=2026-07-03 08:29:43
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:27.296485640 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:27.548598646 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:28.294641245 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bb425]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B B4 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:28.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:28.295738258 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bb42503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B B4 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:28.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:28.296211808 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:28.297859907 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bbc26032001100807ea0703081d2c]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B BC 26 03 20 01 10 08 07 EA 07 03 08 1D 2C]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:44.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 2CTIME=2026-07-03 08:29:44
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:28.588009968 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:29.005964810 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bbc80]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B BC 80]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:45.000
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:29.294362823 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bb4a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B B4 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:29.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:29.296123347 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bbca5032001100807ea0703081d2d]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B BC A5 03 20 01 10 08 07 EA 07 03 08 1D 2D]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:45.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 2DTIME=2026-07-03 08:29:45
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:29.296142225 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:29.598385804 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:30.294450026 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bb525]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B B5 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:30.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:30.295545103 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bb52503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B B5 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:30.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:30.296001701 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:30.297612910 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bbd26032001100807ea0703081d2e]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B BD 26 03 20 01 10 08 07 EA 07 03 08 1D 2E]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:46.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 2ETIME=2026-07-03 08:29:46
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:30.598573200 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:30.917740910 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0020cb2264360a0003053bb575120232333435000000000000000000000000]
+DATAHEX2 [ FD 00 20 CB 22 64 36 0A 00 03 05 3B B5 75 12 02 32 33 34 35 00 00 00 00 00 00 00 00 00 00 00 00]
+----------------------
+CAT=253 Length data=32
+ *FSPEC=cb 22
+*SAC=100 SIC=054
+*LocalID=010
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=05  Command Token Request
+*TimeOfDay=08:29:30.914
+*Transparent Application Data 2 LEN=018 : 02 32 33 34 35 00 00 00 00 00 00 00 00 00 00 00 00
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:30.919016291 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0014bb2031de0164360164360a0003073bbd75]
+DATAHEX2 [ FD 00 14 BB 20 31 DE 01 64 36 01 64 36 0A 00 03 07 3B BD 75]
+----------------------
+CAT=253 Length data=20
+ *FSPEC=bb 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Data Destination REP=001
+  -->> SAC=100 SIC=054 LocalID=010
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=07  Command Token Assign
+*TimeOfDay=08:29:46.914
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:30.968991899 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00148b3464360003083bb57b04200110030201]
+DATAHEX2 [ FD 00 14 8B 34 64 36 00 03 08 3B B5 7B 04 20 01 10 03 02 01]
+----------------------
+CAT=253 Length data=20
+ *FSPEC=8b 34
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=08  Command Message
+*TimeOfDay=08:29:30.960
+*Application Data Structure START=0x0420 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 1 LEN=003 TYPE=2:Unsigned integer 8 bit Value=01 
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:31.009619455 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003063bb57bfd00118b3064360003133bb57b04200100]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 06 3B B5 7B FD 00 11 8B 30 64 36 00 03 13 3B B5 7B 04 20 01 00]
+----------------------
+CAT=253 Length data=30
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=06  Command Token Release
+*TimeOfDay=08:29:30.960
+----------------------
+CAT=253 Length data=30
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:30.960
+*Application Data Structure START=0x0420 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:31.011261128 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003073bbd81]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 07 3B BD 81]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=07  Command Token Assign
+*TimeOfDay=08:29:47.007
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:31.019266741 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0017ab3431de01643600030a3bbd8204200110030201]
+DATAHEX2 [ FD 00 17 AB 34 31 DE 01 64 36 00 03 0A 3B BD 82 04 20 01 10 03 02 01]
+----------------------
+CAT=253 Length data=23
+ *FSPEC=ab 34
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:47.015
+*Application Data Structure START=0x0420 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 1 LEN=003 TYPE=2:Unsigned integer 8 bit Value=01 
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:31.026185522 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0017ab3431de01643600030a3bbd8304200110030201]
+DATAHEX2 [ FD 00 17 AB 34 31 DE 01 64 36 00 03 0A 3B BD 83 04 20 01 10 03 02 01]
+----------------------
+CAT=253 Length data=23
+ *FSPEC=ab 34
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:47.023
+*Application Data Structure START=0x0420 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 1 LEN=003 TYPE=2:Unsigned integer 8 bit Value=01 
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:31.294171310 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bb5a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B B5 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:31.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:31.295991999 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bbda5032001100807ea0703081d2f]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B BD A5 03 20 01 10 08 07 EA 07 03 08 1D 2F]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:47.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 2FTIME=2026-07-03 08:29:47
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:31.296027618 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:31.635881288 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:32.008858659 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bbe01]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B BE 01]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:48.007
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:32.294862424 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bb625]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B B6 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:32.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:32.295956886 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bb62503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B B6 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:32.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:32.296427176 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:32.298192212 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bbe26032001100807ea0703081d30]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B BE 26 03 20 01 10 08 07 EA 07 03 08 1D 30]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:48.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 30TIME=2026-07-03 08:29:48
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:32.641946179 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:33.025114602 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0028ab3231de01643600030a3bbe83038701101400000080808038362828802680232121212321]
+DATAHEX2 [ FD 00 28 AB 32 31 DE 01 64 36 00 03 0A 3B BE 83 03 87 01 10 14 00 00 00 80 80 80 38 36 28 28 80 26 80 23 21 21 21 23 21]
+----------------------
+CAT=253 Length data=40
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:49.023
+*Application Data Structure START=0x0387 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=020 : 00 00 00 80 80 80 38 36 28 28 80 26 80 23 21 21 21 23 21 ONLINE_STATUS[ 
+      .. AntState=NotSYNC
+      .. AntSafetySwitch=NotActivated
+      .. DP4/5 Board=Undef
+      .. DP4/5 CPU=Undef
+      .. DigRx Sum= 56
+      .. DigRx Omega= 54
+      .. Interrogator TX1= 40
+      .. Interrogator TX2= 40
+      .. Interrogator TX3=Undef
+      .. Interrogator TX4= 38
+      .. Interrogator TX5=Undef
+      .. Booster TX1= 35
+      .. Booster TX2= 33
+      .. Booster TX3= 33
+      .. Booster TX4= 33
+      .. Booster TX5= 35
+      .. Booster TX6= 33]
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:33.294473717 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bb6a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B B6 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:33.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:33.296184156 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bbea5032001100807ea0703081d31]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B BE A5 03 20 01 10 08 07 EA 07 03 08 1D 31]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:49.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 31TIME=2026-07-03 08:29:49
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:33.296206328 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:33.379551558 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0020cb2264360a0003053bb6b0120232333435000000000000000000000000]
+DATAHEX2 [ FD 00 20 CB 22 64 36 0A 00 03 05 3B B6 B0 12 02 32 33 34 35 00 00 00 00 00 00 00 00 00 00 00 00]
+----------------------
+CAT=253 Length data=32
+ *FSPEC=cb 22
+*SAC=100 SIC=054
+*LocalID=010
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=05  Command Token Request
+*TimeOfDay=08:29:33.375
+*Transparent Application Data 2 LEN=018 : 02 32 33 34 35 00 00 00 00 00 00 00 00 00 00 00 00
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:33.381028195 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0014bb2031de0164360164360a0003073bbeb0]
+DATAHEX2 [ FD 00 14 BB 20 31 DE 01 64 36 01 64 36 0A 00 03 07 3B BE B0]
+----------------------
+CAT=253 Length data=20
+ *FSPEC=bb 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Data Destination REP=001
+  -->> SAC=100 SIC=054 LocalID=010
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=07  Command Token Assign
+*TimeOfDay=08:29:49.375
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:33.430629278 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00148b3464360003083bb6b604210110030201]
+DATAHEX2 [ FD 00 14 8B 34 64 36 00 03 08 3B B6 B6 04 21 01 10 03 02 01]
+----------------------
+CAT=253 Length data=20
+ *FSPEC=8b 34
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=08  Command Message
+*TimeOfDay=08:29:33.421
+*Application Data Structure START=0x0421 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 1 LEN=003 TYPE=2:Unsigned integer 8 bit Value=01 
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:33.476354319 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0017ab3431de01643600030a3bbebc04210110030201]
+DATAHEX2 [ FD 00 17 AB 34 31 DE 01 64 36 00 03 0A 3B BE BC 04 21 01 10 03 02 01]
+----------------------
+CAT=253 Length data=23
+ *FSPEC=ab 34
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:49.468
+*Application Data Structure START=0x0421 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 1 LEN=003 TYPE=2:Unsigned integer 8 bit Value=01 
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:33.476392745 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003063bb6b6fd00118b3064360003133bb6b604210100]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 06 3B B6 B6 FD 00 11 8B 30 64 36 00 03 13 3B B6 B6 04 21 01 00]
+----------------------
+CAT=253 Length data=30
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=06  Command Token Release
+*TimeOfDay=08:29:33.421
+----------------------
+CAT=253 Length data=30
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:33.421
+*Application Data Structure START=0x0421 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:33.477598542 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003073bbebd]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 07 3B BE BD]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=07  Command Token Assign
+*TimeOfDay=08:29:49.476
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:33.518300631 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0017ab3431de01643600030a3bbebd04210110030201]
+DATAHEX2 [ FD 00 17 AB 34 31 DE 01 64 36 00 03 0A 3B BE BD 04 21 01 10 03 02 01]
+----------------------
+CAT=253 Length data=23
+ *FSPEC=ab 34
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:49.476
+*Application Data Structure START=0x0421 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 1 LEN=003 TYPE=2:Unsigned integer 8 bit Value=01 
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:33.648582643 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:34.294677961 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bb725]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B B7 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:34.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:34.339557990 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bb72503200100120009e0643631de05]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B B7 25 03 20 01 00 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=253 Length data=26
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:34.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+----------------------
+CAT=018 Length data=26
+ Length in data is 17 but we have only 9 bytes
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:34.341542497 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bbf2b032001100807ea0703081d32]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B BF 2B 03 20 01 10 08 07 EA 07 03 08 1D 32]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:50.335
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 32TIME=2026-07-03 08:29:50
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:34.480513264 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0026ab3231de01643600030a3bbf3d04110110120201000000000000000001000000000000]
+DATAHEX2 [ FD 00 26 AB 32 31 DE 01 64 36 00 03 0A 3B BF 3D 04 11 01 10 12 02 01 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00]
+----------------------
+CAT=253 Length data=38
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:50.476
+*Application Data Structure START=0x0411 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=018 : 02 01 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:34.692599119 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:35.007233428 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bbf80]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B BF 80]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:51.000
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:35.295305221 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bb7a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B B7 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:35.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:35.297107730 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bbfa5032001100807ea0703081d33]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B BF A5 03 20 01 10 08 07 EA 07 03 08 1D 33]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:51.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 33TIME=2026-07-03 08:29:51
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:35.297138098 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:35.694526226 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:36.294299289 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bb825]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B B8 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:36.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:36.295406729 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bb82503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B B8 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:36.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:36.295845898 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:36.297595606 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc026032001100807ea0703081d34]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C0 26 03 20 01 10 08 07 EA 07 03 08 1D 34]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:52.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 34TIME=2026-07-03 08:29:52
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:36.700102719 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:37.294789677 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bb8a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B B8 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:37.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:37.296848248 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc0a5032001100807ea0703081d35]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C0 A5 03 20 01 10 08 07 EA 07 03 08 1D 35]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:53.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 35TIME=2026-07-03 08:29:53
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:37.296871640 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:37.393512922 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0020cb2264360a0003053bb8b2120232333435000000000000000000000000]
+DATAHEX2 [ FD 00 20 CB 22 64 36 0A 00 03 05 3B B8 B2 12 02 32 33 34 35 00 00 00 00 00 00 00 00 00 00 00 00]
+----------------------
+CAT=253 Length data=32
+ *FSPEC=cb 22
+*SAC=100 SIC=054
+*LocalID=010
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=05  Command Token Request
+*TimeOfDay=08:29:37.390
+*Transparent Application Data 2 LEN=018 : 02 32 33 34 35 00 00 00 00 00 00 00 00 00 00 00 00
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:37.394904881 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0014bb2031de0164360164360a0003073bc0b2]
+DATAHEX2 [ FD 00 14 BB 20 31 DE 01 64 36 01 64 36 0A 00 03 07 3B C0 B2]
+----------------------
+CAT=253 Length data=20
+ *FSPEC=bb 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Data Destination REP=001
+  -->> SAC=100 SIC=054 LocalID=010
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=07  Command Token Assign
+*TimeOfDay=08:29:53.390
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:37.444552053 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00148b3464360003083bb8b804200110030200]
+DATAHEX2 [ FD 00 14 8B 34 64 36 00 03 08 3B B8 B8 04 20 01 10 03 02 00]
+----------------------
+CAT=253 Length data=20
+ *FSPEC=8b 34
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=08  Command Message
+*TimeOfDay=08:29:37.437
+*Application Data Structure START=0x0420 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 1 LEN=003 TYPE=2:Unsigned integer 8 bit Value=00 
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:37.487685774 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0017ab3431de01643600030a3bc0be04200110030200]
+DATAHEX2 [ FD 00 17 AB 34 31 DE 01 64 36 00 03 0A 3B C0 BE 04 20 01 10 03 02 00]
+----------------------
+CAT=253 Length data=23
+ *FSPEC=ab 34
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:53.484
+*Application Data Structure START=0x0420 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 1 LEN=003 TYPE=2:Unsigned integer 8 bit Value=00 
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:37.487718060 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003063bb8b8fd00118b3064360003133bb8b804200100]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 06 3B B8 B8 FD 00 11 8B 30 64 36 00 03 13 3B B8 B8 04 20 01 00]
+----------------------
+CAT=253 Length data=30
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=06  Command Token Release
+*TimeOfDay=08:29:37.437
+----------------------
+CAT=253 Length data=30
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:37.437
+*Application Data Structure START=0x0420 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:37.489223742 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003073bc0be]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 07 3B C0 BE]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=07  Command Token Assign
+*TimeOfDay=08:29:53.484
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:37.531421969 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0017ab3431de01643600030a3bc0be04200110030200]
+DATAHEX2 [ FD 00 17 AB 34 31 DE 01 64 36 00 03 0A 3B C0 BE 04 20 01 10 03 02 00]
+----------------------
+CAT=253 Length data=23
+ *FSPEC=ab 34
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:53.484
+*Application Data Structure START=0x0420 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 1 LEN=003 TYPE=2:Unsigned integer 8 bit Value=00 
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:37.749689300 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:38.014846907 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bc101]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B C1 01]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:54.007
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:38.294578466 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bb925]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B B9 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:38.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:38.339483009 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bb92503200100120009e0643631de05]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B B9 25 03 20 01 00 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=253 Length data=26
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:38.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+----------------------
+CAT=018 Length data=26
+ Length in data is 17 but we have only 9 bytes
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:38.341306513 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc12b032001100807ea0703081d36]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C1 2B 03 20 01 10 08 07 EA 07 03 08 1D 36]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:54.335
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 36TIME=2026-07-03 08:29:54
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:38.792464991 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:39.294690000 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bb9a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B B9 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:39.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:39.296478627 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc1a5032001100807ea0703081d37]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C1 A5 03 20 01 10 08 07 EA 07 03 08 1D 37]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:55.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 37TIME=2026-07-03 08:29:55
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:39.296502726 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:39.609436738 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0020cb2264360a0003053bb9cd120232333435000000000000000000000000]
+DATAHEX2 [ FD 00 20 CB 22 64 36 0A 00 03 05 3B B9 CD 12 02 32 33 34 35 00 00 00 00 00 00 00 00 00 00 00 00]
+----------------------
+CAT=253 Length data=32
+ *FSPEC=cb 22
+*SAC=100 SIC=054
+*LocalID=010
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=05  Command Token Request
+*TimeOfDay=08:29:39.601
+*Transparent Application Data 2 LEN=018 : 02 32 33 34 35 00 00 00 00 00 00 00 00 00 00 00 00
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:39.610810811 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0014bb2031de0164360164360a0003073bc1ce]
+DATAHEX2 [ FD 00 14 BB 20 31 DE 01 64 36 01 64 36 0A 00 03 07 3B C1 CE]
+----------------------
+CAT=253 Length data=20
+ *FSPEC=bb 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Data Destination REP=001
+  -->> SAC=100 SIC=054 LocalID=010
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=07  Command Token Assign
+*TimeOfDay=08:29:55.609
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:39.660479160 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00148b3464360003083bb9d404210110030200]
+DATAHEX2 [ FD 00 14 8B 34 64 36 00 03 08 3B B9 D4 04 21 01 10 03 02 00]
+----------------------
+CAT=253 Length data=20
+ *FSPEC=8b 34
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=08  Command Message
+*TimeOfDay=08:29:39.656
+*Application Data Structure START=0x0421 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 1 LEN=003 TYPE=2:Unsigned integer 8 bit Value=00 
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:39.693836366 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0017ab3431de01643600030a3bc1d804210110030200]
+DATAHEX2 [ FD 00 17 AB 34 31 DE 01 64 36 00 03 0A 3B C1 D8 04 21 01 10 03 02 00]
+----------------------
+CAT=253 Length data=23
+ *FSPEC=ab 34
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:55.687
+*Application Data Structure START=0x0421 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 1 LEN=003 TYPE=2:Unsigned integer 8 bit Value=00 
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:39.693849558 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003063bb9d4fd00118b3064360003133bb9d404210100]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 06 3B B9 D4 FD 00 11 8B 30 64 36 00 03 13 3B B9 D4 04 21 01 00]
+----------------------
+CAT=253 Length data=30
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=06  Command Token Release
+*TimeOfDay=08:29:39.656
+----------------------
+CAT=253 Length data=30
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:39.656
+*Application Data Structure START=0x0421 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:39.695389921 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003073bc1d8]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 07 3B C1 D8]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=07  Command Token Assign
+*TimeOfDay=08:29:55.687
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:39.736413639 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0017ab3431de01643600030a3bc1d904210110030200]
+DATAHEX2 [ FD 00 17 AB 34 31 DE 01 64 36 00 03 0A 3B C1 D9 04 21 01 10 03 02 00]
+----------------------
+CAT=253 Length data=23
+ *FSPEC=ab 34
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:55.695
+*Application Data Structure START=0x0421 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 1 LEN=003 TYPE=2:Unsigned integer 8 bit Value=00 
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:39.797763678 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:40.294874575 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bba25]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B BA 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:40.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:40.339509167 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bba2503200100120009e0643631de05]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B BA 25 03 20 01 00 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=253 Length data=26
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:40.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+----------------------
+CAT=018 Length data=26
+ Length in data is 17 but we have only 9 bytes
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:40.341280065 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc22b032001100807ea0703081d38]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C2 2B 03 20 01 10 08 07 EA 07 03 08 1D 38]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:56.335
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 38TIME=2026-07-03 08:29:56
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:40.842855075 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:41.011600296 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bc281]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B C2 81]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:57.007
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:41.294984569 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bbaa503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B BA A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:41.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:41.296695529 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc2a5032001100807ea0703081d39]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C2 A5 03 20 01 10 08 07 EA 07 03 08 1D 39]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:57.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 39TIME=2026-07-03 08:29:57
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:41.296718621 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:41.849835926 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:42.294599377 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bbb25]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B BB 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:42.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:42.295694650 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bbb2503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B BB 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:42.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:42.296128403 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:42.297772955 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc326032001100807ea0703081d3a]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C3 26 03 20 01 10 08 07 EA 07 03 08 1D 3A]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:58.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 3ATIME=2026-07-03 08:29:58
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:42.513013285 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0026ab3231de01643600030a3bc34104110110120200000000000000000001000000000000]
+DATAHEX2 [ FD 00 26 AB 32 31 DE 01 64 36 00 03 0A 3B C3 41 04 11 01 10 12 02 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00]
+----------------------
+CAT=253 Length data=38
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:58.507
+*Application Data Structure START=0x0411 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=018 : 02 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:42.849654078 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:43.294488226 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bbba503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B BB A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:43.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:43.296240069 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc3a5032001100807ea0703081d3b]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C3 A5 03 20 01 10 08 07 EA 07 03 08 1D 3B]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:29:59.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1D 3BTIME=2026-07-03 08:29:59
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:43.296262418 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:43.889759950 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:44.022329398 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bc401]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B C4 01]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:00.007
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:44.294565540 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bbc25]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B BC 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:44.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:44.295674084 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bbc2503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B BC 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:44.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:44.295993820 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:44.297884736 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc426032001100807ea0703081e00]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C4 26 03 20 01 10 08 07 EA 07 03 08 1E 00]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:00.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 00TIME=2026-07-03 08:30:00
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:44.894921280 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:45.294315616 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bbca503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B BC A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:45.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:45.296111646 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc4a5032001100807ea0703081e01]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C4 A5 03 20 01 10 08 07 EA 07 03 08 1E 01]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:01.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 01TIME=2026-07-03 08:30:01
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:45.296134598 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:45.899406884 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:46.294704039 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bbd25]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B BD 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:46.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:46.295796583 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bbd2503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B BD 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:46.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:46.296294915 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:46.297934611 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc526032001100807ea0703081e02]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C5 26 03 20 01 10 08 07 EA 07 03 08 1E 02]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:02.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 02TIME=2026-07-03 08:30:02
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:46.937757886 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:47.005623392 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bc580]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B C5 80]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:03.000
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:47.294887032 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bbda503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B BD A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:47.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:47.296701072 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc5a5032001100807ea0703081e03]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C5 A5 03 20 01 10 08 07 EA 07 03 08 1E 03]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:03.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 03TIME=2026-07-03 08:30:03
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:47.296736045 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:47.954129037 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:48.294694195 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bbe25]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B BE 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:48.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:48.295797052 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bbe2503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B BE 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:48.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:48.296254321 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:48.297548884 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc626032001100807ea0703081e04]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C6 26 03 20 01 10 08 07 EA 07 03 08 1E 04]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:04.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 04TIME=2026-07-03 08:30:04
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:49.000771211 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:49.294431751 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bbea503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B BE A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:49.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:49.296204507 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc6a5032001100807ea0703081e05]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C6 A5 03 20 01 10 08 07 EA 07 03 08 1E 05]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:05.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 05TIME=2026-07-03 08:30:05
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:49.296228502 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:50.011385174 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:50.052468865 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bc701]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B C7 01]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:06.007
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:50.294143717 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bbf25]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B BF 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:50.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:50.295236084 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bbf2503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B BF 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:50.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:50.295553752 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:50.297296592 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc726032001100807ea0703081e06]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C7 26 03 20 01 10 08 07 EA 07 03 08 1E 06]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:06.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 06TIME=2026-07-03 08:30:06
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:51.011044188 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:51.294292444 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bbfa503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B BF A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:51.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:51.296211023 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc7a5032001100807ea0703081e07]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C7 A5 03 20 01 10 08 07 EA 07 03 08 1E 07]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:07.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 07TIME=2026-07-03 08:30:07
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:51.296234528 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:52.058924847 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:52.294431621 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bc025]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B C0 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:52.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:52.295524836 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc02503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C0 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:52.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:52.296013009 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:52.297390075 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc826032001100807ea0703081e08]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C8 26 03 20 01 10 08 07 EA 07 03 08 1E 08]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:08.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 08TIME=2026-07-03 08:30:08
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:53.017689117 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bc882]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B C8 82]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:09.015
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:53.069968412 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:53.294843287 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc0a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C0 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:53.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:53.296591438 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc8a5032001100807ea0703081e09]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C8 A5 03 20 01 10 08 07 EA 07 03 08 1E 09]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:09.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 09TIME=2026-07-03 08:30:09
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:53.296614608 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:54.084521987 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:54.294865834 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bc125]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B C1 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:54.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:54.295957967 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc12503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C1 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:54.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:54.296393558 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:54.297896991 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc926032001100807ea0703081e0a]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C9 26 03 20 01 10 08 07 EA 07 03 08 1E 0A]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:10.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 0ATIME=2026-07-03 08:30:10
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:55.110288722 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:55.294453596 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc1a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C1 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:55.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:55.296194313 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bc9a5032001100807ea0703081e0b]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B C9 A5 03 20 01 10 08 07 EA 07 03 08 1E 0B]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:11.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 0BTIME=2026-07-03 08:30:11
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:55.296216320 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:56.004743728 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bca00]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B CA 00]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:12.000
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:56.156888163 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:56.294571518 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bc225]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B C2 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:56.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:56.295664222 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc22503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C2 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:56.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:56.296163252 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:56.297571220 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bca26032001100807ea0703081e0c]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B CA 26 03 20 01 10 08 07 EA 07 03 08 1E 0C]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:12.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 0CTIME=2026-07-03 08:30:12
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:57.157014423 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:57.295049571 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc2a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C2 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:57.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:57.296811786 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bcaa5032001100807ea0703081e0d]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B CA A5 03 20 01 10 08 07 EA 07 03 08 1E 0D]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:13.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 0DTIME=2026-07-03 08:30:13
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:57.296844471 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:58.203701239 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:58.294881369 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bc325]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B C3 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:29:58.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:58.295968802 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc32503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C3 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:58.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:58.296283696 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:58.298313326 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bcb26032001100807ea0703081e0e]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B CB 26 03 20 01 10 08 07 EA 07 03 08 1E 0E]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:14.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 0ETIME=2026-07-03 08:30:14
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:59.015935912 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bcb81]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B CB 81]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:15.007
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:59.218692212 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:59.294352839 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc3a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C3 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:29:59.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:59.296152612 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bcba5032001100807ea0703081e0f]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B CB A5 03 20 01 10 08 07 EA 07 03 08 1E 0F]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:15.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 0FTIME=2026-07-03 08:30:15
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:59.296164372 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:00.258266827 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:00.294184476 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bc425]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B C4 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:00.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:00.295270382 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc42503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C4 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:00.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:00.295589017 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:00.296888009 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bcc26032001100807ea0703081e10]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B CC 26 03 20 01 10 08 07 EA 07 03 08 1E 10]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:16.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 10TIME=2026-07-03 08:30:16
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:01.294975267 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc4a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C4 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:01.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:01.295020325 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:01.296825087 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bcca6032001100807ea0703081e11]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B CC A6 03 20 01 10 08 07 EA 07 03 08 1E 11]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:17.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 11TIME=2026-07-03 08:30:17
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:01.296835897 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:02.015049340 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bcd01]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B CD 01]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:18.007
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:02.294762013 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bc525]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B C5 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:02.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:02.295854510 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc52503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C5 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:02.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:02.296308584 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:02.297908826 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bcd26032001100807ea0703081e12]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B CD 26 03 20 01 10 08 07 EA 07 03 08 1E 12]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:18.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 12TIME=2026-07-03 08:30:18
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:02.298512579 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:03.294253578 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc5a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C5 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:03.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:03.296078148 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bcda5032001100807ea0703081e13]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B CD A5 03 20 01 10 08 07 EA 07 03 08 1E 13]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:19.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 13TIME=2026-07-03 08:30:19
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:03.296101959 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:03.347625721 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:04.295078050 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bc625]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B C6 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:04.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:04.296172948 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc62503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C6 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:04.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:04.296491804 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:04.298038844 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bce26032001100807ea0703081e14]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B CE 26 03 20 01 10 08 07 EA 07 03 08 1E 14]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:20.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 14TIME=2026-07-03 08:30:20
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:04.348578143 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:05.011265736 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bce81]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B CE 81]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:21.007
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:05.295027779 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc6a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C6 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:05.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:05.296708621 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bcea6032001100807ea0703081e15]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B CE A6 03 20 01 10 08 07 EA 07 03 08 1E 15]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:21.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 15TIME=2026-07-03 08:30:21
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:05.296732954 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:05.398340465 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:06.294591001 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bc725]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B C7 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:06.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:06.295825830 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc72503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C7 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:06.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:06.296148162 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:06.297391878 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bcf26032001100807ea0703081e16]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B CF 26 03 20 01 10 08 07 EA 07 03 08 1E 16]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:22.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 16TIME=2026-07-03 08:30:22
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:06.398062640 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:07.294462752 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc7a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C7 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:07.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:07.325010383 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bcfa9032001100807ea0703081e17]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B CF A9 03 20 01 10 08 07 EA 07 03 08 1E 17]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:23.320
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 17TIME=2026-07-03 08:30:23
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:07.325044218 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:07.426654978 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:08.011290690 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bd001]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B D0 01]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:24.007
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:08.294653887 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bc825]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B C8 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:08.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:08.295913915 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc82503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C8 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:08.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:08.296229180 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:08.297699337 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd026032001100807ea0703081e18]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D0 26 03 20 01 10 08 07 EA 07 03 08 1E 18]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:24.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 18TIME=2026-07-03 08:30:24
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:08.443230494 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:09.294890024 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc8a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C8 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:09.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:09.296547293 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd0a6032001100807ea0703081e19]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D0 A6 03 20 01 10 08 07 EA 07 03 08 1E 19]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:25.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 19TIME=2026-07-03 08:30:25
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:09.296569250 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:09.448403760 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:10.294644969 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bc925]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B C9 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:10.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:10.295788364 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc92503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C9 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:10.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:10.296238963 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:10.297546875 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd126032001100807ea0703081e1a]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D1 26 03 20 01 10 08 07 EA 07 03 08 1E 1A]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:26.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 1ATIME=2026-07-03 08:30:26
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:10.448101476 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:11.007154789 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bd180]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B D1 80]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:27.000
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:11.294907215 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc9a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C9 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:11.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:11.296689182 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd1a6032001100807ea0703081e1b]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D1 A6 03 20 01 10 08 07 EA 07 03 08 1E 1B]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:27.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 1BTIME=2026-07-03 08:30:27
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:11.296728350 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:11.448508186 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:11.776021429 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bc9e302180100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B C9 E3 02 18 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:11.773
+*Application Data Structure START=0x0218 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:11.778104177 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0016ab3231de01643600030a3bd1e3021801100200]
+DATAHEX2 [ FD 00 16 AB 32 31 DE 01 64 36 00 03 0A 3B D1 E3 02 18 01 10 02 00]
+----------------------
+CAT=253 Length data=22
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:27.773
+*Application Data Structure START=0x0218 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=002 : 00
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:12.294322026 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bca25]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B CA 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:12.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:12.338942568 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bca2503200100120009e0643631de05]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B CA 25 03 20 01 00 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=253 Length data=26
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:12.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+----------------------
+CAT=018 Length data=26
+ Length in data is 17 but we have only 9 bytes
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:12.340908768 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd22b032001100807ea0703081e1c]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D2 2B 03 20 01 10 08 07 EA 07 03 08 1E 1C]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:28.335
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 1CTIME=2026-07-03 08:30:28
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:12.493962716 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:13.294249042 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bcaa503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B CA A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:13.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:13.296074866 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd2a5032001100807ea0703081e1d]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D2 A5 03 20 01 10 08 07 EA 07 03 08 1E 1D]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:29.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 1DTIME=2026-07-03 08:30:29
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:13.296096470 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:13.497920398 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:14.009701854 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bd301]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B D3 01]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:30.007
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:14.294281755 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bcb25]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B CB 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:14.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:14.295388323 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bcb2503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B CB 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:14.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:14.295857070 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:14.297361377 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd326032001100807ea0703081e1e]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D3 26 03 20 01 10 08 07 EA 07 03 08 1E 1E]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:30.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 1ETIME=2026-07-03 08:30:30
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:14.498443972 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:15.294349858 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bcba503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B CB A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:15.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:15.296258412 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd3a5032001100807ea0703081e1f]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D3 A5 03 20 01 10 08 07 EA 07 03 08 1E 1F]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:31.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 1FTIME=2026-07-03 08:30:31
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:15.296282477 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:15.548365868 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:16.295082852 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bcc25]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B CC 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:16.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:16.296396776 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bcc2503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B CC 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:16.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:16.296847782 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:16.298397402 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd426032001100807ea0703081e20]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D4 26 03 20 01 10 08 07 EA 07 03 08 1E 20]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:32.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 20TIME=2026-07-03 08:30:32
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:16.316623861 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bcc2804130100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B CC 28 04 13 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:16.312
+*Application Data Structure START=0x0413 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:16.317851534 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00beab3231de01643600030a3bd42804130110aa07000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+DATAHEX2 [ FD 00 BE AB 32 31 DE 01 64 36 00 03 0A 3B D4 28 04 13 01 10 AA 07 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00]
+----------------------
+CAT=253 Length data=190
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:32.312
+*Application Data Structure START=0x0413 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=170 : 07 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Avg Power SUM  |    0 |    0 |    0 |    0 |    0 |    0 |    0 
+Avg Power OMNI |    0 |    0 |    0 |    0 |    0 |    0 |    0 
+Min Power SUM  |    0 |    0 |    0 |    0 |    0 |    0 |    0 
+Min Power OMNI |    0 |    0 |    0 |    0 |    0 |    0 |    0 
+Max Power SUM  |    0 |    0 |    0 |    0 |    0 |    0 |    0 
+Max Power OMNI |    0 |    0 |    0 |    0 |    0 |    0 |    0 
+Avg VSWR  SUM  |  0.00|  0.00|  0.00|  0.00|  0.00|  0.00|  0.00
+Avg VSWR  OMNI |  0.00|  0.00|  0.00|  0.00|  0.00|  0.00|  0.00
+Min VSWR  SUM  |  0.00|  0.00|  0.00|  0.00|  0.00|  0.00|  0.00
+Min VSWR  OMNI |  0.00|  0.00|  0.00|  0.00|  0.00|  0.00|  0.00
+Max VSWR  SUM  |  0.00|  0.00|  0.00|  0.00|  0.00|  0.00|  0.00
+Max VSWR  OMNI |  0.00|  0.00|  0.00|  0.00|  0.00|  0.00|  0.00
+
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:16.595280487 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:17.010248892 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bd481]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B D4 81]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:33.007
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:17.295239607 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bcca503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B CC A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:17.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:17.296904616 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd4a6032001100807ea0703081e21]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D4 A6 03 20 01 10 08 07 EA 07 03 08 1E 21]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:33.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 21TIME=2026-07-03 08:30:33
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:17.296917484 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:17.599141531 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:18.295036808 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bcd25]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B CD 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:18.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:18.296425068 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bcd2503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B CD 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:18.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:18.296860376 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:18.298220147 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd526032001100807ea0703081e22]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D5 26 03 20 01 10 08 07 EA 07 03 08 1E 22]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:34.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 22TIME=2026-07-03 08:30:34
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:18.599301092 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:19.294932076 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bcda503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B CD A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:19.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:19.296669121 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd5a6032001100807ea0703081e23]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D5 A6 03 20 01 10 08 07 EA 07 03 08 1E 23]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:35.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 23TIME=2026-07-03 08:30:35
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:19.296691091 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:19.639958249 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:20.004553941 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bd600]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B D6 00]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:36.000
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:20.294423372 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bce25]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B CE 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:20.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:20.295639476 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bce2503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B CE 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:20.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:20.296124183 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:20.297333480 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd626032001100807ea0703081e24]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D6 26 03 20 01 10 08 07 EA 07 03 08 1E 24]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:36.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 24TIME=2026-07-03 08:30:36
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:20.644809716 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:21.294944441 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bcea503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B CE A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:21.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:21.296605943 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd6a6032001100807ea0703081e25]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D6 A6 03 20 01 10 08 07 EA 07 03 08 1E 25]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:37.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 25TIME=2026-07-03 08:30:37
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:21.296620425 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:21.649295316 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:22.295174630 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bcf25]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B CF 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:22.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:22.296565424 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bcf2503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B CF 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:22.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:22.297059773 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:22.298489740 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd726032001100807ea0703081e26]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D7 26 03 20 01 10 08 07 EA 07 03 08 1E 26]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:38.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 26TIME=2026-07-03 08:30:38
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:22.649646589 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:23.006403250 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bd780]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B D7 80]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:39.000
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:23.294847930 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bcfa503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B CF A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:23.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:23.296812839 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd7a6032001100807ea0703081e27]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D7 A6 03 20 01 10 08 07 EA 07 03 08 1E 27]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:39.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 27TIME=2026-07-03 08:30:39
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:23.296835762 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:23.369451048 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bcfaf032d0100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B CF AF 03 2D 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:23.367
+*Application Data Structure START=0x032d COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:23.369798271 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bcfaf03840100fd00118b3064360003133bcfaf03850100fd00118b3064360003133bcfaf03860100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B CF AF 03 84 01 00 FD 00 11 8B 30 64 36 00 03 13 3B CF AF 03 85 01 00 FD 00 11 8B 30 64 36 00 03 13 3B CF AF 03 86 01 00]
+----------------------
+CAT=253 Length data=51
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:23.367
+*Application Data Structure START=0x0384 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+----------------------
+CAT=253 Length data=51
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:23.367
+*Application Data Structure START=0x0385 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+----------------------
+CAT=253 Length data=51
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:23.367
+*Application Data Structure START=0x0386 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:23.371010672 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0018ab3431de01643600030a3bd7af032d01100404a7ff]
+DATAHEX2 [ FD 00 18 AB 34 31 DE 01 64 36 00 03 0A 3B D7 AF 03 2D 01 10 04 04 A7 FF]
+----------------------
+CAT=253 Length data=24
+ *FSPEC=ab 34
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:39.367
+*Application Data Structure START=0x032d COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 1 LEN=004 TYPE=4:Unsigned integer 16 bit Value=a7ff 
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:23.412296871 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0028ab3231de01643600030a3bd7af038401101400000000000000000000000000000000000000fd0028ab3231de01643600030a3bd7af038501101400000001000000000000000000000000000000fd0028ab3231de01643600030a3bd7af038601101400000000000000000000000000000000000000]
+DATAHEX2 [ FD 00 28 AB 32 31 DE 01 64 36 00 03 0A 3B D7 AF 03 84 01 10 14 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FD 00 28 AB 32 31 DE 01 64 36 00 03 0A 3B D7 AF 03 85 01 10 14 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FD 00 28 AB 32 31 DE 01 64 36 00 03 0A 3B D7 AF 03 86 01 10 14 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00]
+----------------------
+CAT=253 Length data=120
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:39.367
+*Application Data Structure START=0x0384 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=020 : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+----------------------
+CAT=253 Length data=120
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:39.367
+*Application Data Structure START=0x0385 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=020 : 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+----------------------
+CAT=253 Length data=120
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:39.367
+*Application Data Structure START=0x0386 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=020 : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:23.688199441 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:24.294459957 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bd025]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B D0 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:24.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:24.338765000 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bd02503200100120009e0643631de05]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B D0 25 03 20 01 00 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=253 Length data=26
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:24.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+----------------------
+CAT=018 Length data=26
+ Length in data is 17 but we have only 9 bytes
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:24.340577032 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd82b032001100807ea0703081e28]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D8 2B 03 20 01 10 08 07 EA 07 03 08 1E 28]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:40.335
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 28TIME=2026-07-03 08:30:40
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:24.689029020 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:25.295127073 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bd0a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B D0 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:25.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:25.296901521 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd8a6032001100807ea0703081e29]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D8 A6 03 20 01 10 08 07 EA 07 03 08 1E 29]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:41.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 29TIME=2026-07-03 08:30:41
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:25.296931997 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:25.699413933 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:25.809824626 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bd0e7032e0100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B D0 E7 03 2E 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:25.804
+*Application Data Structure START=0x032e COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:25.810176755 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bd0e7032f0100fd00118b3064360003133bd0e703870100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B D0 E7 03 2F 01 00 FD 00 11 8B 30 64 36 00 03 13 3B D0 E7 03 87 01 00]
+----------------------
+CAT=253 Length data=34
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:25.804
+*Application Data Structure START=0x032f COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+----------------------
+CAT=253 Length data=34
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:25.804
+*Application Data Structure START=0x0387 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:25.811238795 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0018ab3431de01643600030a3bd8e7032e011004043000]
+DATAHEX2 [ FD 00 18 AB 34 31 DE 01 64 36 00 03 0A 3B D8 E7 03 2E 01 10 04 04 30 00]
+----------------------
+CAT=253 Length data=24
+ *FSPEC=ab 34
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:41.804
+*Application Data Structure START=0x032e COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 1 LEN=004 TYPE=4:Unsigned integer 16 bit Value=3000  TempPowerSupply=  48.00
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:25.811841121 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0018ab3431de01643600030a3bd8e7032f011004042e00]
+DATAHEX2 [ FD 00 18 AB 34 31 DE 01 64 36 00 03 0A 3B D8 E7 03 2F 01 10 04 04 2E 00]
+----------------------
+CAT=253 Length data=24
+ *FSPEC=ab 34
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:41.804
+*Application Data Structure START=0x032f COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 1 LEN=004 TYPE=4:Unsigned integer 16 bit Value=2e00  TempAdaptationBoard=  46.00
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:25.812122906 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0028ab3231de01643600030a3bd8e7038701101400000080808038362828802680232121212321]
+DATAHEX2 [ FD 00 28 AB 32 31 DE 01 64 36 00 03 0A 3B D8 E7 03 87 01 10 14 00 00 00 80 80 80 38 36 28 28 80 26 80 23 21 21 21 23 21]
+----------------------
+CAT=253 Length data=40
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:41.804
+*Application Data Structure START=0x0387 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=020 : 00 00 00 80 80 80 38 36 28 28 80 26 80 23 21 21 21 23 21 ONLINE_STATUS[ 
+      .. AntState=NotSYNC
+      .. AntSafetySwitch=NotActivated
+      .. DP4/5 Board=Undef
+      .. DP4/5 CPU=Undef
+      .. DigRx Sum= 56
+      .. DigRx Omega= 54
+      .. Interrogator TX1= 40
+      .. Interrogator TX2= 40
+      .. Interrogator TX3=Undef
+      .. Interrogator TX4= 38
+      .. Interrogator TX5=Undef
+      .. Booster TX1= 35
+      .. Booster TX2= 33
+      .. Booster TX3= 33
+      .. Booster TX4= 33
+      .. Booster TX5= 35
+      .. Booster TX6= 33]
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:26.007892903 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bd901]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B D9 01]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:42.007
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:26.294633773 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bd125]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B D1 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:26.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:26.338761528 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bd12503200100120009e0643631de05]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B D1 25 03 20 01 00 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=253 Length data=26
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:26.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+----------------------
+CAT=018 Length data=26
+ Length in data is 17 but we have only 9 bytes
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:26.340627948 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd92b032001100807ea0703081e2a]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D9 2B 03 20 01 10 08 07 EA 07 03 08 1E 2A]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:42.335
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 2ATIME=2026-07-03 08:30:42
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:26.741569522 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:27.294965202 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bd1a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B D1 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:27.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:27.296821947 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bd9a6032001100807ea0703081e2b]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B D9 A6 03 20 01 10 08 07 EA 07 03 08 1E 2B]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:43.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 2BTIME=2026-07-03 08:30:43
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:27.296845266 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:27.789212000 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:28.294962274 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bd225]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B D2 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:28.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:28.296211547 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bd22503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B D2 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:28.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:28.296677903 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:28.297991420 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bda26032001100807ea0703081e2c]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B DA 26 03 20 01 10 08 07 EA 07 03 08 1E 2C]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:44.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 2CTIME=2026-07-03 08:30:44
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:28.791739577 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:29.000287509 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd0010ab2031de0164360003123bda80]
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 12 3B DA 80]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:45.000
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:29.295274337 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bd2a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B D2 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:29.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:29.297114373 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bdaa6032001100807ea0703081e2d]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B DA A6 03 20 01 10 08 07 EA 07 03 08 1E 2D]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:45.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 2DTIME=2026-07-03 08:30:45
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:29.297129625 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:29.800085957 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:30.294348257 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd000d8b2064360003123bd325]
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 12 3B D3 25]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=18  Alive Message
+*TimeOfDay=08:30:30.289
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:30.295443205 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bd32503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B D3 25 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:30.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:30.295910301 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:30.297766689 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bdb26032001100807ea0703081e2e]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B DB 26 03 20 01 10 08 07 EA 07 03 08 1E 2E]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:46.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 2ETIME=2026-07-03 08:30:46
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:30.799510204 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:31.295035074 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bd3a503200100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B D3 A5 03 20 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:31.289
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:31.296942241 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd001cab3231de01643600030a3bdba6032001100807ea0703081e2f]
+DATAHEX2 [ FD 00 1C AB 32 31 DE 01 64 36 00 03 0A 3B DB A6 03 20 01 10 08 07 EA 07 03 08 1E 2F]
+----------------------
+CAT=253 Length data=28
+ *FSPEC=ab 32
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=10  Delta Status Transfer Message
+*TimeOfDay=08:30:47.296
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 2 LEN=008 : 07 EA 07 03 08 1E 2FTIME=2026-07-03 08:30:47
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:31.296954826 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e0643631de05]
+DATAHEX2 [ 12 00 09 E0 64 36 31 DE 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:31.846209459 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [120009e031de643605]
+DATAHEX2 [ 12 00 09 E0 31 DE 64 36 05]
+----------------------
+CAT=018 Length data=9
+ Skipping CAT 018
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:31.965071989 CEST 192.168.5.191|==-==-==-==-==-==-==-==-
+====================================
+DATAHEX [fd00118b3064360003133bd3fb02a90100]
+DATAHEX2 [ FD 00 11 8B 30 64 36 00 03 13 3B D3 FB 02 A9 01 00]
+----------------------
+CAT=253 Length data=17
+ *FSPEC=8b 30
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=19  Data Request
+*TimeOfDay=08:30:31.960
+*Application Data Structure START=0x02a9 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:30:31.965415186 CEST 192.168.5.191|==-==-==-==-==-==-==-==-

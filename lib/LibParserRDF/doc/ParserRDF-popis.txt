@@ -1,0 +1,30 @@
+1) vytvorime si objekt MUP
+2) muzeme ho naucit user defined funkce
+3) ParserRDF pres metodu set() nastavime, co bude v budoucnu delat
+4) je mozne si vytvorit globalni promenne
+   globalni promenne jsou drzeny v MUP objektu, pokud MUP objekt mam extra pro kazdy ParserRDF
+5) do kazdeho volani parse() je mozne vkladat a zaroven potom vyzvedavat InOut promenne
+
+
+
+zakladni prvky definice funkce:
+  if,cond,then[,else]
+  case,cond1,then1,...,condN,thenN[,default]
+  undef,var1[,..,varN]
+  for,iii=0,iii<10,iii+=1,{}
+  zbytek povazuji za MUParserX vyrazy
+
+
+  pozor na stredniky a carky a jednotlive parametry nesmi obsahovat carky, pokud je obsahuji, tak sup s tim do zavorek
+   - obecne pro podminku kulate, pro zbytek slozene, ale respektuji i hranate pro indexy 2 rozmernych poli
+
+   oddelovace commandu jsou }, ;
+   oddelovace parametru jsou ","
+
+
+promenne RDF:
+  1) pokud se ve vykonavane casti zadaneho vyrazu pres  set() objevi promenne, ktere nejsou ani globalni, ani in-out, pok se zkouseji nacist ze struktur RDF
+  2) pokud se behem vykonavani casti skriptu zmeni, nebo pres UNDEF zrusi, pak se poznamenaji, ze na konci parse() se provedou pozadovane zmeny ve strukture RDF
+  3) UNDEF vetsinou provede zruseni polozky ve strukture ... napriklad "M3A" zrusi danou polozku, ale zruseni pouze priznaku ... treba M3A_G pouze shodi priznak Garbled na false.
+  
+

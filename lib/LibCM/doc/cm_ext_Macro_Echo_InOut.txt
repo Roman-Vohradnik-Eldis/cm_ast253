@@ -1,0 +1,33 @@
+
+  Sim_A__MEA_SEL/exist             = Eval, true
+  Sim_A__MEA_SEL/eval              =  Echo,"Eval, " ;
+  Sim_A__MEA_SEL/eval              =  Macro, 1, "X","0-7","( ((Sim_A__SW_LOCK==$X$) && exist(Sim_A__MEA_PERIODS[$X$])) ? Sim_A__MEA_PERIODS[$X$] :" ;
+  Sim_A__MEA_SEL/eval              =  Echo,"-2" ;
+  Sim_A__MEA_SEL/eval              =  Macro, 1, "X","0-7", ")" ;
+
+
+=== SOURCE ============
+ Echo,"Eval, " ;
+ Macro, 1, "X","0-7","( ((Sim_A__SW_LOCK==$X$) && exist(Sim_A__MEA_PERIODS[$X$])) ? Sim_A__MEA_PERIODS[$X$] :" ;
+ Echo,"-2" ;
+ Macro, 1, "X","0-7", ")" ;
+==== OUTPUT =============
+ Eval,
+  ( ((Sim_A__SW_LOCK==0) && exist(Sim_A__MEA_PERIODS[0])) ? Sim_A__MEA_PERIODS[0] :
+  ( ((Sim_A__SW_LOCK==1) && exist(Sim_A__MEA_PERIODS[1])) ? Sim_A__MEA_PERIODS[1] :
+  ( ((Sim_A__SW_LOCK==2) && exist(Sim_A__MEA_PERIODS[2])) ? Sim_A__MEA_PERIODS[2] :
+  ( ((Sim_A__SW_LOCK==3) && exist(Sim_A__MEA_PERIODS[3])) ? Sim_A__MEA_PERIODS[3] :
+  ( ((Sim_A__SW_LOCK==4) && exist(Sim_A__MEA_PERIODS[4])) ? Sim_A__MEA_PERIODS[4] :
+  ( ((Sim_A__SW_LOCK==5) && exist(Sim_A__MEA_PERIODS[5])) ? Sim_A__MEA_PERIODS[5] :
+  ( ((Sim_A__SW_LOCK==6) && exist(Sim_A__MEA_PERIODS[6])) ? Sim_A__MEA_PERIODS[6] :
+  ( ((Sim_A__SW_LOCK==7) && exist(Sim_A__MEA_PERIODS[7])) ? Sim_A__MEA_PERIODS[7] :
+  -2
+  )
+  )
+  )
+  )
+  )
+  )
+  )
+  )
+===================

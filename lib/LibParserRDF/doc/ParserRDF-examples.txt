@@ -1,0 +1,219 @@
+=====================vyhazet vse, kde neni definovana CAT, jinak prevod z 34/48 na 1/2 ===================================================================
+
+
+    {if,(!exist(CAT)),REMOVE=1,{{if,(CAT==34),CAT=2},{if,(CAT==48),CAT=1}}}
+
+=====================vyhazet vse CAT 48 ===================================================================
+
+    {if,(CAT==48),REMOVE=1}
+
+=====================vyhazeni vsech CAT 048 a 001 ===================================================================
+
+    {if,((CAT==48)||(CAT==1)),      ,REMOVE=1}
+
+====================priklad slozitejsich vetvi rozskoku ====================================================================
+
+    if,((SIC==1) && (SAC==2) && exist(CallSign)),
+      {CallSign="BLB"},
+      {
+        case,
+          FL>300,CallSign="HI-" // CallSign,
+          FL>200,{CallSign="MED-" // CallSign,M3A_G=true, {undef,M3A}},
+          CallSign="LO-" // CallSign
+       }
+   }
+
+
+
+====================pridani znaku na prvni misto CallSign ====================================================================
+
+
+
+      {
+        case,
+          ((M3A>>12)&7)==7,CallSign="7-" // CallSign,
+          ((M3A>>12)&7)==6,CallSign="6-" // CallSign,
+          ((M3A>>12)&7)==5,CallSign="5-" // CallSign,
+          ((M3A>>12)&7)==4,CallSign="4-" // CallSign,
+          ((M3A>>12)&7)==3,CallSign="3-" // CallSign,
+          ((M3A>>12)&7)==2,CallSign="2-" // CallSign,
+          CallSign="01-" // CallSign
+       }
+
+==============vyhazeni vsech targetu s priznakem SIM (Simulated) ==========================================================================
+
+if,(exist(FlagSIM) && (FlagSIM)),REMOVE=1
+if,exist(FlagSIM),{if,FlagSIM,REMOVE=1}
+
+==============pricteni k casu 1 minuty ==========================================================================
+
+if,exist(TOD),TOD+=60
+
+==============zmena polohy radaru v North message ==========================================================================
+
+
+if (exist(NORTH_POS3D_ALT)),{NORTH_POS3D_ALT=11.111}
+
+================ukazka zadani promenne pres BASH promennou do astmerge - ukazka escapovanych uvozovek ========================================================================
+
+EXPR2="
+if,(CAT==34),
+{
+  PRINT=\"SERV; \";
+  if,(ServiceTYPE==1),{PRINT=PRINT // \"NORTH; \";}
+
+};
+if,(CAT==48),REMOVE=1;
+"
+
+
+
+
+========================slozitejsi podminka v bash promenne ================================================================
+
+
+EXPR2="
+{
+{   if,((CAT==48)&&(exist(M3A,FL,RNG,AZ))),
+ {
+  FL+=11;
+  if,((M3A==0x7777) && (MC==-10) && (RNG<152) && (RNG>148)),
+  {
+    AZ+=90;
+    FL=-5;
+  };
+  FL-=1;
+ }
+};
+if,(CAT==48)&&(exist(M3A,FL,RNG,AZ)),
+  {if,((M3A==0x7776) && (MC==-5) && (RNG<152) && (RNG>148)),
+    AZ+=180,CallSign=\"ELSE\"};
+
+if,(CAT==48)&&(exist(M3A,FL,RNG,AZ)),
+  {if,((M3A==0x7776) && (MC==-5) && (RNG<152) && (RNG>148)),
+    AZ+=180},CallSign=CallSign // \"ELSE\";
+
+{if,(CAT==48)&&(exist(M3A,FL,RNG,AZ))
+  ,{case,(M3A==0x1000),RNG+=1,
+       (M3A==0x1200),{AZ+=2;RNG+=2},
+                  {undef,RNG};}
+}
+}
+"
+
+
+=================jiny zpusob vymazani vsech zprav RDFService =======================================================================
+
+
+EXPR2="
+if,(exist(ServiceTYPE)),
+ {  REMOVE=true}
+"
+
+==================maly vypis jako z ast2text ======================================================================
+
+
+EXPR2="
+PRINT=PRINT // strdec(CAT,3,true) // \":\";
+if,(CAT==34),
+{
+  PRINT=PRINT // \"SERV; \" // strdec(ServiceTYPE) // \";\";
+  if,(ServiceTYPE==1),{PRINT=PRINT // \"NORTH; \";};
+  X=ServiceTYPE;
+  for,iii=0,iii<10,iii+=1,{
+  PRINT=PRINT // \"SERV; \" // strdec(X) // \";\"; };
+..
+
+};
+if,(CAT==48),REMOVE=1;
+"
+
+
+
+
+
+============vetsi vypis jako z ast2text============================================================================
+
+
+PRINT=PRINT // strdec(CAT,3,true) // ":";
+if,exist(TOD),
+{
+  PRINT=PRINT // "TOD=" // strftime("%H:%M:%S.%q",TOD) // "; ";
+};
+if,(CAT==48),
+{
+  if,exist(RNG,AZ),
+  {
+    PRINT=PRINT // "Rng=" // strfloat(RNG,6,2,true) // ",Az=" // strfloat(AZ,6,2,true) // "; ";
+  };
+  if,exist(FlagSIM) && (FlagSIM),
+  {
+    COUNT_SIM+=1;
+    PRINT=PRINT // "SIMULATED=" // strdec(COUNT_SIM) //"; ";
+  };
+  if,exist(FlagTST) && (FlagTST),
+  {
+    PRINT=PRINT // "TESTEDED; ";
+  };
+  if,exist(FlagRAB) && (FlagRAB),
+  {
+    PRINT=PRINT // "RAB; ";
+  };
+  if,exist(FlagSPI) && (FlagSPI),
+  {
+    PRINT=PRINT // "SPI; ";
+  };
+  if,exist(M3A),
+  {
+    PRINT=PRINT // "M3A=" // strhex(M3A,4,true);
+    if,exist(M3A_G) && (M3A_G), PRINT=PRINT // "g";
+    if,exist(M3A_I) && (M3A_I), PRINT=PRINT // "i";
+    if,exist(M3A_T) && (M3A_T), PRINT=PRINT // "t";
+    PRINT=PRINT // "; ";
+  };
+  if,exist(FL),
+  {
+    PRINT=PRINT // "FL=" // strfloat(FL,6,2,true);
+    if,exist(FL_G) && (FL_G), PRINT=PRINT // "g";
+    if,exist(FL_I) && (FL_I), PRINT=PRINT // "i";
+    if,exist(FL_25) && (FL_25), PRINT=PRINT // "(25)";
+    PRINT=PRINT // "; ";
+  };
+  if,exist(SADDR),
+  {
+    PRINT=PRINT // "S=" // strhex(SADDR,6,true) // "; ";
+  };
+  if,exist(CallSign),
+  {
+    PRINT=PRINT // "CS=" // CallSign // "; ";
+    PRINT=PRINT // "BDS20=" // strhex(CmBDS20_from_CallSign(CallSign),14,true,true) // "; ";
+    
+  };
+  
+};
+if,(CAT==34),
+{
+  if,(ServiceTYPE==1),
+  {
+    PRINT=PRINT // "TYPE=NORTH; ";
+    if,exist(NORTH_POS3D_LAT,NORTH_POS3D_LON,NORTH_POS3D_ALT),
+    {
+      PRINT=PRINT // "Lat=" // strany(NORTH_POS3D_LAT) // "; Lon=" // strany(NORTH_POS3D_LON) // "; ";
+    };
+    if,exist(NORTH_ROTSPD),
+    {
+      PRINT=PRINT // "RotSpd=" // strfloat(NORTH_ROTSPD,1,2) // "; ";
+    };
+    
+  };
+  if,(ServiceTYPE==2),
+  {
+    if,exist(SECTOR),
+    {
+      PRINT=PRINT // "Sector=" // strdec((SECTOR / 11.25),2,true) // "; ";
+    };
+  };
+};
+
+
+========================================================================================

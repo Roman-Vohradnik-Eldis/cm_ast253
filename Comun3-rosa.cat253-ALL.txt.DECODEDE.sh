@@ -1,0 +1,1 @@
+Decode-file.sh Comun3-rosa.cat253-ALL.txt | tee Comun3-rosa.cat253-ALL.txt.DECODED.txt

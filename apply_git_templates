@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+if [ -d .git  ]; then
+    if [ -d git_templates ]; then
+	rm -rf .git/hooks
+	rm .git/description
+	git init --template git_templates
+	exit 0
+    fi
+fi
+
+if [ -f .git  ]; then
+    if [ -d git_templates ]; then
+	SUBMODULE_ADDR=$(cat .git | cut -d ':' -f 2 )
+	echo reinicializing submodule $SUBMODULE_ADDR
+	rm -rf  $SUBMODULE_ADDR/hooks
+	rm $SUBMODULE_ADDR/description
+	cp -r ./git_templates/hooks $SUBMODULE_ADDR/hooks
+	cp git_templates/description $SUBMODULE_ADDR/description
+    fi
+fi

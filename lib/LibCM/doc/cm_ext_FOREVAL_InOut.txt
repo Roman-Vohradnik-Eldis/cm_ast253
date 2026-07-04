@@ -1,0 +1,126 @@
+
+################## INPUT ===================
+
+  GUI__MeaPwrOmegaTFSS/eval         = ForEval, 1, "X","0-7", "GUI__MeaPwrOmegaTFSS[$X$] = GUI__BUFFER[4+$X$] / 2";
+#### o dost slozitejsi 2 dimenzionalni a jeste vycet hodnot PARU - ale logicky to je kravina, protoze by jsme meli pracovat pouze s GUI__MeaPwrOmegaTFSS
+  GUI__MeaPwrOmegaTFSS/eval         = ForEval, 2, "X","0-7", "Y,Z","SumTMOS,19,OmegaTMOS,27,SumTFSS,35,OmegaTFSS,43", "GUI__MeaPwr$Y$[$X$] = GUI__BUFFER[$Z$+$X$] / 2";
+  TxG_A__SW_ALL_DISABLED/exist      = ForEval, 1, "X","M1,M2,MC,M4,M3O,MCO,M3S,MCS,UF11,UF11_M3O,UF11_MCO,ROLL,3K1,3K2,3K3", "CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_$X$)"
+  TxG_A__SW_ALL_DISABLED/eval       = ForEval, 1, "X","M1,M2,MC,M4,M3O,MCO,M3S,MCS,UF11,UF11_M3O,UF11_MCO,ROLL,3K1,3K2,3K3", "CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_$X$) ? TxG_A__SW_$X$ : false)"
+  TxG_A__SW_ALL_ENABLED/exist      = ForEval, 1, "X","M1,M2,MC,M4,M3O,MCO,M3S,MCS,UF11,UF11_M3O,UF11_MCO,ROLL,3K1,3K2,3K3", "CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_$X$)"
+  TxG_A__SW_ALL_ENABLED/eval       = ForEval, 1, "X","M1,M2,MC,M4,M3O,MCO,M3S,MCS,UF11,UF11_M3O,UF11_MCO,ROLL,3K1,3K2,3K3", "CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_$X$) ? TxG_A__SW_$X$ : true)"
+
+
+
+============== OUTPUT ================================
+
+ForCycleDimensions=1, Template="GUI__MeaPwrOmegaTFSS[$X$] = GUI__BUFFER[4+$X$] / 2"
+ForEval:GUI__MeaPwrOmegaTFSS[0] = GUI__BUFFER[4+0] / 2
+ForEval:GUI__MeaPwrOmegaTFSS[1] = GUI__BUFFER[4+1] / 2
+ForEval:GUI__MeaPwrOmegaTFSS[2] = GUI__BUFFER[4+2] / 2
+ForEval:GUI__MeaPwrOmegaTFSS[3] = GUI__BUFFER[4+3] / 2
+ForEval:GUI__MeaPwrOmegaTFSS[4] = GUI__BUFFER[4+4] / 2
+ForEval:GUI__MeaPwrOmegaTFSS[5] = GUI__BUFFER[4+5] / 2
+ForEval:GUI__MeaPwrOmegaTFSS[6] = GUI__BUFFER[4+6] / 2
+ForEval:GUI__MeaPwrOmegaTFSS[7] = GUI__BUFFER[4+7] / 2
+
+ForCycleDimensions=2, Template="GUI__MeaPwr$Y$[$X$] = GUI__BUFFER[$Z$+$X$] / 2"
+ForEval:GUI__MeaPwrSumTMOS[0] = GUI__BUFFER[19+0] / 2
+ForEval:GUI__MeaPwrOmegaTMOS[0] = GUI__BUFFER[27+0] / 2
+ForEval:GUI__MeaPwrSumTFSS[0] = GUI__BUFFER[35+0] / 2
+ForEval:GUI__MeaPwrOmegaTFSS[0] = GUI__BUFFER[43+0] / 2
+ForEval:GUI__MeaPwrSumTMOS[1] = GUI__BUFFER[19+1] / 2
+ForEval:GUI__MeaPwrOmegaTMOS[1] = GUI__BUFFER[27+1] / 2
+ForEval:GUI__MeaPwrSumTFSS[1] = GUI__BUFFER[35+1] / 2
+ForEval:GUI__MeaPwrOmegaTFSS[1] = GUI__BUFFER[43+1] / 2
+ForEval:GUI__MeaPwrSumTMOS[2] = GUI__BUFFER[19+2] / 2
+ForEval:GUI__MeaPwrOmegaTMOS[2] = GUI__BUFFER[27+2] / 2
+ForEval:GUI__MeaPwrSumTFSS[2] = GUI__BUFFER[35+2] / 2
+ForEval:GUI__MeaPwrOmegaTFSS[2] = GUI__BUFFER[43+2] / 2
+ForEval:GUI__MeaPwrSumTMOS[3] = GUI__BUFFER[19+3] / 2
+ForEval:GUI__MeaPwrOmegaTMOS[3] = GUI__BUFFER[27+3] / 2
+ForEval:GUI__MeaPwrSumTFSS[3] = GUI__BUFFER[35+3] / 2
+ForEval:GUI__MeaPwrOmegaTFSS[3] = GUI__BUFFER[43+3] / 2
+ForEval:GUI__MeaPwrSumTMOS[4] = GUI__BUFFER[19+4] / 2
+ForEval:GUI__MeaPwrOmegaTMOS[4] = GUI__BUFFER[27+4] / 2
+ForEval:GUI__MeaPwrSumTFSS[4] = GUI__BUFFER[35+4] / 2
+ForEval:GUI__MeaPwrOmegaTFSS[4] = GUI__BUFFER[43+4] / 2
+ForEval:GUI__MeaPwrSumTMOS[5] = GUI__BUFFER[19+5] / 2
+ForEval:GUI__MeaPwrOmegaTMOS[5] = GUI__BUFFER[27+5] / 2
+ForEval:GUI__MeaPwrSumTFSS[5] = GUI__BUFFER[35+5] / 2
+ForEval:GUI__MeaPwrOmegaTFSS[5] = GUI__BUFFER[43+5] / 2
+ForEval:GUI__MeaPwrSumTMOS[6] = GUI__BUFFER[19+6] / 2
+ForEval:GUI__MeaPwrOmegaTMOS[6] = GUI__BUFFER[27+6] / 2
+ForEval:GUI__MeaPwrSumTFSS[6] = GUI__BUFFER[35+6] / 2
+ForEval:GUI__MeaPwrOmegaTFSS[6] = GUI__BUFFER[43+6] / 2
+ForEval:GUI__MeaPwrSumTMOS[7] = GUI__BUFFER[19+7] / 2
+ForEval:GUI__MeaPwrOmegaTMOS[7] = GUI__BUFFER[27+7] / 2
+ForEval:GUI__MeaPwrSumTFSS[7] = GUI__BUFFER[35+7] / 2
+ForEval:GUI__MeaPwrOmegaTFSS[7] = GUI__BUFFER[43+7] / 2
+
+ForCycleDimensions=1, Template="CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_$X$)"
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_M1)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_M2)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_MC)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_M4)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_M3O)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_MCO)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_M3S)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_MCS)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_UF11)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_UF11_M3O)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_UF11_MCO)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_ROLL)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_3K1)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_3K2)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_3K3)
+
+ForCycleDimensions=1, Template="CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_$X$) ? TxG_A__SW_$X$ : false)"
+ForEval:CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_M1) ? TxG_A__SW_M1 : false)
+ForEval:CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_M2) ? TxG_A__SW_M2 : false)
+ForEval:CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_MC) ? TxG_A__SW_MC : false)
+ForEval:CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_M4) ? TxG_A__SW_M4 : false)
+ForEval:CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_M3O) ? TxG_A__SW_M3O : false)
+ForEval:CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_MCO) ? TxG_A__SW_MCO : false)
+ForEval:CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_M3S) ? TxG_A__SW_M3S : false)
+ForEval:CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_MCS) ? TxG_A__SW_MCS : false)
+ForEval:CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_UF11) ? TxG_A__SW_UF11 : false)
+ForEval:CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_UF11_M3O) ? TxG_A__SW_UF11_M3O : false)
+ForEval:CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_UF11_MCO) ? TxG_A__SW_UF11_MCO : false)
+ForEval:CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_ROLL) ? TxG_A__SW_ROLL : false)
+ForEval:CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_3K1) ? TxG_A__SW_3K1 : false)
+ForEval:CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_3K2) ? TxG_A__SW_3K2 : false)
+ForEval:CmExtW____TMP = CmExtW____TMP or (exist(TxG_A__SW_3K3) ? TxG_A__SW_3K3 : false)
+
+ForCycleDimensions=1, Template="CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_$X$)"
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_M1)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_M2)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_MC)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_M4)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_M3O)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_MCO)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_M3S)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_MCS)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_UF11)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_UF11_M3O)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_UF11_MCO)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_ROLL)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_3K1)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_3K2)
+ForEval:CmExtW____TMP = CmExtW____TMP or  exist(TxG_A__SW_3K3)
+
+ForCycleDimensions=1, Template="CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_$X$) ? TxG_A__SW_$X$ : true)"
+ForEval:CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_M1) ? TxG_A__SW_M1 : true)
+ForEval:CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_M2) ? TxG_A__SW_M2 : true)
+ForEval:CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_MC) ? TxG_A__SW_MC : true)
+ForEval:CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_M4) ? TxG_A__SW_M4 : true)
+ForEval:CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_M3O) ? TxG_A__SW_M3O : true)
+ForEval:CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_MCO) ? TxG_A__SW_MCO : true)
+ForEval:CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_M3S) ? TxG_A__SW_M3S : true)
+ForEval:CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_MCS) ? TxG_A__SW_MCS : true)
+ForEval:CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_UF11) ? TxG_A__SW_UF11 : true)
+ForEval:CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_UF11_M3O) ? TxG_A__SW_UF11_M3O : true)
+ForEval:CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_UF11_MCO) ? TxG_A__SW_UF11_MCO : true)
+ForEval:CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_ROLL) ? TxG_A__SW_ROLL : true)
+ForEval:CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_3K1) ? TxG_A__SW_3K1 : true)
+ForEval:CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_3K2) ? TxG_A__SW_3K2 : true)
+ForEval:CmExtW____TMP = CmExtW____TMP and (exist(TxG_A__SW_3K3) ? TxG_A__SW_3K3 : true)

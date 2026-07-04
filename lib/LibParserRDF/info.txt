@@ -1,0 +1,4 @@
+name:LibParserRDF
+version_file: ParserRDF.hh
+version_string: #define PARSER_RDF_VERSION
+changelog_file:

@@ -1,0 +1,15 @@
+[submodule "lib/LibCMS"]
+	path = lib/LibCMS
+	url = ../../lib/LibCMS.git
+[submodule "lib/LibCM"]
+	path = lib/LibCM
+	url = ../../lib/LibCM.git
+[submodule "lib/LibRDF"]
+	path = lib/LibRDF
+	url = ../../lib/LibRDF.git
+[submodule "lib/LibParserRDF"]
+	path = lib/LibParserRDF
+	url = ../../lib/LibParserRDF.git
+[submodule "lib/LibVER"]
+	path = lib/LibVER
+	url = ../../lib/LibVER.git

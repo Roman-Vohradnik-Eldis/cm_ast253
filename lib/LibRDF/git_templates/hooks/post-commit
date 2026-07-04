@@ -1,0 +1,16 @@
+#!/bin/bash
+# zjistime aktualni branch
+branch=$(git branch --show-current)
+if [ -z "${branch}" ]; then
+  echo "error: branch is not defined"
+  exit 1
+fi
+
+if [ "${branch:0:6}" == "master" ] || [ "${branch:0:4}" == "main" ]; then
+  # priradime tag a smazeme pomocny soubor
+  if [ -f .lasttag ]; then
+    git tag -F .lasttag $(cat .lasttag)
+    rm .lasttag
+  fi
+fi
+

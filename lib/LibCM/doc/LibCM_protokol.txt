@@ -1,0 +1,106 @@
+
+
+spojeni je vzdy server - klient,klient,...
+
+bud pres TCP, nebo UDP
+  u UDP se to rozlisi UDP_ID, kde 1=server a dalsi cisla jsou klienti
+
+
+
+TEXT MOD
+  Pro TCP i UDP je to stejne, akorat UDP ma na zacatku zpravy vzdy 3 parametry navic (PACKET_NO, SRC, DST)... cisla UDP_ID 
+  V UDP : Pokud je DST 0, nebo prazdne, pak to je zprava pro vsechny (treba PING), v pripade dat si pak musi az klient profiltrovat data.
+  V UDP : Protejsek potvrzuje prijeti paketu ACC,PACKET_NO  ... pokud neni potvrzeno prijeti do nejake doby {UDPRetryTime=0.2sec}, je paket opakovan ... maximalne {UDPRetryCount=3}
+    Pokud je broadcast, pak musi odpovedet vsichni, jinak je v Retry opakovan treba jen tomu jednomu dotycnemu.
+    ACC se neposila na PING, INIT_ACC
+ PRO TCP i UDP jsou mozne shluky prikazu do jednoho packetu/radku .... oddelene stredniky. V UDP modu je pridavek 3 parametru na zacatku pouze za cely packet.
+
+
+
+PING .. pro udrzeni spojeni dle parametru v CFG. Pingani si knihovna provadi sama touto zpravou. Pokud jsou odesilany jina data, pak nemusi chodit PING. Ale musi byt zajisteno, ze vsechny potrebne DST obslouzime vcas.
+ACC,PACKET_NO
+
+INIT,PROTOCOL_VERSION[int],Compatibility_flags[int],PingPeriod[sec],PingTimeOut[sec],LengthMax[bytes],LengthIdeal[bytes],BaudSpeedMax[bits/sec],BaudSpeedCalcTime[sec],MyPrefix[string ... napriklad "TxG_A__"],RemotePrefix(pokud je definovan-pak ma prednost)
+INIT_ACC : init received and accepted by partner side
+  - ve vysledku se pouziji bezpecne parametry z obou stran...u UDP_MODE : server optimalizue se vsemi klienty a klient pouze se serverem
+  - u UDP ma baudspeed kazdy svoje a kontroluje celkovy odchozi datovy tok. U TCP se baudspeed sjednoti na MIN pro kazde spojeni a hlida se pro odchozi tok pro kazde spojeni.
+
+DISCONNECT (pouze v UDP rezimu), je poslan pri pingtimeout a pri opakovanem nepotvrzeni commandu odpovidajici odpovedi ACC
+
+FILT_CLEAR : Smaze vsechny filtry (reset filtru)
+FILT_DEF,name{[1,2/2,2/...]},name,name,... : Definice filtru ... pokud protejsek ma prefix, pak mu poslu pouze filtry s tim prefixem a odstranim ho z nazvu
+           .... indexy jsoy [y], nebo [y,x]
+FILT_UNDEF,name,name,name  ...  pokud protejsek ma prefix, pak mu poslu pouze filtry s tim prefixem a odstranim ho z nazvu
+FILT_CHG,  change filters
+  
+FRAG,FrameNo,Frames,data  ... fragmentovani promenne vetsiho pole, pokud se samo o sobe nevejde do jednoho packetu (max_length)
+   .... nesmi byt preruseno jinym commandem vyjima : PING a ACC
+
+
+DEF,name, typespec  ,values : jako v CFG akorat "=" za nazvem promenne nahradime ","
+UNDEF,name
+SET,name,values  # modifikuje moje promenne ... updaty od vlastnika
+MOD,name,values  # modifikuje partnerovy promenne (totez, jako SET)
+  - u SET a MOD muze name obsahovat zmenenou prioritu : NAME/priority ... napriklad : Stagger/1
+
+
+FILTRY:
+  TxG_A__PATTERN[4,1/6,1/8,2] - chceme z teto promenne pouze array_indexy 4,1  6,1  8,2
+  TxG_?__P*    - chceme ze vsech TxG (A, B, C , ...) vsechny promenne zacinajici na velke P
+  TxG_{A,B,C}__P*    - chceme z TxG_A,TxG_B,TxG_C vsechny promenne zacinajici na velke P
+  *  Chci uplne vsechny promenne - pokud se jedna o pripojeni na cm_hub/cm_router, pak vsechny zname promenne, ale tento filtr pozadavek se nepreposle
+  ** Chci uplne vsechny promenne - pokud se jedna o pripojeni na cm_hub/cm_router, pak vsechny promenne a tento filtr bude preposlan dalsim, takze ziskame promenne, ktere doposud nikdo na nic nechtel
+
+
+----------------
+otazkou je, jak na kontext ... kdyz se zrovna zmeni .... Pamatovat si i neklik predchozich?? nebo poslat REJ a vse vratit (obtizne)
+  a jak na UDP_server broadcast? co ruzne kontexty, zavest jeste Bcast kontext??
+
+BUILD,build_no,bit_length,CRC_of_txt_build      zavest pak i pro TXT protokol treba s HEX na vyzkouseni pro budouci BIN
+BIN,build_no,data {offset/fspec} datahex
+
+
+
+
+
+---------------  CFG --------------------------------
+[CM_Variables]
+# ??? u array nejaky default value???
+# ??? PrivateVariable/SharedVariable  (OnlyLocal)
+# name         = priority, max_update_time, flags, type, array_y:array_x=default_value,                               ,value(s)     # bool
+# name         = priority, max_update_time, flags, type, array_y:array_x=default_value, min_value, max_value, min_step,value(s)     # float, int
+# name         = priority, max_update_time, flags, type, array_y:array_x=default_value, enum_values                   ,value(s)     # enum(int)
+# name         = priority, max_update_time, flags, type, array_y:array_x=default_value, string_max_size               ,value(s)     # string
+# flags : external | writable | save_file
+#   max_update_time [sec]
+# enum values : 0="M1":1="M2":3="M3/A":6="MC":23="empty"
+#  values :  for single .. one value, for array ... value1, value2, .. valueN
+#      array default pointer y,x = 0,0 on start changing, but can be moved : value[0,0], value[0,1], 3:3=value[3,3], value[3,4], ...
+#    for set more same values (FILL) can be used also y_'y_count':x'x_count' : value[0,0], ....  7_3:3_2=FILLVALUE[7..9,3..4], value[9,5]
+
+STATUS       =  5,0.1,YNN,s           ,              ,               500                        , "E: u n k n o w n /W: \035,,,\010 /E:UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKNNNNNNNNNNNNNNNNNNNNNNNNNNNNOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN" # poznamka \035 je mrizka
+stagger      = 15,3.1,YYY,bool        ,                                                         , On
+SW_M1        = 15,0.1,YYY,bool        ,                                                         , true
+SW_M2        = 15,0.1,YYY,bool        ,                                                         , false
+SW_M3        = 15,0.1,YYY,bool        ,                                                         , 1
+SW_MC        = 15,0.1,YYY,bool        ,                                                         , Yes # poznamka
+SW_M4        = 15,0.1,YYY,bool        ,                                                         , 1
+SW_DUMMY     = 15,0.1,YYY,bool        , 4:4=true                                                , 0
+SW_3K1       = 15,0.1,YYY,bool        ,                                                         , Yes # poznamka
+SW_UF11      = 15,0.1,YYY,bool        ,                                                         , Yes # poznamka
+SW_SURV      = 15,0.1,YYY,enum        ,              , 0="no":1="yes":128="map"                 , "map"
+SW_LOCK      = 15,0.1,YYY,enum        ,              , 0="no":1="yes":128="map":2="intermittent", "map"
+SW_DATA      = 15,0.1,YYY,enum        ,              , 0="no":1="yes":128="map"                 , "map"
+PRF          = 15,0.1,YYY,float       ,              , 50.0 , 450.0, 0.1                        , 150.5
+PERIODS      = 85,3.1,YNN,int         , 35=99        ,    0 ,  9999,   1                        , 0_30=0
+TEST_MODE    = 35,0.1,YYN,enum        ,              , 0="M1":1="M2":3="M3/A":6="MC":23="empty" , "MC"
+PATTERN_MODE = 25,0.1,YYY,enum        , 32:16="empty", 0="M1":1="M2":3="M3/A":6="MC":23="empty" , 0_31:0=3, 0_31:1=6 # posledni se kdyztak dozopakuje
+TESTING_STR  = 99,0.1,NNN,s           ,              ,               500                        , "Local testing unsaved variable - string"
+UF_DF        = 85,0.1,YNN,int         , 12=0         ,    0 ,  9999,   1                        , 0,0,0,0,0,0,0,0,0,0,0,0
+UF_DF2       = 85,0.1,YNN,int         , 12=0         ,    0 ,  9999,   1                        , 0_11=0
+UF_DF3       = 85,0.1,YNN,int         , 6:2=0        ,    0 ,  9999,   1                        , 0,0,0,0,0,0,0,0,0,0,0,0
+UF_DF4       = 85,0.1,YNN,int         , 6:2=0        ,    0 ,  9999,   1                        , 0_5:0_1=0
+UF_DF5       = 85,0.1,YNN,int         , 6:2=0        ,    0 ,  9999,   1                        , 0_5:0=0, 0_5:1=1, 51=3,4,5,6,7
+RPM          = 85,0.1,YNN,float       ,              ,  1.0 ,  25.0, 0.01                       , 12.5
+
+

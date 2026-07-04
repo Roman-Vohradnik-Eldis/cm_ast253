@@ -1,0 +1,4 @@
+name:LibVER
+version_file:
+version_string:2.2.3
+changelog_file:

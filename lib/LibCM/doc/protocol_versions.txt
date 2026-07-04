@@ -1,0 +1,3 @@
+verze komunikace se nastavi na tu nejnizsi mezi partnery
+
+verze 0 popis : viz LibCM_protokol.txt

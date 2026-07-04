@@ -1,0 +1,61 @@
+*Application Data Structure START=0x0003 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0006 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0201 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0201 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0205 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0205 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x020c COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0218 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0218 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x02a8 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x02a8 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x02a9 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x02a9 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x02b5 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x02b5 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x02be COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x02be COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x02d6 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x02d6 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x02d7 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x02d7 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0320 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x032e COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x032e COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x032f COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x032f COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0344 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0344 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0345 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0345 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0387 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0387 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0400 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0400 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0410 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0410 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0411 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0411 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0413 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0413 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0415 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0415 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0420 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0420 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0421 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0421 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0422 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0422 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0423 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0423 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0424 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0424 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0425 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0425 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x0461 COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x0461 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x06ce COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x06ce COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Application Data Structure START=0x06cf COUNT=1 STATUS=0000 {NONstate data | real data | object under remote control | no data included}
+*Application Data Structure START=0x06cf COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}

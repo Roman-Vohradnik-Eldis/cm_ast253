@@ -1,0 +1,66 @@
+14:38:00 start nahravani
+14:38:04.5  start ROSA
+14:38:30 Login (2345)
+14:38:50 koukam na BITE Temperatures
+14:39:06 koukam na BITE Power
+14:40:03 Transmitt (ale hned to prestane - spatny vysilac) 
+14:40:32 Standby
+
+
+
+MIN_CFG_SCAN_SEQ_PROGRAM                1        1  # number of used scans in sequence
+SCAN     1 # number of sectors in scan
+# start | stop  | program id | active(opt)
+     0     360      29.
+MIN_CFG_SCAN_SEQ_PROGRAM # 
+
+
+MIN_CFG_PROGRAM29                       1           # interrogation program
+#Mode               tx/rx time  PR(0..12)(Opt.)   Mode 5 type (Opt.).
+MODE_3A_ONLY             3473                        # mode  |  time........
+MODE_S                   3637         1              # mode  |  time  |  PR.
+MODE_C_ONLY              3473                        # mode  |  time........
+ROLL_CALL                7274               # mode  |  time
+#End pattern
+#
+NAME          5s:M3O.MSO.MCO.RC.PR1.168Hz
+MAX_RANGE     256.0000 # nautical miles
+BEAM_WIDTH      3.5000 # degrees
+NOMINAL_ATT     5.0000 # nominal antenna turn time in sec
+DELTA_ATT       1.0000 # allowed difference from nominal att
+# Parameter
+MIN_CFG_MX_THRES_N_SLOPE                 4031105  #hex32  (dec 67309829)
+MIN_CFG_MX_SL_CORR_RUNLENGTH                 d04  #hex32  (dec   3332)
+MIN_CFG_MX_SL_AZIM_COR                       249  #hex32  (dec    585)
+MIN_CFG_MX_MP_INITIAL_RAR_DISCARD_LIMIT        4  #hex32  (dec      4)
+MIN_CFG_MX_SL_INITIAL_RAR_DISCARD_LIMIT        4  #hex32  (dec      4)
+#.
+MIN_CFG_PROGRAM29 # END
+
+
+PRVNI ZPRAVA z meho PC do 192.168.5.103
+                              TIME?  [58 d8 0e]  12:38:08
+                           02=connect request
+fd 00 0d 8b 20 64 36 00 03 02 58 d8 0e
+^ 253 cat
+   ^ 13 bytes length
+         ^ FSPEC I253/010 , I253/040 , I253/070 , I253/080
+               ^ I253/010   SAC=100  SIC=54
+                     ^ I253/040 
+               I253/070
+               I253/080
+               
+DRUHA ZPRAVA - ODPOVED
+fd 00 10 ab 20 31 de 01 64 36 00 03 03 58 c1 44
+                                       TIME
+                                    03-conect response
+               31 de = sac=49 sic=222
+
+
+
+
+Nejaka delsi zprava s nazvama programu/patternu, ale jsou i delsi zpravy
+                                         TIME?
+fd 00 de ab 32 31 de 01 64 36 00 03 0a   58 c1 4b 04 15 01 10 ca 01 02 06 00 35 73 3a 4d 31 2e 32 30 30 48 7a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 35 73 3a 4d 32 2e 32 30 30 48 7a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 35 73 3a 4d 33 2e 32 30 30 48 7a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 35 73 3a 4d 43 2e 32 30 30 48 7a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 04 35 73 3a 4d 34 2e 32 30 30 48 7a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05 35 73 3a 4d 53 4f 2e 41 43 2e 50 52 30 2e 32 30 30 48 7a 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+

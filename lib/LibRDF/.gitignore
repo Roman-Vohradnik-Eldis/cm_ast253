@@ -1,0 +1,9 @@
+*~
+*.o
+*.a
+*.so
+*.jst
+*.jup
+.d
+.lasttag
+.lastver

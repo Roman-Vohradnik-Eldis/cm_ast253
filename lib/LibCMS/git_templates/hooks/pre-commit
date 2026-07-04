@@ -1,0 +1,72 @@
+#!/bin/bash
+if ! [ -f info.txt ]; then
+  # zjistime adresar projektu
+  url=$(git config --get remote.origin.url)
+  if [ -z "${url}" ]; then
+    echo "error: remote url not found"
+    exit 1
+  fi
+
+  # vytvorime soubor info.txt
+  echo -en "name:$(basename ${url})\nversion_file:\nversion_string:\nchangelog_file:\n" > info.txt
+  git add info.txt
+fi
+
+# zjistime editor
+editor=${EDITOR:-$(git config --get core.editor)}
+if [ -z "${editor}" ]; then
+  echo "error: editor is not set"
+  exit 1
+fi
+
+# zjistime aktualni branch
+branch=$(git branch --show-current)
+if [ -z "${branch}" ]; then
+  echo "error: branch is not defined"
+  exit 1
+fi
+
+if [ "${branch:0:6}" == "master" ] || [ "${branch:0:4}" == "main" ]; then
+  # jsme v master/main vetvi
+  # pozadame o zadani verze/tagu
+  tmpfile=$(mktemp)
+  echo -en "$(git describe | cut -d'-' -f 1)" > ${tmpfile}
+  ${editor} < /dev/tty ${tmpfile}
+  version=$(tail -n1 ${tmpfile})
+  rm ${tmpfile}
+
+  # zkontrolujeme validitu verze/tagu
+  if [ -n "$(echo ${version} | egrep -x '[0-9]+\.[0-9]+\.[0-9]+\.0')" ]; then
+    echo "error: development version number"
+    exit 1
+  elif [ -z "$(echo ${version} | egrep -x '[0-9]+\.[0-9]+\.[0-9]+')" ] && [ -z "$(echo ${version} | egrep -x '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+')" ]; then
+    echo "error: wrong version number"
+    exit 1
+  fi
+
+  # zkontrolujeme unikatnost verze/tagu
+  if [ -n "$(git tag --list | fgrep -x ${version})" ]; then
+    echo "error: already used version number"
+    exit 1
+  fi
+
+  # poznamename si verzi/tag do pomocneho souboru
+  echo ${version} > .lasttag
+else
+  # jsme ve vyvojove vetvi
+  # nastavime verzi/tag na nulu
+  version="0.0.0"
+fi
+
+# zmenime verzi/tag
+version_file=$(grep version_file info.txt  | cut -d: -f 2)
+version_string=$(grep version_string info.txt  | cut -d: -f 2)
+
+if [ -n "${version_file}" ]; then
+  sed -i "s/\(${version_string}\).*/\1 \"${version}\"/" "${version_file}"
+  git add "${version_file}"
+else
+  sed -i "s/version_string:.*/version_string:${version}/" info.txt
+  git add info.txt
+fi
+

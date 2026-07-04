@@ -1,0 +1,82 @@
+#!/usr/bin/env zsh
+
+err() {
+    echo -e "\e[0;31mError\e[0m(\e[0;34m$(basename $0)\e[0m): $1" >&2
+    exit $2
+}
+
+
+parse() {
+    delim=${3:-:}
+    echo $(grep -oh "${item:=$1}[ ]*${delim}.*" "${file:=$2}" | sed "s/[^${delim}]\+${delim}[ ]*\(.*\)/\1/")
+}
+
+get_previous_version()
+{
+  if [ ! -z "$version_file" ]; then
+   cat "$version_file" | grep ^"$version_string" | sed 's/.*\"\(.*\)\".*/\1/'
+  else
+    git describe 2> /dev/null | cut "-" -f 1
+  fi
+}
+
+read_version() {
+    tmpfile=$(mktemp)
+    echo -en "#Please fill a version\n"`get_previous_version` > $tmpfile
+    $editor < /dev/tty $tmpfile
+    version=$(tail -n1 $tmpfile)
+    rm $tmpfile
+}
+
+check_version() {
+    alias pgrep='grep --perl-regexp --line-regexp --quiet'
+
+    if $(echo $version | pgrep "\d+\.\d+\.\d+\.[0]");  then
+        echo 1
+    elif $(echo $version | pgrep "\d+\.\d+\.\d+\.\d+") || $(echo $version | pgrep "\d+\.\d+\.\d+"); then
+        echo 0
+    else
+        echo 2
+    fi
+}
+
+create_info() {
+    if [ ! -f info.txt ]; then
+        name=$(basename $(git rev-parse --show-toplevel))
+        echo -en "name:$name\nversion_file:\nversion_string:\nchangelog_file:\n" >> info.txt
+        git add info.txt
+    fi
+}
+
+create_info
+
+editor=${EDITOR:-$(git config --get core.editor)}
+if [ -z $editor ]; then
+    err "Error: \$EDITOR nor \$(git config --get core.editor) is set" 1
+fi
+
+version_file=$(parse version_file info.txt)
+version_string=$(parse version_string info.txt)
+
+read_version
+
+if [ "$(check_version)" -eq 1 ]; then
+    notag=yes
+    echo V$Vesion > .lastver
+elif [ $(check_version) -eq 2 ]; then
+    err "Error: Invalid version format \`$version', format=\`(\d\.){2,3}[\d]?'" 2
+fi
+
+if [ -z "$notag" ]; then
+    echo $version > .lasttag
+    echo "V$version" > .lastver
+fi
+
+
+if [ ! -z "$version_file" ]; then
+    sed -i "s/\($version_string\).*/\1 \"$version\"/" $version_file
+    git add $version_file
+else
+    sed -i "s/\(version_string:\).*/\1$version/" info.txt
+    git add info.txt
+fi

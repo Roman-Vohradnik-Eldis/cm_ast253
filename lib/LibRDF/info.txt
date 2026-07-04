@@ -1,0 +1,4 @@
+name:LibRDF
+version_file:RDFHeader.hh
+version_string:#define ELDIS_RDF_VERSION
+changelog_file:

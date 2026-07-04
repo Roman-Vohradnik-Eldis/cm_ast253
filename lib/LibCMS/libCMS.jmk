@@ -1,0 +1,4 @@
+#!/bin/sh
+
+makemake --no-std-inc --check
+make -k all

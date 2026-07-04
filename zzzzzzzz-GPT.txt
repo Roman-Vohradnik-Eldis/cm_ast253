@@ -1,0 +1,42 @@
+
+
+
+na gitlabu rozjedu projekt, kdyztak pridam i cm_fixframe, nebo cm_snmp, coi co je.
+Uploaduji projekt se zdrojakem main.cc prejmenovanu na main_testing.cc.
+Zadam uvodni vec.
+
+Ahoj, zatim nevyuzivam CLI, jedu pres prompt a Tve upravy budu stahovat a testovat.
+Nejprve se seznam s kodem cm, to je kod nasi vlastni knihovny ovladani. To se podivej treba na fixframe, je k tomu i konfiguracni doubor s promennyma.
+Dale pak jsem neco testoval a udelal soubor main_testing.cc.b a muzu dodat i logy a podobne. Taky neco z wiresharku.\
+Vyhoda totiz je, ze mam i nejaky ovladaci software, ktery se jmenuje ROSA, je sice pod windows, ale i ve wine funguje, tak jsem mohl nachyytat nejake informace o komunikaci wiresharkem.
+Mozna bych mohl pres tee aspon nachytat posledni informace z provozu moji posledni verze testeru,at vime oba, jak to funguje, ze? Pokud zapomenu, pripomen se, a ja to zajistim.
+Taky tam asi dam dokumentaci v PDF, soubor se jmenuje : ....
+Ale na pocatek asi neni potreba.
+Co potrebuji?
+Tim testerem se mi podarilo udelat komunikaci s dotazovacem Henshold a , jen tak osklive napsanou rutinu s posilanim dat a prijem je jen vypisovani textu.
+Potrebuji, do LibRDF udelat dalsi cast knihovny na asterix category 253. Prijdes na to z dokumentu PDF a cele LibRDF, je to vse podobne.
+Ano, u polozek 100 a 110 je tezke, jak to zvolit, klidne vektor bajtu. U 100 by to slo mozne najek chytreji.
+Pres tuto nove upravenou knihovnu budeme prijimat i posilat data.
+S prijmem je problem, knihovna pocita, ze mame vzdy celou zpravu, ale pres tcp to neni vzdy jiste, takze cast checkinku, pri cteni zpravy, muzi zustat i mimo knihovnu RDR, kde se precte kategorie a delka a zjistuje se, zda mame vsechny data a jinak je return cocet dat, co mame, nebo chybi, tusim, to musi zustat mimo knihovnu a neco s v knihovne muze duplikovat. Checku neni nikdy dost.
+
+tak, pojedeme skrze knihovnu lib rdf s tim novym, to se zjednodusi testovaci kod. Tim zacnu, ze to vyskousim, to je bod 1.
+
+Ted si tu napisu vsechno, ale pak pojedeme step by step, pisu si to dopredu.
+
+Dale pak to bude smerovat k tomu, aby vznikl projekt cm_ast253, ktery bude konvertorem mezi protokolem asterix253 a libcm.
+
+Z kodu vidis, jak souhlasi dobre dokumentace a kod testeru, ktery uspesne se pripojil, ziskal informace na dotazovane struktury . pak se i uspesne prihlasil a dostal Token Response. Zajimave je, ze to dokaze dostat zcela stejne i prio spatnem heslu (dobre je tusim "3456" nebo "2345" a to se stane i pri spatnem heslu, ale pak nelze zaovladat. To se pak stav promenne nezmeni, ale prijde "Alert"
+ 
+Nejvetsi ukol pro tebe, bude postavit celou logitk 2 - 3 threadu, ve styku cm_fixframe a testeru.
+
+Aby se b=v nejakem trheadu resilo, ze jaky mame stav a jaky je cas, zda si usneme, nebo pockame na neco a zda budeme posilat connect request, zda mame odpoved, nebo treba 8 vterin nic a  znova. Zda mame odpoved a posledni odpoved neni starsi, nez treba 8 sekund, jinak si udelam svuj disconnect. T tak. A pak taky, kdyz budu potrebovat ovladat, tak Token request a pohlidat token response, i kdyz to neni 100%, tak pak dkyz prijde alert, ze to nefunguje, tak znova udelat token release, token request, vzdy pockat na reakci a menit si svoji stavovou tabulku , vcetne casu poslednich reakci a udelat si i svoje timeouty.
+
+Dalsim bodem bude, ze budu mit Bool promennou pro LibCM, ta bude SCN/nebo SCF, uz jsem zapomel, co jsem naposledy zaovladal a slo to po tech tokenech.
+Pojedeme pres promenne CM, ktere mi nadefinujes, pro tento kron jen nekolik a zkusime , aby slo skrze protokol Cm ovkladat SCN On/Off a SCF On/Off.
+To ja si pak pustim cm_gui_simple a hned to tam uvidim, stav a moznost i zmeny. Jsem schopen zkontrolovat.
+
+Pak bych potreboval logiku. Rozpojilo se spojeni? Pak vse je nezname, vsechny promenne jsou ve stavu UNDEF. Jenom mame status a ten bude "E:Not connected"
+Jinak do statusu budeme promitat nejak Alarmy
+ Postupne, pak az bude uspech, tak do toho vseho dame vsechnu promenne, dle dokumentace, nazvy pouzijeme z dokumentace.
+
+

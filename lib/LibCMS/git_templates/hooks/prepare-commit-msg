@@ -1,0 +1,22 @@
+#!/bin/bash
+# precteme jmeno projektu
+name=$(grep name info.txt  | cut -d: -f 2)
+if [ -z "${name}" ]; then
+  url=$(git config --get remote.origin.url)
+  if [ -z "${url}" ]; then
+    echo "error: remote url not found"
+    exit 1
+  fi
+  name=$(basename ${url})
+fi
+
+# pridame do komentare jmeno projektu a cislo verze
+if [ -f .lasttag ]; then
+  echo "${name} $(cat .lasttag)" >> "${1}"
+else
+  echo "${name}" >> "${1}"
+fi
+
+# pridame do komentare seznam submodulu
+git submodule >> "${1}"
+

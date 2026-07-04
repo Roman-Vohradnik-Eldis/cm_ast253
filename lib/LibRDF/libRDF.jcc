@@ -1,0 +1,373 @@
+jx_browser_data 87
+# project tree
+0 "root"
+T
+1 "libRDF"
+T
+2 "RDFHeader.hh"
+F
+"./RDFHeader.hh"
+T
+2 "RDFAsterix.hh"
+F
+"./RDFAsterix.hh"
+T
+2 "RDFAsterix.cc"
+F
+"./RDFAsterix.cc"
+T
+2 "RDFAsterix001plot.cc"
+F
+"./RDFAsterix001plot.cc"
+T
+2 "RDFAsterix001track.cc"
+F
+"./RDFAsterix001track.cc"
+T
+2 "RDFAsterix002.cc"
+F
+"./RDFAsterix002.cc"
+T
+2 "RDFAsterix003.cc"
+F
+"./RDFAsterix003.cc"
+T
+2 "RDFAsterix004.cc"
+F
+"./RDFAsterix004.cc"
+T
+2 "RDFAsterix008.cc"
+F
+"./RDFAsterix008.cc"
+T
+2 "RDFAsterix009.cc"
+F
+"./RDFAsterix009.cc"
+T
+2 "RDFAsterix010.cc"
+F
+"./RDFAsterix010.cc"
+T
+2 "RDFAsterix011.cc"
+F
+"./RDFAsterix011.cc"
+T
+2 "RDFAsterix012.cc"
+F
+"./RDFAsterix012.cc"
+T
+2 "RDFAsterix013.cc"
+F
+"./RDFAsterix013.cc"
+T
+2 "RDFAsterix017.cc"
+F
+"./RDFAsterix017.cc"
+T
+2 "RDFAsterix018.cc"
+F
+"./RDFAsterix018.cc"
+T
+2 "RDFAsterix019.cc"
+F
+"./RDFAsterix019.cc"
+T
+2 "RDFAsterix020.cc"
+F
+"./RDFAsterix020.cc"
+T
+2 "RDFAsterix021.cc"
+F
+"./RDFAsterix021.cc"
+T
+2 "RDFAsterix030.cc"
+F
+"./RDFAsterix030.cc"
+T
+2 "RDFAsterix034.cc"
+F
+"./RDFAsterix034.cc"
+T
+2 "RDFAsterix048.cc"
+F
+"./RDFAsterix048.cc"
+T
+2 "RDFAsterix048Private.hh"
+F
+"./RDFAsterix048Private.hh"
+T
+2 "RDFAsterix048Private.cc"
+F
+"./RDFAsterix048Private.cc"
+T
+2 "RDFAsterix062.cc"
+F
+"./RDFAsterix062.cc"
+T
+2 "RDFAsterix065.cc"
+F
+"./RDFAsterix065.cc"
+T
+2 "RDFAsterix250.cc"
+F
+"./RDFAsterix250.cc"
+T
+2 "RDFAsterix250Private.hh"
+F
+"./RDFAsterix250Private.hh"
+T
+2 "RDFAsterix250Private.cc"
+F
+"./RDFAsterix250Private.cc"
+T
+2 "RDFAsterix245.cc"
+F
+"./RDFAsterix245.cc"
+T
+2 "RDFAsterix252.cc"
+F
+"./RDFAsterix252.cc"
+T
+2 "RDFCommandTarget.hh"
+F
+"./RDFCommandTarget.hh"
+T
+2 "RDFCommandTarget.cc"
+F
+"./RDFCommandTarget.cc"
+T
+2 "RDFCoordinate.hh"
+F
+"./RDFCoordinate.hh"
+T
+2 "RDFCoordinate.cc"
+F
+"./RDFCoordinate.cc"
+T
+2 "RDFHadr.hh"
+F
+"./RDFHadr.hh"
+T
+2 "RDFHadr.cc"
+F
+"./RDFHadr.cc"
+T
+2 "RDFJamStrobe.hh"
+F
+"./RDFJamStrobe.hh"
+T
+2 "RDFJamStrobe.cc"
+F
+"./RDFJamStrobe.cc"
+T
+2 "RDFMartello.hh"
+F
+"./RDFMartello.hh"
+T
+2 "RDFMartello.cc"
+F
+"./RDFMartello.cc"
+T
+2 "RDFParService.hh"
+F
+"./RDFParService.hh"
+T
+2 "RDFParService.cc"
+F
+"./RDFParService.cc"
+T
+2 "RDFParTarget.hh"
+F
+"./RDFParTarget.hh"
+T
+2 "RDFParTarget.cc"
+F
+"./RDFParTarget.cc"
+T
+2 "RDFProjection.hh"
+F
+"./RDFProjection.hh"
+T
+2 "RDFProjection.cc"
+F
+"./RDFProjection.cc"
+T
+2 "RDFRadarService.hh"
+F
+"./RDFRadarService.hh"
+T
+2 "RDFRadarService.cc"
+F
+"./RDFRadarService.cc"
+T
+2 "RDFTargetAdsb.hh"
+F
+"./RDFTargetAdsb.hh"
+T
+2 "RDFTargetAdsb.cc"
+F
+"./RDFTargetAdsb.cc"
+T
+2 "RDFTargetDetections.hh"
+F
+"./RDFTargetDetections.hh"
+T
+2 "RDFTargetDetections.cc"
+F
+"./RDFTargetDetections.cc"
+T
+2 "RDFTargetModeS.hh"
+F
+"./RDFTargetModeS.hh"
+T
+2 "RDFTargetModeS.cc"
+F
+"./RDFTargetModeS.cc"
+T
+2 "RDFTargetPlot.hh"
+F
+"./RDFTargetPlot.hh"
+T
+2 "RDFTargetPlot.cc"
+F
+"./RDFTargetPlot.cc"
+T
+2 "RDFTargetStruct.hh"
+F
+"./RDFTargetStruct.hh"
+T
+2 "RDFTargetStruct.cc"
+F
+"./RDFTargetStruct.cc"
+T
+2 "RDFTargetTrack.hh"
+F
+"./RDFTargetTrack.hh"
+T
+2 "RDFTargetTrack.cc"
+F
+"./RDFTargetTrack.cc"
+T
+2 "RDFVersionNumber.hh"
+F
+"./RDFVersionNumber.hh"
+T
+2 "RDFVersionNumber.cc"
+F
+"./RDFVersionNumber.cc"
+T
+2 "RDFWarningAlert.hh"
+F
+"./RDFWarningAlert.hh"
+T
+2 "RDFWarningAlert.cc"
+F
+"./RDFWarningAlert.cc"
+T
+2 "RDFWeatherMessage.hh"
+F
+"./RDFWeatherMessage.hh"
+T
+2 "RDFWeatherMessage.cc"
+F
+"./RDFWeatherMessage.cc"
+T
+2 "RDFDatalinkFunction.hh"
+F
+"./RDFDatalinkFunction.hh"
+T
+2 "RDFDatalinkFunction.cc"
+F
+"./RDFDatalinkFunction.cc"
+T
+2 "RDFSurvCoordFunction.hh"
+F
+"./RDFSurvCoordFunction.hh"
+T
+2 "RDFSurvCoordFunction.cc"
+F
+"./RDFSurvCoordFunction.cc"
+T
+2 "CoverageMap.hh"
+F
+"./CoverageMap.hh"
+T
+2 "CoverageMap.cc"
+F
+"./CoverageMap.cc"
+T
+2 "ClusterMap.hh"
+F
+"./ClusterMap.hh"
+T
+2 "ClusterMap.cc"
+F
+"./ClusterMap.cc"
+T
+2 "CCoorTransform.hh"
+F
+"./CCoorTransform.hh"
+T
+2 "CCoorTransform.cc"
+F
+"./CCoorTransform.cc"
+T
+2 "CMatrix.hh"
+F
+"./CMatrix.hh"
+T
+2 "CMatrix.cc"
+F
+"./CMatrix.cc"
+T
+2 "DF_Items.hh"
+F
+"./DF_Items.hh"
+T
+2 "enums_structures.cc"
+F
+"./enums_structures.cc"
+T
+2 "DF_Items.cc"
+F
+"./DF_Items.cc"
+T
+2 "UF_DF_Data.hh"
+F
+"./UF_DF_Data.hh"
+T
+2 "UF_DF_Data.cc"
+F
+"./UF_DF_Data.cc"
+T
+2 "UF_Items.hh"
+F
+"./UF_Items.hh"
+T
+2 "UF_Items.cc"
+F
+"./UF_Items.cc"
+T
+2 "UF_Subfields.hh"
+F
+"./UF_Subfields.hh"
+T
+2 "UF_Subfields.cc"
+F
+"./UF_Subfields.cc"
+F
+F
+# tasks
+4
+"makemake --no-std-inc"
+F
+# build settings
+0
+T
+"libRDF.a"
+""
+"make -k all"
+# search paths
+F
+# C preprocessor
+F

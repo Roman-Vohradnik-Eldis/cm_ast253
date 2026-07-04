@@ -1,0 +1,130 @@
+jx_browser_data 87
+# project tree
+0 "root"
+T
+1 "libCMS"
+T
+2 "cms_header.h"
+F
+"./cms_header.h"
+T
+2 "cms_buffer.h"
+F
+"./cms_buffer.h"
+T
+2 "cms_buffer.c"
+F
+"./cms_buffer.c"
+T
+2 "cms_client.h"
+F
+"./cms_client.h"
+T
+2 "cms_client.c"
+F
+"./cms_client.c"
+T
+2 "cms_com.h"
+F
+"./cms_com.h"
+T
+2 "cms_com.c"
+F
+"./cms_com.c"
+T
+2 "cms_config.h"
+F
+"./cms_config.h"
+T
+2 "cms_config.c"
+F
+"./cms_config.c"
+T
+2 "cms_debug.h"
+F
+"./cms_debug.h"
+T
+2 "cms_debug.c"
+F
+"./cms_debug.c"
+T
+2 "cms_file.h"
+F
+"./cms_file.h"
+T
+2 "cms_file.c"
+F
+"./cms_file.c"
+T
+2 "cms_ip.h"
+F
+"./cms_ip.h"
+T
+2 "cms_ip.c"
+F
+"./cms_ip.c"
+T
+2 "cms_local.h"
+F
+"./cms_local.h"
+T
+2 "cms_local.c"
+F
+"./cms_local.c"
+T
+2 "cms_misc.h"
+F
+"./cms_misc.h"
+T
+2 "cms_misc.c"
+F
+"./cms_misc.c"
+T
+2 "cms_server.h"
+F
+"./cms_server.h"
+T
+2 "cms_server.c"
+F
+"./cms_server.c"
+T
+2 "cms_server_2.h"
+F
+"./cms_server_2.h"
+T
+2 "cms_server_2.c"
+F
+"./cms_server_2.c"
+T
+2 "cms_text.h"
+F
+"./cms_text.h"
+T
+2 "cms_text.c"
+F
+"./cms_text.c"
+T
+2 "cms_udp.h"
+F
+"./cms_udp.h"
+T
+2 "cms_udp.c"
+F
+"./cms_udp.c"
+F
+F
+# tasks
+4
+"makemake --no-std-inc"
+F
+# build settings
+0
+T
+"libCMS.a"
+""
+"make -k all"
+# search paths
+T "./" T
+F
+# C preprocessor
+F

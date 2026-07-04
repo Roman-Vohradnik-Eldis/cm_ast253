@@ -1,0 +1,5 @@
+Priority - sepsat , jak by se mely pridelovat
+   5-status, Vyp/Zap vykonu a prepinani kanalu
+  15-25 - ovladane promenne dle dulezitosti
+  70-95- mereni
+  40-50 SMAP+DMAP

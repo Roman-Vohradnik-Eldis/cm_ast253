@@ -1,0 +1,145 @@
+#!/bin/bash
+
+set -eu -o pipefail
+
+if (( $# != 2 )); then
+    printf "Usage: $0 PROJECT_PATH OUTPUT_FILE\n"
+    exit 1
+fi
+
+projdir=$1
+outfile=$2
+
+if [[ ! -e "$projdir"/.git ]]; then
+    printf "Using pregenerated GitInfo\n"
+    exit 0
+fi
+
+fail() {
+    printf "Error: $@\n" 1>&2
+    exit 1
+}
+
+process_project() {
+    local modpath=$1
+    local url=$2
+
+    [[ "$url" =~ /([^/]+)$ ]] || fail "Cannot match url: $url"
+    local projname=${BASH_REMATCH[1]}
+    local projname=${projname%.git}
+
+    local description
+    local description_orig
+    description=$(git -C "$projdir/$modpath" describe --tags --long --dirty --always)
+    description_orig=$description
+
+    # read dirty (if present)
+    local has_modified_files
+    if [[ $description =~ -dirty$ ]]; then
+        description=${description%-*}
+        has_modified_files=true
+    else
+        has_modified_files=false
+    fi
+
+    local version_offset=0
+    local version_a=0 version_b=0 version_c=0
+    if [[ $description =~ - ]]; then
+        # tag exists, read short commit hash
+        description=${description%-*}
+
+        # read version offset
+        [[ $description =~ -([0-9]+)$ ]] || fail "Failed to read version offset in $description_orig"
+        version_offset=${BASH_REMATCH[1]}
+        description=${description%-*}
+
+        # read tag
+        if [[ $description =~ ([0-9]+)[^0-9]+([0-9]+)[^0-9]+([0-9]+) ]]; then
+            version_a=${BASH_REMATCH[1]}
+            version_b=${BASH_REMATCH[2]}
+            version_c=${BASH_REMATCH[3]}
+        elif [[ $description =~ ([0-9]+)[^0-9]+([0-9]+) ]]; then
+            version_a=${BASH_REMATCH[1]}
+            version_b=${BASH_REMATCH[2]}
+        elif [[ $description =~ ([0-9]+) ]]; then
+            version_a=${BASH_REMATCH[1]}
+        fi
+    fi
+
+    local commit_time
+    commit_time=$(git -C "$projdir/$modpath" show -s --format=%ct)
+
+    # local has_unstaged_files
+    # if git -C "$projdir/$modpath" clean -n | grep -q .; then
+    #     has_unstaged_files=true
+    # else
+    #     has_unstaged_files=false
+    # fi
+    local hash
+    hash=$(git -C "$projdir/$modpath" rev-parse HEAD)
+    printf "        GitInfo{\n"
+    printf "            .%s = %s,\n" \
+           "projname" "\"$projname\"" \
+           "path" "\"$modpath\"" \
+           "url" "\"$url\"" \
+           "version_a" "$version_a" \
+           "version_b" "$version_b" \
+           "version_c" "$version_c" \
+           "version_offset" "$version_offset" \
+           "hash" "\"$hash\"" \
+           "has_modified_files" "$has_modified_files" \
+           "commit_time" "$commit_time"
+    printf "        }"
+}
+
+print_modules() {
+    printf "\nstd::vector<GitInfo> get_git_modules()\n"
+    printf "{\n"
+    printf "    return {\n"
+
+    ## example: submodule.lib/LibCM.url git@linux:sw/lib/LibCM
+    git -C "$projdir" config --file .gitmodules --get-regexp url | while read l; do
+        [[ "$l" =~ submodule\.(.+)\.'url '(.+) ]] || fail "Cannot match: $l"
+        process_project "${BASH_REMATCH[1]}" "${BASH_REMATCH[2]}"
+        printf ",\n"
+    done
+
+    printf "    };\n"
+    printf "}\n"
+}
+
+print_main() {
+    printf "\nGitInfo get_git_info()\n"
+    printf "{\n"
+    printf "    return\n"
+
+    local l
+    l=$(git -C "$projdir" config --file .git/config --get-regexp 'remote.origin.url' || fail "Git remote not set")
+    [[ "$l" =~ 'url '(.+) ]] || fail "Cannot match: $l"
+    process_project "" "${BASH_REMATCH[1]}"
+    printf ";\n"
+    printf "}\n"
+}
+
+run() {
+    printf '#include "project_version.hh"\n'
+    printf "\n"
+    printf "namespace VER {\n"
+    printf "\n"
+    print_main
+    print_modules
+    printf "\n"
+    printf "} // namespace VER\n"
+}
+
+tmpfile=$(mktemp /tmp/git_info-XXXXXX)
+
+run > $tmpfile
+
+if ! cmp -s "$tmpfile" "$outfile"; then
+    printf "\e[32mUpdating $outfile\e[0m\n"
+    mv "$tmpfile" "$outfile"
+else
+    # printf "Checking GitInfo: not changed\n"
+    rm "$tmpfile"
+fi

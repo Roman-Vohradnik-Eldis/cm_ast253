@@ -1,0 +1,1211 @@
+#include <errno.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <sys/time.h>
+
+#include "CMSConfig.hh"
+#include "CMSDebug.hh"
+#include "CMSServer2.hh"
+#include "CMSBuffer.hh"
+#include "CMSSynch.hh"
+#include "CMSIP.hh"
+#include "CMSMisc.hh"
+
+#include "RDFAsterix.hh"
+
+#include "version.h"
+#define ELDIS_HDLCDEC_VERSION "1.3.13.0"
+
+#define MSG_MAX 4096
+
+
+#define FSPEC_FX 0x01
+
+#define FSPEC01_I253_010 0x80
+#define FSPEC02_I253_015 0x40
+#define FSPEC03_I253_020 0x20
+#define FSPEC04_I253_025 0x10
+#define FSPEC05_I253_030 0x08
+#define FSPEC06_I253_035 0x04
+#define FSPEC07_I253_040 0x02
+
+#define FSPEC08_I253_050 0x80
+#define FSPEC09_I253_060 0x40
+#define FSPEC10_I253_070 0x20
+#define FSPEC11_I253_080 0x10
+#define FSPEC12_I253_090 0x08
+#define FSPEC13_I253_100 0x04
+#define FSPEC14_I253_110 0x02
+
+int printHex=9;
+int IpMode=0;
+std::string InIpDesc;
+CMSIP * InpIP = NULL;
+
+uint8_t MySAC=49;
+uint8_t MySIC=188;
+uint8_t MyLocalID=10;
+
+
+void new_AlarmStr(const unsigned char *buf, int LEN)
+{
+  char MSG[MSGMAX];
+  memcpy(MSG,buf,LEN);
+  MSG[LEN]=0;
+  printf("MSG=\"%s\"",MSG);
+}
+
+void new_Alarm110(const unsigned char *buf, int LEN)
+{
+  char MSG[MSGMAX];
+  memcpy(MSG,buf,LEN);
+  MSG[LEN]=0;
+  printf("MSG=\"%s\"",MSG);
+}
+
+
+void new_MSR_STATE(uint16_t UINT)
+{
+       if (UINT == 0x0004) printf(" MSR_STATE=NOGO ");
+  else if (UINT == 0x0005) printf(" MSR_STATE=STANDBY ");
+  else if (UINT == 0x0006) printf(" MSR_STATE=TRANSMIT ");
+  else if (UINT == 0x0007) printf(" MSR_STATE=CALIBRATION ");
+  else if (UINT == 0x0008) printf(" MSR_STATE=BITE ");
+  else                     printf(" MSR_STATE=UNKNOWN ");
+}
+
+void new_TEMP(uint16_t UINT, uint16_t ActualSTART)
+{
+       if (ActualSTART == 0x32e) printf(" TempPowerSupply=");
+  else if (ActualSTART == 0x32f) printf(" TempAdaptationBoard=");
+  else                           printf("?TempUnknown?=");
+  
+  if (UINT & 0x8000)
+  {
+    printf("%7.2f",(((double)(UINT ^ 0xffff))/256.) * -1.);
+  } else {
+    printf("%7.2f",((double)UINT)/256.);
+  }
+}
+
+
+void new_EXT_SYS_STATE(const unsigned char *buf, int LEN)
+{
+  printf(" \n ---> EXT_SYS_STATE[");
+
+  printf("general_state=");
+       if (buf[0] == 0x00) printf("Unknown");
+  else if (buf[0] == 0x01) printf("Wait");
+  else if (buf[0] == 0x02) printf("Synchronized");
+  else if (buf[0] == 0x03) printf("Ready");
+  else if (buf[0] == 0x04) printf("Nogo");
+  else if (buf[0] == 0x05) printf("Standby");
+  else if (buf[0] == 0x06) printf("Transmit");
+  else if (buf[0] == 0x07) printf("Calibration");
+  else if (buf[0] == 0x08) printf("Bite");
+  else                     printf("UNDEF");
+
+  printf(" master_slave=");
+       if (buf[1] == 0x00) printf("Unknown");
+  else if (buf[1] == 0x01) printf("master");
+  else if (buf[1] == 0x02) printf("slave");
+  else if (buf[1] == 0x03) printf("alone");
+  else                     printf("UNDEF");
+
+  printf(" proxy_state=");
+       if (buf[2] == 0x00) printf("disconnected");
+  else if (buf[2] == 0x01) printf("connected");
+  else                     printf("UNDEF");
+
+  printf(" chain=");
+       if (buf[3] == 0x00) printf("Unknown");
+  else if (buf[3] == 0x01) printf("Chain1");
+  else if (buf[3] == 0x02) printf("Chain2");
+  else if (buf[3] == 0x03) printf("SingleChainHW");
+  else                     printf("UNDEF");
+
+  printf(" auto_master_slave=");
+       if (buf[4] == 0x00) printf("disabled");
+  else if (buf[4] == 0x01) printf("enabled");
+  else                     printf("UNDEF");
+
+  printf(" antenna=");
+       if (buf[5] == 0x00) printf("not turning");
+  else if (buf[5] == 0x01) printf("turning");
+  else                     printf("UNDEF");
+
+  printf(" op_mode=");
+       if (buf[6] == 0x00) printf("redundant");
+  else if (buf[6] == 0x01) printf("maintenance");
+  else if (buf[6] == 0x02) printf("standalone");
+  else                     printf("UNDEF");
+
+  printf(" time_source=");
+       if (buf[7] == 0x00) printf("internal");
+  else if (buf[7] == 0x01) printf("GPS");
+  else if (buf[7] == 0x02) printf("NTP");
+  else if (buf[7] == 0x03) printf("OtherCHAIN");
+  else if (buf[7] == 0x04) printf("external");
+  else if (buf[7] == 0x05) printf("NTP2");
+  else                     printf("UNDEF");
+
+  printf(" ai_info=");
+       if (buf[8] == 0x00) printf("unknown");
+  else if (buf[8] == 0x01) printf("encoder_1");
+  else if (buf[8] == 0x02) printf("encoder_2");
+  else if (buf[8] == 0x03) printf("standalone");
+  else                     printf("UNDEF");
+
+  printf(" time_accuracy=");
+       if (buf[9] == 0x00) printf("inaccurate");
+  else if (buf[9] == 0x01) printf("accurate");
+  else                     printf("UNDEF");
+
+//  printf(" navigation_status=");
+//       if (buf[10] == 0x00) printf("");
+//  else if (buf[10] == 0x02) printf("");
+//  else if (buf[10] == 0x04) printf("");
+//  else if (buf[10] == 0x08) printf("");
+//  else if (buf[10] == 0x04) printf("");
+//  else if (buf[10] == 0x05) printf("");
+//  else                     printf("UNDEF");
+
+//  printf(" time_sync_status=");
+//       if (buf[11] == 0x00) printf("");
+//  else if (buf[11] == 0x01) printf("");
+//  else if (buf[11] == 0x02) printf("");
+//  else if (buf[11] == 0x03) printf("");
+//  else if (buf[11] == 0x04) printf("");
+//  else if (buf[11] == 0x05) printf("");
+//  else                     printf("UNDEF");
+
+  printf(" ] ");
+}
+
+void new_MIP(const unsigned char *buf, int LEN)
+{
+  printf("MIP page[ Len=%d Index=%d Pages?=%d NumOfMIPs=%d]\n",LEN,buf[0],buf[1],buf[2]);
+  for (int a=0;a<buf[2];a++)
+  {
+    int index=buf[(a*33)+3];
+    char name[33];
+    for (int b=0;b<32;b++)
+    {
+      name[b]=buf[(a*33)+4+b];
+    }
+    name[32]=0;
+    printf("    ... MIP ID=%d Name=%s\n",index,name);
+
+  }
+}
+
+void new_POWER_MONITORING(const unsigned char *buf, int LEN)
+{
+  printf ("\n");
+  for (int a=0;a<12;a++)
+  {
+         if (a== 0) printf("Avg Power SUM  ");
+    else if (a== 1) printf("Avg Power OMNI ");
+    else if (a== 2) printf("Min Power SUM  ");
+    else if (a== 3) printf("Min Power OMNI ");
+    else if (a== 4) printf("Max Power SUM  ");
+    else if (a== 5) printf("Max Power OMNI ");
+    else if (a== 6) printf("Avg VSWR  SUM  ");
+    else if (a== 7) printf("Avg VSWR  OMNI ");
+    else if (a== 8) printf("Min VSWR  SUM  ");
+    else if (a== 9) printf("Min VSWR  OMNI ");
+    else if (a==10) printf("Max VSWR  SUM  ");
+    else if (a==11) printf("Max VSWR  OMNI ");
+    else           printf("---unknown---- ");
+    
+    for (int b=0;b<7;b++)
+    {
+      uint16_t Val = field2unsigned ((buf)+1+(b*24)+(a*2), 16);
+      if (a<6)  printf("|%5d ",Val); // Power
+      else      printf("|%6.2f",((double)Val)/100); // VSWR
+    }
+    
+    
+    printf("\n");
+  }
+
+}
+
+void new_SCAN_SEQ_PROGRAM(const unsigned char *buf, int LEN)
+{
+  printf ("\n SCAN_SEQ_PROGRAM (many variant not tested) !!!!!!!! \n");
+
+  if (printHex>8)
+  {
+    printf("DATAHEX_SEQ [");
+    for (int b=0;b<LEN;b++)
+    {
+      printf(" %02X",buf[b]);
+    }
+    printf("]\n");
+  } //SEQ [ 01 01 01 00 01 68 1D 00]
+  printf("Overall length of item = %d ",buf[0]);
+  printf("Total number of defined scans = %d\n",buf[1]);
+  int readpos=2;
+  while( readpos < LEN)
+  {
+    printf("  ..... Scan Number=%d",buf[readpos+0]);
+    printf("  ?? Number of defined sectors in current scan=%d",buf[readpos+1]);
+    uint32_t VAL32 = field2unsigned ((buf+readpos+1), 24);
+    printf(" Az=(%d..%d)",(VAL32 >> 12) & 0xfff,VAL32 & 0xfff);
+    printf(" Program=%03d\n",buf[readpos+4]);
+    readpos+=6;
+  }
+}
+
+
+void PrintOneSimpleTEMP(unsigned char Temp, const char * Name)
+{
+  printf("%s",Name);
+       if (Temp == 0x80) printf("Undef");
+  else if (Temp &  0x80) printf("%3d",-((int)(~Temp)));
+  else                   printf("%3d",Temp);
+}
+
+void new_ONLINE_STATUS(const unsigned char *buf, int LEN)
+{
+  printf(" ONLINE_STATUS[ ");
+  if (LEN != 20) { printf ("ERROR ONLINE_STATUS nust have length 20, but have %d\n",LEN); return ; }
+  printf("\n      .. AntState=%s",((buf[0] & 0x01) ? "SYNC" : "NotSYNC"));
+  printf("\n      .. AntSafetySwitch=%s",((buf[1] & 0x01) ? "ACTIVATED" : "NotActivated"));
+  PrintOneSimpleTEMP(buf[ 4], "\n      .. DP4/5 Board=");
+  PrintOneSimpleTEMP(buf[ 5], "\n      .. DP4/5 CPU=");
+  PrintOneSimpleTEMP(buf[ 6], "\n      .. DigRx Sum=");
+  PrintOneSimpleTEMP(buf[ 7], "\n      .. DigRx Omega=");
+  PrintOneSimpleTEMP(buf[ 8], "\n      .. Interrogator TX1=");
+  PrintOneSimpleTEMP(buf[ 9], "\n      .. Interrogator TX2=");
+  PrintOneSimpleTEMP(buf[10], "\n      .. Interrogator TX3=");
+  PrintOneSimpleTEMP(buf[11], "\n      .. Interrogator TX4=");
+  PrintOneSimpleTEMP(buf[12], "\n      .. Interrogator TX5=");
+  PrintOneSimpleTEMP(buf[13], "\n      .. Booster TX1=");
+  PrintOneSimpleTEMP(buf[14], "\n      .. Booster TX2=");
+  PrintOneSimpleTEMP(buf[15], "\n      .. Booster TX3=");
+  PrintOneSimpleTEMP(buf[16], "\n      .. Booster TX4=");
+  PrintOneSimpleTEMP(buf[17], "\n      .. Booster TX5=");
+  PrintOneSimpleTEMP(buf[18], "\n      .. Booster TX6=");
+
+  printf("]");
+}
+
+void new_TIME(const unsigned char *buf, int LEN)
+{
+  if (LEN != 8) { printf ("ERROR TIME nust have length 8, but have %d\n",LEN); return ; }
+  printf( "TIME=%04d-%02d-%02d %02d:%02d:%02d",((int)buf[0]<<8) | buf[1], buf[2], buf[3], buf[4], buf[5], buf[6]);
+}
+
+
+int Decode253(const unsigned char *buf, const int buflen)
+{
+  int a=0;
+
+  if (printHex>1)
+  {
+    printf("DATAHEX2 [");
+    for (int b=0;b<buflen;b++)
+    {
+      printf(" %02X",buf[b]);
+    }
+    printf("]\n");
+  }
+
+//  if (CAT != 253) 
+//  {
+//    printf("Wrong Category %d\n",buf[0]);
+//  }
+  while (a<buflen)
+  {
+    unsigned char CAT=buf[a];
+    if (buflen<(a+4))
+    {
+      printf("Too small HEAD for CAT=%03d  ActPtr=%d BufLen%d\n",CAT,a,buflen );
+      return -1;
+    }
+    uint16_t insidelength = (((uint16_t)buf[1])<<8) | ((uint16_t)buf[2]);
+  
+    printf ("----------------------\n");
+    printf("CAT=%03d Length data=%d\n ",CAT,buflen);
+
+    if (MSGMAX < insidelength)
+    {
+      printf("Length in data is %d but MSGMAX is %d \n",insidelength, MSGMAX);
+      return -1;
+    }
+    if ((buflen - a) < insidelength)
+    {
+//      printf("Length in data is %d but we have only %d bytes\n",insidelength, (buflen-a));
+      return a;
+    }
+    a += 3;
+    if (CAT == 253)
+    {
+      uint16_t ActualSTART = 0;
+      uint8_t ActualMsgType = 0;
+
+      unsigned char FSPEC1 = 0 ,FSPEC2 = 0;
+      if (buflen<(a+1)) { printf("\nERROR: Cannot read FSPEC1\n"); return -1; }
+      FSPEC1 = buf[a++];
+      if (FSPEC1 & FSPEC_FX)
+      {
+        if (buflen<(a+1)) { printf("\nERROR: Cannot read FSPEC2\n"); return -1; }
+        FSPEC2 = buf[a++];
+      }
+      printf ("*FSPEC=%02x %02x\n",FSPEC1,FSPEC2);
+      if (FSPEC1 & FSPEC01_I253_010)
+      {
+        if (buflen<(a+2)) { printf("\nERROR: Cannot read I253_010\n"); return -1; }
+        unsigned char SAC = 0 ,SIC = 0;
+        SAC = buf[a++];
+        SIC = buf[a++];
+        printf ("*SAC=%03d SIC=%03d\n",SAC,SIC);
+      }
+      if (FSPEC1 & FSPEC02_I253_015)
+      {
+        if (buflen<(a+1)) { printf("\nERROR: Cannot read I253_015\n"); return -1; }
+        unsigned char LocalID = 0;
+        LocalID = buf[a++];
+        printf ("*LocalID=%03d\n",LocalID);
+      }
+      if (FSPEC1 & FSPEC03_I253_020)
+      {
+        unsigned char REP = 0;
+        if (buflen<(a+1)) { printf("\nERROR: Cannot read I253_020\n"); return -1; }
+        REP = buf[a++];
+        printf ("*Data Destination and Local Identifier REP=%03d\n",REP);
+        for (int x=0;x<REP;x++)
+        {
+          if (buflen<(a+2)) { printf("\nERROR: Cannot read I253_020\n"); return -1; }
+          unsigned char SAC = 0 ,SIC = 0;
+          SAC = buf[a++];
+          SIC = buf[a++];
+          printf ("  -->> SAC=%03d SIC=%03d\n",SAC,SIC);
+        }
+      }
+      if (FSPEC1 & FSPEC04_I253_025)
+      {
+        unsigned char REP = 0;
+        if (buflen<(a+1)) { printf("\nERROR: Cannot read I253_025\n"); return -1; }
+        REP = buf[a++];
+        printf ("*Data Destination REP=%03d\n",REP);
+        for (int x=0;x<REP;x++)
+        {
+          unsigned char SAC = 0 ,SIC = 0;
+          unsigned char LocalID = 0;
+          if (buflen<(a+3)) { printf("\nERROR: Cannot read I253_025\n"); return -1; }
+          SAC = buf[a++];
+          SIC = buf[a++];
+          LocalID = buf[a++];
+          printf ("  -->> SAC=%03d SIC=%03d LocalID=%03d\n",SAC,SIC,LocalID);
+        }
+      }
+      if (FSPEC1 & FSPEC05_I253_030)
+      {
+        if (buflen<(a+2)) { printf("\nERROR: Cannot read I253_030\n"); return -1; }
+        uint16_t SAI = field2unsigned ((buf+a), 16);
+        a+=2;
+        printf ("*Source Application Identifier=%05d\n",SAI);
+      }
+      if (FSPEC1 & FSPEC06_I253_035) // never used, no description in Henshold DOCU
+      {
+        printf ("!!! UNSUPPORTED FSPEC06_I253_035 - never used, no description in Henshold DOCU\n");
+      }
+      if (FSPEC1 & FSPEC07_I253_040)
+      {
+        unsigned char MsgType = 0;
+        if (buflen<(a+1)) { printf("\nERROR: Cannot read I253_040\n"); return -1; }
+        MsgType = buf[a++];
+        bool PI = ((MsgType & 0x80) ? true : false);
+        bool D = ((MsgType & 0x40) ? true : false);
+        MsgType = MsgType & 0x3F;
+        ActualMsgType = MsgType;
+        printf ("*MessageType %s %s MsgType=%02d ",(PI?"PRIORITY":"NoPrior"),(D?"DeliveryBit":"NoDeliveryBit"), MsgType);
+              if (MsgType ==  2 ) printf(" Connect request");
+              if (MsgType ==  3 ) printf(" Connect Response");
+              if (MsgType ==  4 ) printf(" Connect Release");
+              if (MsgType ==  5 ) printf(" Command Token Request");
+              if (MsgType ==  6 ) printf(" Command Token Release");
+              if (MsgType ==  7 ) printf(" Command Token Assign");
+              if (MsgType ==  8 ) printf(" Command Message");
+              if (MsgType == 10 ) printf(" Delta Status Transfer Message");
+              if (MsgType == 17 ) printf(" Alarm");
+              if (MsgType == 18 ) printf(" Alive Message");
+              if (MsgType == 19 ) printf(" Data Request");
+        printf ("\n");
+      }
+      if (FSPEC2 & FSPEC08_I253_050)
+      {
+        unsigned char REP = 0;
+        if (buflen<(a+1)) { printf("\nERROR: Cannot read I253_050\n"); return -1; }
+        REP = buf[a++];
+        printf ("*Message Sequence Identifier REP=%03d\n",REP);
+        for (int x=0;x<REP;x++)
+        {
+          if (buflen<(a+2)) { printf("\nERROR: Cannot read I253_050\n"); return -1; }
+          uint16_t MSID = field2unsigned ((buf+a), 16);
+          a+=2;
+          printf ("  -->> MSID=%05d\n",MSID);
+        }
+      }
+      if (FSPEC2 & FSPEC09_I253_060) // never used, no description in Henshold DOCU
+      {
+        printf ("!!! UNSUPPORTED FSPEC09_I253_060 - never used, no description in Henshold DOCU\n");
+      }
+      if (FSPEC2 & FSPEC10_I253_070)
+      {
+        if (buflen<(a+3)) { printf("\nERROR: Cannot read I253_070\n"); return -1; }
+        uint32_t TOD = field2unsigned (buf+a, 24);
+        a+=3;
+        int ms = TOD % 128;
+        TOD /= 128;
+        int s=TOD % 60;
+        TOD /= 60;
+        int m=TOD % 60;
+        TOD /= 60;
+        ms = (ms * 1000 ) / 128;
+        printf("*TimeOfDay=%02d:%02d:%02d.%03d\n",TOD,m,s,ms);
+      }
+      if (FSPEC2 & FSPEC11_I253_080)
+      {
+        if (buflen<(a+4)) { printf("\nERROR: Cannot read I253_080\n"); return -1; }
+        uint16_t START = field2unsigned (buf+a, 16);
+        ActualSTART = START;
+        a+=2;
+        unsigned char COUNT = buf[a++];
+        unsigned char STATUS = buf[a++];
+        printf("*Application Data Structure START=0x%04x COUNT=%d STATUS=%04x {%s | %s | %s | %s}\n",START,COUNT,STATUS
+           ,((STATUS & 0x80) ? "state data" : "NONstate data")
+           ,((STATUS & 0x40) ? "simulated data" : "real data")
+           ,((STATUS & 0x20) ? "object under local control" : "object under remote control")
+           ,((STATUS & 0x10) ? "data included" : "no data included")
+           );
+      }
+      if (FSPEC2 & FSPEC12_I253_090) // never used, no description in Henshold DOCU
+      {
+        printf ("!!! UNSUPPORTED FSPEC12_I253_090 - never used, no description in Henshold DOCU\n");
+      }
+      if (FSPEC2 & FSPEC13_I253_100)
+      {
+        unsigned char LEN = 0;
+        unsigned char TYPE = 0;
+        if (buflen<(a+2)) { printf("\nERROR: Cannot read I253_100\n"); return -1; }
+        LEN = buf[a++];
+        TYPE = buf[a++];
+        printf ("*Transparent Application Data 1 LEN=%03d TYPE=%d:",LEN,TYPE);
+        if (buflen<(a+(LEN-2))) { printf("\nERROR: Cannot read I253_100 data\n"); return -1; }
+        if (TYPE==0)
+        {
+          printf ("Special");
+        }
+        if (TYPE==1)
+        {
+          printf ("Signed integer 8 bit");
+        }
+        if (TYPE==2)
+        {
+          printf ("Unsigned integer 8 bit");
+          if (buflen<(a+1)) { printf("\nERROR: Cannot read I253_100 UINT8\n"); return -1; }
+          uint8_t UINT = field2unsigned (buf+a, 8);
+          printf (" Value=%02x ",UINT);
+          if (ActualSTART == 0x0001) printf("MSR_STATE=%s",((UINT & 0x01)?"TRANSMITT":"STDBY"));
+        }
+        if (TYPE==3)
+        {
+          printf ("Signed integer 16 bit");
+        }
+        if (TYPE==4)
+        {
+          printf ("Unsigned integer 16 bit");
+          if (buflen<(a+2)) { printf("\nERROR: Cannot read I253_100 UINT16\n"); return -1; }
+          uint16_t UINT = field2unsigned (buf+a, 16);
+          printf (" Value=%04x ",UINT);
+          if (ActualSTART == 0x0400) new_MSR_STATE(UINT);
+          if (ActualSTART == 0x032e) new_TEMP(UINT,ActualSTART);
+          if (ActualSTART == 0x032f) new_TEMP(UINT,ActualSTART);
+        }
+        if (TYPE==5)
+        {
+          printf ("Signed integer 32 bit");
+        }
+        if (TYPE==6)
+        {
+          printf ("Unsigned integer 32 bit");
+        }
+        if (TYPE==7)
+        {
+          printf ("Floating Point");
+        }
+        if (TYPE==8)
+        {
+          printf ("Text string (8 bit)");
+          if (ActualMsgType==17) new_AlarmStr(buf+a,LEN);
+
+        }
+        //dodelat dekodovani
+        printf ("\n");
+        a+=LEN-2;
+      }
+      if (FSPEC2 & FSPEC14_I253_110)
+      {
+        unsigned char LEN = 0;
+        if (buflen<(a+1)) { printf("\nERROR: Cannot read I253_110\n"); return -1; }
+        LEN = buf[a++];
+        printf ("*Transparent Application Data 2 LEN=%03d :",LEN);
+        if (buflen<(a+(LEN-1))) { printf("\nERROR: Cannot read I253_110 data [0x%04x]\n",ActualSTART); return -1; }
+
+
+        if (printHex>2)
+        {
+          for (int b=0; b<(LEN-1); b++)
+          {
+            printf(" %02X",buf[a+b]);
+          }
+        }
+
+        if (ActualMsgType==17) new_Alarm110(buf+a,LEN);
+        if (ActualSTART == 0x0410)
+        {
+          if (buflen<(a+(18-1))) { printf("\nERROR: Cannot read I253_110 EXT_SYS_STATE (0x0410)\n"); return -1; }
+          new_EXT_SYS_STATE(buf+a,LEN);
+        }
+        if (ActualSTART == 0x0320) new_TIME(buf+a,LEN);
+        if (ActualSTART == 0x0413) new_POWER_MONITORING(buf+a,LEN);
+        if (ActualSTART == 0x0415) new_MIP(buf+a,LEN);
+        if (ActualSTART == 0x0387) new_ONLINE_STATUS(buf+a,LEN);
+        if (ActualSTART == 0x0345) new_SCAN_SEQ_PROGRAM(buf+a,LEN);
+        printf ("\n");
+        a+=LEN-1;
+      }
+//      printf ("POINTER IS %d [Remain %d]",a,buflen - a);
+//      if (buflen > a)
+//      {
+//        printf(" .. nasledujici bajty : ");
+//        for (int b=a; b<buflen; b++)
+//        {
+//          printf(" %02X",buf[b]);
+//        }
+//      }
+//      printf("\n");
+    } else {
+      printf ("Skipping CAT %03d\n",CAT);
+      if (insidelength>3)  a += (insidelength-3);
+    }
+  }
+  return 0;
+}
+
+void IpReceiveThread()
+{
+  char buffer[MSGMAX];
+  int PtrLast = 0;
+  while (true)
+  {
+    unsigned length = InpIP->Recv(buffer+PtrLast,MSGMAX);
+    printf ("RECV=%d\n",length);
+    length += PtrLast;
+    PtrLast = 0;
+    if (length>3)
+    {
+      PtrLast =  Decode253((unsigned char *)buffer,length);
+      if (PtrLast < 0)
+      {
+        printf ("ERROR: data corrupted inside asterix message\n");
+        PtrLast = 0;
+      }
+      if (PtrLast > 0)
+      {
+        if (PtrLast<MSGMAX)
+        {
+          for (int i=PtrLast; i<(int)length; i++)
+          {
+            buffer[i]=buffer[PtrLast+i];
+          }
+          PtrLast = length - PtrLast;
+        } else {
+          PtrLast = 0; // too long
+        }
+      }
+//      jak udelat spojovani dat mezi ramci????????  ale klidne pro prvni pokuz bez spojovani  a hlavne dodelat navazani spojeni v send threadu
+    }
+
+
+/*
+    struct timeval tv;
+    gettimeofday (&tv, NULL);
+    double PCTIME = ((double)tv.tv_sec) + ((double)tv.tv_usec / 1000000);
+      
+    if (length>3)
+    {
+      
+      const unsigned char * ptr = (unsigned char *) buffer;
+      unsigned length1 = 0;
+        
+      while (length1 < length)
+      {
+        unsigned length2 = (((unsigned) ptr[1]) << 8) | ptr[2];
+
+        if (length2 < 3)
+        {
+//          modeS_error(DEBUG_WHAT_plots, 10,"wrong packet length in data : %d",length2);
+          goto failed;
+        }
+        if (length1 + length2 > length)
+        {
+//          modeS_error(DEBUG_WHAT_plots, 10,"wrong packet length %d + %d > %d", length1, length2, length);
+          goto failed;
+        }
+        NewBuffer(ptr,length2,PCTIME);
+          
+        ptr += length2;
+        length1 += length2;
+      }
+      failed: ;
+    }// else modeS_error(DEBUG_WHAT_plots, 10,"ReceivePlotThread received ERR: %d",length);
+*/
+  }
+  delete InpIP;
+}
+
+void compile_and_send_cat253_command(uint32_t flags, int MessageType, int SrcApp, int AppData, char *data110 = NULL , int len110 = 0, char *data100 = NULL , int len100 = 0)
+// flags bit0 - use Sac+Sic, bit1=use act time for TOD, bit2 - use LocalID
+// MessageType uint8_t , -1= dont use
+// SrcApp uint16_t , -1= dont use
+{
+  unsigned char data[MSGMAX];
+  unsigned char buffer[MSGMAX];
+
+  unsigned char *msg;
+  unsigned char *record;
+  unsigned char *fspec;
+  unsigned char *field;
+  int fspec_size;
+  int field_size;
+  int size;
+  int maxsize = MSGMAX; /// lze nastavit i mensi, ale ne vetsi
+  
+
+  memset (data, 0, maxsize);
+  msg = (unsigned char *) data;
+  msg[0] = 253;
+  msg[1] = 0;
+  msg[2] = 0;
+  size = 3;
+
+
+// WHILE READ ITEMS
+
+    memset (buffer, 0, sizeof (buffer));
+    record = fspec = msg + size;
+    field = buffer;
+
+
+
+    // data source identifier
+    if (flags & 0x0001)
+    {
+      *fspec |= FSPEC01_I253_010;
+      field[0] = MySAC;
+      field[1] = MySIC;
+      field += 2;
+    }
+
+    if (flags & 0x0004)
+    {
+      *fspec |= FSPEC02_I253_015;
+      field[0] = MyLocalID;
+      field += 1;
+    }
+
+    if (SrcApp > 0)
+    {
+      *fspec |= FSPEC05_I253_030;
+      uint16_t _SrcApp = SrcApp;
+      field[0] = (_SrcApp >> 8) & 0xff;
+      field[1] = _SrcApp & 0xff;
+      field += 2;
+    }
+
+    if (MessageType > 0)
+    {
+      *fspec |= FSPEC07_I253_040;
+      uint8_t _MessageType = MessageType;
+      field[0] = _MessageType;
+      field += 1;
+    }
+
+    *fspec |= FSPEC_FX;
+    fspec++;
+
+    if (flags & 0x0002)
+    {
+      *fspec |= FSPEC10_I253_070;
+      struct timeval  tv;
+      gettimeofday (&tv, NULL);
+      unsigned Y, M, D, h, m, s;
+      time2ymdhms (tv.tv_sec, &Y, &M, &D, &h, &m, &s);
+      unsigned long long Time = ((s + (m * 60) + (h * 60 * 60)) * 1000) + (tv.tv_usec / 1000);
+      int time = RDF_time_to_asterix_time(Time);
+      field[0] = (time >> 16) & 0xff;
+      field[1] = (time >> 8) & 0xff;
+      field[2] = time & 0xff;
+      field += 3;
+    }
+
+    if (AppData > 0)
+    {
+      *fspec |= FSPEC11_I253_080;
+      uint16_t _AppData = AppData;
+      field[0] = (_AppData >> 8) & 0xff;
+      field[1] = _AppData & 0xff;
+      field += 2;
+      field[0] = 0x01;
+      field += 1;
+      field[0] = 0x00;
+      if (((len100>0) && (data100!=NULL)) || ((len110>0) && (data110!=NULL))) field[0] |= 0x10;
+      field += 1;
+    }
+
+
+    if ((len100>0) && (data100!=NULL))
+    {
+      *fspec |= FSPEC13_I253_100;
+      field[0] = len100;
+      field += 1;
+      memcpy(field,data100,len100-1);
+      field += (len100-1);
+    }
+
+    if ((len110>0) && (data110!=NULL))
+    {
+      *fspec |= FSPEC14_I253_110;
+      field[0] = len110;
+      field += 1;
+      memcpy(field,data110,len110-1);
+      field += (len110-1);
+      
+    }
+
+
+
+    // vymazeme nevyuzite polozky fspec
+    while (!(*fspec & ~FSPEC_FX))
+    {
+      fspec--;
+    }
+    *fspec &= ~FSPEC_FX;
+    fspec++;
+
+    fspec_size = fspec - record;
+    field_size = field - buffer;
+    if (size + fspec_size + field_size > maxsize)
+    {
+      if (size == 3)
+      {
+        cms_error ("not enough space in output buffer");
+//        service_list.pop_front ();
+//        continue;
+        return;
+      }
+//      break;
+    }
+
+    // zkopirujeme polozku do zaznamu
+    memcpy (fspec, buffer, field_size);
+    size += fspec_size + field_size;
+
+    // odstranime track z fronty
+// WHILE READ ITEMS
+  msg[1] = (size >> 8) & 0xff;
+  msg[2] = size & 0xff;
+
+  if (size > 2)
+  {
+    printf("SEND MESSAGE [");
+    for (int a=0;a<size;a++)
+    {
+      printf("%02X ",data[a]);
+    }
+    printf("]\n");
+
+    InpIP->Send(data,size);
+  }
+
+  
+
+}
+
+//uint8_t MySAC=49;
+//uint8_t MySIC=188;
+
+
+
+/*
+DATAHEX2 [ FD 00 0D 8B 20 64 36 00 03 02 58 D8 0E]
+----------------------
+CAT=253 Length data=13
+ *FSPEC=8b 20
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=02  Connect request
+*TimeOfDay=12:38:08.109
+-==-==-==-==-==-==-==-==|Jun 18, 2026 14:38:08.119190931 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+
+*/
+
+/*
+
+CAT=253 Length data=32
+ *FSPEC=cb 22
+*SAC=100 SIC=054
+*LocalID=010
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=05  Command Token Request
+*TimeOfDay=08:29:30.914
+*Transparent Application Data 2 LEN=018 : 02 32 33 34 35 00 00 00 00 00 00 00 00 00 00 00 00
+
+*/
+
+
+
+void IpSendThread()
+{
+
+
+  sleep(5);
+  printf("SEND\n");
+  compile_and_send_cat253_command(0x0003, 2, 3,     -1); // Connect request
+  sleep(1);
+  compile_and_send_cat253_command(0x0003,19, 3, 0x0400); // Data Request   [MSR_STATE]
+  sleep(1);
+  compile_and_send_cat253_command(0x0003,19, 3, 0x0410); // Data Request   [EXT_SYS_STATE]
+  sleep(1);
+  compile_and_send_cat253_command(0x0003,19, 3, 0x0413); // Data Request   [POWER_MONITORING]
+  sleep(1);
+  compile_and_send_cat253_command(0x0003,19, 3, 0x0415); // Data Request   [MIP]
+  sleep(3);
+  compile_and_send_cat253_command(0x0003,19, 3, 0x032e); // TEMP PSU_TEMP for Power Supply
+  compile_and_send_cat253_command(0x0003,19, 3, 0x032f); // TEMP ADAP_TEMP for Adaptation Board
+  compile_and_send_cat253_command(0x0003,19, 3, 0x0387); // ONLINE_STATUS
+  compile_and_send_cat253_command(0x0003,19, 3, 0x0345); // SCAN_SEQ_PROGRAM
+  sleep(1);
+//pplication Data Structure START=0x0410
+  compile_and_send_cat253_command(0x0003, 6, 3,     -1); //06  Command Token Release
+
+  for (int z=0;z<4;z++)
+  {
+    compile_and_send_cat253_command(0x0003, 18, 3,     -1); // Alive
+    sleep (3);
+  }
+  char tokendata[20];
+  memset(tokendata,0,18);
+  tokendata[0]=0x02;
+  tokendata[1]=0x00; /// zajimave, jine heslo nevadi???
+  tokendata[2]=0x00;
+  tokendata[3]=0x00;
+  tokendata[4]=0x00;
+
+  tokendata[0]=0x02;
+  tokendata[1]=0x32; /// zajimave, jine heslo nevadi???
+  tokendata[2]=0x33;
+  tokendata[3]=0x34;
+  tokendata[4]=0x35;
+  
+  compile_and_send_cat253_command(0x0007,5, 3, -1 , tokendata, 18); // TOKEN RQ
+
+
+  memset(tokendata,0,18);
+  tokendata[0]=0x02; /// zajimave, jine heslo nevadi???
+  tokendata[1]=0x00; // ON/OFF
+
+  compile_and_send_cat253_command(0x0003,8, 3, 0x0421 , NULL, 0, tokendata, 3 ); // TOKEN RQ
+
+  while (true)
+  {
+    compile_and_send_cat253_command(0x0003, 18, 3,     -1); // Alive
+    sleep (3);
+  }
+
+/*
+SCF enable/disable
+
+====================================
+DATAHEX [fd00148b3464360003083bb9d404210110030200]
+DATAHEX2 [ FD 00 14 8B 34 64 36 00 03 08 3B B9 D4 04 21 01 10 03 02 00]
+----------------------
+CAT=253 Length data=20
+ *FSPEC=8b 34
+*SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=08  Command Message
+*TimeOfDay=08:29:39.656
+*Application Data Structure START=0x0421 COUNT=1 STATUS=0010 {NONstate data | real data | object under remote control | data included}
+*Transparent Application Data 1 LEN=003 TYPE=2:Unsigned integer 8 bit Value=00.
+-==-==-==-==-==-==-==-==|Jul 3, 2026 10:29:39.693836366 CEST 192.168.5.103|==-==-==-==-==-==-==-==-
+
+
+*/
+
+
+
+/* --- na to prijde odpoved token assign
+
+
+  compile_and_send_cat253_command(0x0003, 2, 3,     -1); // Connect request
+
+
+DATAHEX2 [ FD 00 10 AB 20 31 DE 01 64 36 00 03 07 58 C1 58]
+----------------------
+CAT=253 Length data=16
+ *FSPEC=ab 20
+*SAC=049 SIC=222
+*Data Destination and Local Identifier REP=001
+  -->> SAC=100 SIC=054
+*Source Application Identifier=00003
+*MessageType NoPrior NoDeliveryBit MsgType=07  Command Token Assign
+*TimeOfDay=12:37:22.687
+*/
+
+}
+
+
+gpointer IpReceiveThreadStart (gpointer)
+{
+  try
+  {
+    printf ("IpReceiveThread start\n");
+    IpReceiveThread ();
+    printf ("IpReceiveThread stop\n");
+  }
+  catch (...)
+  {
+    printf ("IpReceiveThread error\n");
+  }
+
+  return NULL;
+}
+
+
+
+gpointer IpSendThreadStart (gpointer)
+{
+  try
+  {
+    printf ("IpSendThread start\n");
+    IpSendThread ();
+    printf ("IpSendThread stop\n");
+  }
+  catch (...)
+  {
+    printf ("IpSendThread error\n");
+  }
+
+  return NULL;
+}
+
+
+
+int main (int argc, char **argv)
+{
+  bool daemon, realtime;
+  int a=0;
+  int tmp_int;
+  GThread *IpSend_thread;
+
+
+  unsigned char bufbin[MSG_MAX*2];
+  char buftxt[MSG_MAX*2];
+  int bufbinlen=0;
+  int buftxtlen=0;
+
+
+//  print_eldis_version (&argc, &argv, "HDLCdec", ELDIS_HDLCDEC_VERSION, NULL);
+  version(&argc,&argv);
+
+  // inicializujeme thready
+  g_thread_init (NULL);
+
+
+  // defaultni parametry
+  daemon = realtime = false;
+
+  // nacteme parametry z prikazove radky
+  for (int i = 1; i < argc; i++)
+  {
+    // rezime daemon
+    if (!strcmp (argv[i], "-daemon"))
+    {
+      daemon = true;
+    }
+    // prepnuti na realtime scheduler
+    else if (!strcmp (argv[i], "-realtime"))
+    {
+      realtime = true;
+    } else if (!strncasecmp (argv[i], "-H", 2))
+    {
+      g_printf("Help:\n");
+    } else if (!strncasecmp (argv[i], "-I", 2))
+    {
+      IpMode=1;
+    } else if (!strncasecmp (argv[i], "-A", 2))
+    {
+      sscanf(argv[i]+2,"%d",&tmp_int);
+      MySAC=tmp_int;
+    } else if (!strncasecmp (argv[i], "-C", 2))
+    {
+      sscanf(argv[i]+2,"%d",&tmp_int);
+      MySIC=tmp_int;
+    } else if (!strncasecmp (argv[i], "-X", 2))
+    {
+      sscanf(argv[i]+2,"%d",&tmp_int);
+      printHex=tmp_int;
+/*    } else if (!strncasecmp (argv[i], "-M", 2))
+    {
+      sscanf(argv[i]+2,"%d",&tmp_int);
+      MAIN_MODE=tmp_int;
+    } else if (!strncasecmp (argv[i], "-V", 2))
+    {
+      sscanf(argv[i]+2,"%d",&tmp_int);
+      Verbosity=tmp_int;
+    } else if (!strncasecmp (argv[i], "-D", 2))
+    {
+      sscanf(argv[i]+2,"%d",&tmp_int);
+      DataBits=tmp_int;
+      DataBitsMask=0; for (int z=0;z<DataBits;z++) DataBitsMask |= 1 << z;
+    } else if (!strncasecmp (argv[i], "-S", 2))
+    {
+      sscanf(argv[i]+2,"%d",&tmp_int);
+      Skip_bytes=tmp_int;
+    } else if (!strncasecmp (argv[i], "-E", 2))
+    {
+      sscanf(argv[i]+2,"%d",&tmp_int);
+      Skip_end_bytes=tmp_int;
+    } else if (!strncasecmp (argv[i], "-C", 2))
+    {
+      sscanf(argv[i]+2,"%d",&tmp_int);
+      CRC_type=tmp_int;
+    } else if (!strncasecmp (argv[i], "-B", 2))
+    {
+      sscanf(argv[i]+2,"%x",&tmp_int);
+      IDLE_BYTE=(unsigned char)tmp_int;
+    } else if (!strncasecmp (argv[i], "-R", 2))
+    {
+      ReverseCharBits=1; 
+    } else if (!strncasecmp (argv[i], "-I", 2))
+    {
+      FileModeIn = 1;
+    } else if (!strncasecmp (argv[i], "-N", 2))
+    {
+      FileModeIn = 2;
+    } else if (!strncasecmp (argv[i], "-X", 2))
+    {
+      FileModeIn = 3;
+*/
+    } else {
+      if (IpMode)
+      {
+        InIpDesc = std::string(argv[i]);
+      } else {
+        for (a=0;a<(int)strlen(argv[i]);a++)
+        {
+          if ((argv[i][a] != ' ') && (argv[i][a] != ':'))
+          {
+           buftxt[buftxtlen] = argv[i][a];
+           buftxtlen++;
+          }
+        }
+      }
+    } 
+  }
+  if (!IpMode)
+  {
+    buftxt[buftxtlen] = 0;
+    printf("====================================\n");
+    if (printHex>3) printf("DATAHEX [%s]\n",buftxt);
+    bufbinlen = buftxtlen/2;
+    unsigned int dato;
+    for (a=0;a<bufbinlen;a++)
+    {
+      sscanf(buftxt+(2*a),"%02x",&dato);
+      bufbin[a] = (unsigned char) dato;
+    }
+    Decode253(bufbin,bufbinlen);
+    return 0;
+  }
+
+  // nastavime debugove hlasky
+  cms_debug_set_project ("rovoutils");
+  cms_debug_set_program ("Decode253");
+  cms_debug_set_syslog (daemon);
+  cms_debug_set_stdout (!daemon);
+
+#ifdef G_OS_UNIX
+  // pobezime jako demon
+  if (daemon)
+  {
+    switch (fork ())
+    {
+      // error
+    case -1:
+      {
+        g_print ("fork error\n");
+        return -1;
+      }
+      // child process
+    case 0:
+      {
+        break;
+      }
+
+      // parent process
+    default:
+      {
+        sleep (1);
+        _exit (0);
+      }
+    }
+    // vytvorime novou session a skupinu procesu
+    if (setsid () < 0)
+      return -1;
+//    print_eldis_version (&argc, &argv, "HDLCdec", ELDIS_HDLCDEC_VERSION, NULL);
+    version(&argc,&argv);
+  }
+#endif
+
+
+
+//      g_print ("astmerge is running\n");
+
+#ifdef G_OS_UNIX
+  // pobezime v realtime rezimu
+  if (realtime)
+  {
+    struct sched_param param;
+    memset (&param, 0, sizeof (param));
+    param.sched_priority = 10;
+    sched_setscheduler (0, SCHED_FIFO, &param);
+  }
+#endif
+
+  InpIP = new CMSIP(CMS_FLAG_BOTH, InIpDesc);
+
+#if GLIB_CHECK_VERSION (2, 32, 0)
+  IpSend_thread = g_thread_new ("IpSend", IpSendThreadStart, NULL);
+#else
+  IpSend_thread = g_thread_create (IpSendThreadStart, NULL, TRUE, NULL);
+#endif
+
+
+
+  IpReceiveThread();
+
+  g_thread_join (IpSend_thread);
+  delete InpIP;
+
+    
+
+  return 0;
+}

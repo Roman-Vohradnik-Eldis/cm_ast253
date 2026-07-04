@@ -1,0 +1,23 @@
+#!/bin/bash
+if [ -d .git ]; then
+  if [ -d git_templates ]; then
+    rm -rf .git/hooks
+    git init --template git_templates
+    basename $(git config --get remote.origin.url) > .git/description
+    git submodule foreach 'if [ -x ./apply_git_templates ]; then ./apply_git_templates; fi'
+  else
+    echo "git_templates is missing"
+  fi
+elif [ -f .git ]; then
+  if [ -d git_templates ]; then
+    gitdir=$(cat .git | cut -d ':' -f 2)
+    echo reinicializing submodule ${gitdir}
+    rm -rf ${gitdir}/hooks
+    cp -r ./git_templates/hooks ${gitdir}/hooks
+    basename $(git config --get remote.origin.url) > ${gitdir}/description
+  else
+    echo "git_templates is missing"
+  fi
+else
+  echo ".git is missing"
+fi

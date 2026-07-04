@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+if [ -f .lasttag ]; then
+    git tag -F .lasttag $(cat .lasttag) 
+    rm .lasttag
+fi

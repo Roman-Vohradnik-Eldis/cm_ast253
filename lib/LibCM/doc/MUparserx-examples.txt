@@ -1,0 +1,58 @@
+#to nacitani z cfg budu mozna muset jednou upravit - az budu chtit do vyrazu nekam nacpat znak '#'
+
+CmBDS20_EncCh        = chr(((x==0 ? 0x20 : (((x & 0x20) != 0) ? x : x | 0x40)))) # convert six-bit-enc-char(callsign) to ASCII char
+CmBDS20_DecCh        = (((x & 0x20) != 0) ?  x : (x & 0x3f))
+
+# lze to takto rozdelit do vice radku
+CmBDS20_to_CallSign  = rtrim(CmBDS20_EncCh((x>>42)&0x3f) // CmBDS20_EncCh((x>>36)&0x3f) // CmBDS20_EncCh((x>>30)&0x3f) // CmBDS20_EncCh((x>>24)&0x3f) 
+CmBDS20_to_CallSign  =   // CmBDS20_EncCh((x>>18)&0x3f) // CmBDS20_EncCh((x>>12)&0x3f) // CmBDS20_EncCh((x>>6)&0x3f))
+
+CmBDS20_from_CallSign= (0x20 << 48) | ((CmBDS20_DecCh(ord(x,0,32)) & 0x3f) << 42) | ((CmBDS20_DecCh(ord(x,1,32)) & 0x3f) << 36) | ((CmBDS20_DecCh(ord(x,2,32)) & 0x3f) << 30) | ((CmBDS20_DecCh(ord(x,3,32)) & 0x3f) << 24) | ((CmBDS20_DecCh(ord(x,4,32)) & 0x3f) << 18) | ((CmBDS20_DecCh(ord(x,5,32)) & 0x3f) << 12) | ((CmBDS20_DecCh(ord(x,6,32)) & 0x3f) << 6)
+
+
+CmByteStatusToStr_AILAN=CmByteStatusToStr(a,b,"E:Not Connected","Unknown status 0x%02X",
+CmByteStatusToStr_AILAN=    0x100,0x03,"O:Command executed",
+CmByteStatusToStr_AILAN=    0x100,0x08,"E:Unknown command",
+CmByteStatusToStr_AILAN=    0x100,0x0C,"E:Cannot execute command",
+CmByteStatusToStr_AILAN=    0    ,0xCD,"E:AI error",
+CmByteStatusToStr_AILAN=    0    ,0xCE,"E:SSR Receiver error",
+CmByteStatusToStr_AILAN=    0    ,0xCF,"E:Motor power supply off",
+CmByteStatusToStr_AILAN=    0    ,0xD0,"W:Internal start-up test",
+CmByteStatusToStr_AILAN=    0    ,0xD1,"E:Converter communication error",
+CmByteStatusToStr_AILAN=    0    ,0xD2,"E:Converter error",
+CmByteStatusToStr_AILAN=    0    ,0xD3,"E:HF relay error",
+CmByteStatusToStr_AILAN=    0    ,0xD4,"E:Antenna blocked",
+CmByteStatusToStr_AILAN=    0    ,0xD5,"O:Operation OK")
+
+
+#  CmByteStatusToStr_SSREx=CmByteStatusToStr(a,b,"E:Not Connected","Unknown status 0x%02X",0x100,0xC1,"O:Commnad done",0x100,0xC2,"W:Command Bad Length",0    ,0xC0,"O:OK",0    ,0x00,"W:Inic",0    ,0x01,"E:Inic STC File Error",0    ,0x02,"E:Inic Calib File Error",0    ,0x03,"E:Inic Status File Error",0    ,0x05,"E:Inic Test Pattern File Error",0    ,0x06,"E:Inic Driver Buffer Error",0    ,0x07,"E:Driver Buffer Memory Error",0    ,0x08,"E:Driver Buffer Misc Error",0x0C4,0x84,"W:Interference Warning",0x0C1,0x41,"E:AI Error",0x0C2,0x42,"E:Optic Error",0x0C4,0x44,"E:PCIEA Error",0x0D0,0x50,"E:PCIEA Data Error",0x0E0,0x60,"E:Period Error",0x0C8,0x48,"E:Data Miss Error")
+# pokud chci E:Not Connected zmenit na E:Not # Connected, pak cely vyraz za = hodim do stringu (uvozovek). Veskere uvozovky uvnitr zmenim na \" . A znak # zadame jako \035.
+#   a tim vsim docilime, ze CmsConfig nam to nevyhodnoti, jako poznamku
+CmByteStatusToStr_SSREx="CmByteStatusToStr(a,b,\"E:Not \035 Connected\",\"Unknown status 0x%02X\","
+CmByteStatusToStr_SSREx=    "0x100,0xC1,\"O:Commnad done\","
+CmByteStatusToStr_SSREx=    "0x100,0xC2,\"W:Command Bad Length\","
+CmByteStatusToStr_SSREx=    "0    ,0xC0,\"O:OK\","
+CmByteStatusToStr_SSREx=    "0    ,0x00,\"W:Inic\","
+CmByteStatusToStr_SSREx=    "0    ,0x01,\"E:Inic STC File Error\","
+CmByteStatusToStr_SSREx=    "0    ,0x02,\"E:Inic Calib File Error\","
+CmByteStatusToStr_SSREx=    0    ,0x03,"E:Inic Status File Error",
+CmByteStatusToStr_SSREx=    0    ,0x05,"E:Inic Test Pattern File Error",
+CmByteStatusToStr_SSREx=    0    ,0x06,"E:Inic Driver Buffer Error",
+CmByteStatusToStr_SSREx=    0    ,0x07,"E:Driver Buffer Memory Error",
+CmByteStatusToStr_SSREx=    0    ,0x08,"E:Driver Buffer Misc Error",
+CmByteStatusToStr_SSREx=    0x0C4,0x84,"W:Interference Warning",
+CmByteStatusToStr_SSREx=    0x0C1,0x41,"E:AI Error",
+CmByteStatusToStr_SSREx=    0x0C2,0x42,"E:Optic Error",
+CmByteStatusToStr_SSREx=    0x0C4,0x44,"E:PCIEA Error",
+CmByteStatusToStr_SSREx=    0x0D0,0x50,"E:PCIEA Data Error",
+CmByteStatusToStr_SSREx=    0x0E0,0x60,"E:Period Error",
+CmByteStatusToStr_SSREx=    0x0C8,0x48,"E:Data Miss Error")
+
+
+
+#                             BDS20=0x204014923D4820
+#                             BDS20_to_CallSign(BDS20)  # PARROT
+#                             (((BDS20>>(6*8))&0xff)==0x20) # BDS20 valid?
+#                             CS="Parrot"
+#                             BDS20_from_CallSign(toupper(CS))
+#                             StartUpTime=CurrentTime()

@@ -1,0 +1,58 @@
+#!/bin/bash # for mc syntax highlight only
+
+#  example of line in CONFIG section
+#  LiveDebugControlFiles=/var/CM/debugcontrol/,HubForGui-$CMNAME,HubForGui,ALL....
+#  # LiveDebugControlFiles=directory for all,  high priority filename, ....., low priority filename (for more customers)
+#  #    default: LiveDebugControlFiles=/tmp/,CM_LIVE_DEBUG  , to disable use LiveDebugControlFiles=None
+#
+# Simulator-A:LiveDebugControlFiles=/var/CM/debugcontrol/,SIM-A,SIM,ALL
+# Router1:    LiveDebugControlFiles=/var/CM/debugcontrol/,ROU-$CMNAME,ROU,ALL
+# HubForGUI:  LiveDebugControlFiles=/var/CM/debugcontrol/,HUB-$CMNAME,HUB,ALL
+# GUI:        LiveDebugControlFiles=/var/CM/debugcontrol/,GUI,ALL
+
+
+#PRINT_COMUN_RECV           R
+#PRINT_COMUN_SEND           S
+#PRINT_COMUN_FRAG           F
+#PRINT_COMUN_PING_RECV      P
+#PRINT_COMUN_PING_SEND      p
+#PRINT_COMUN_ACC_RECV       A
+#PRINT_COMUN_ACC_SEND       a
+#PRINT_COMUN_CONN           N
+
+#PRINT_EXT_CREATE           1
+#PRINT_EXT_DELETE           0
+#PRINT_EXT_UPDATE           2
+
+#DUMP_FILTERS_MY            M
+#DUMP_FILTERS_PARTNER_EACH  E
+#DUMP_FILTERS_PARTNER_ALL   L
+
+#VAR_CREATED                C
+#VAR_DELETED                D
+#VAR_CHANGED                c
+#VAR_ACTUAL_FULL_STATE      l
+
+#NEWLINE                    n
+#ADD_TIME                   T
+#ADD_VAR_AGE                G
+
+
+LMEn=FILEOVER:/tmp/CM_Debug/Filt_state/$PNAME-$CMNAME-$CONN-$ID.txt,$CMNAME-$ID:
+LMEnT=FILE:/tmp/CM_Debug/Filt_hist/$PNAME-$CMNAME-$CONN-$ID.txt,$CMNAME-$ID:
+TRSF=FILE:/tmp/CM_Debug/Comm/$PNAME-$CMNAME-$CONN-$ID.txt,$CMNAME-$ID:
+CDcnTG=FILE:/tmp/CM_Debug/Var_hist/$PNAME-$CMNAME-$CONN-$ID.txt,$CMNAME-$ID:
+lnTG=FILEOVER:/tmp/CM_Debug/Var_state/$PNAME-$CMNAME-$CONN-$ID.txt,$CMNAME-$ID:
+T012=FILE:/tmp/CM_Debug/Ext/$PNAME-$CMNAME-$CONN-$ID.txt,$CMNAME-$ID:
+
+#functional_examples:
+#TRSF=FILE:/tmp/CM_$PNAME-$PID-$ID.txt,$CMNAME-$ID:
+#TRSF=server-text:0.0.0.0:0x9910:10,$CMNAME-$ID:
+#TRSF=STDOUT,$CMNAME-$ID:
+#TRSF=NS:libcm-$ID:2,$CMNAME-$ID:
+
+# do filename i do PREFIX lze pouzit promenne :  $ID replace by ID
+#                                                $CMNAME - MyLibCM_name  ... can be empty(), filled only in HUB/ROU
+#                                                $PNAME - ProgramName (cm_router, ...)
+#                                                $PID - PID number for separate fixframe, ....
+#                                                $CONN - LibCM IpDescriptor with replaced ":" -> "_"

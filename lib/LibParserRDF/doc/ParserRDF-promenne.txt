@@ -1,0 +1,157 @@
+
+priklad InOut variables pouzitych v astmerge:
+
+CAT (extenal-optional) int 0.255
+REV (extenal-optional) string
+REMOVE bool  (nastaveni teto promenne do true by melo zpusobit vyhozeni cele RDF struktury(plot/track/sevice/...)
+             - tato promenna muze byt kontrolovana v prubehu vykonavani skriptu a pri nastaveni do true muze byt skript okamzite ukoncen
+PRINT string (astmerge tuto promennou po kazdem parse() vypise, kdyz neni prazdna)
+
+
+
+ ------- RDFTargetPlot + RDFTargetTrack -------
+
+SIC  int 0..255 {erase=>0}
+SAC  int 0..255 {erase=>0}
+TOD (Plot,Track,Service)(1,48,250) double {erase=NotPresent}
+
+TargetTYPE (Plot,Track)(1,48,250) 1:PSR, 2:SSR, 3:CMB, 4:ALL, 5:ROLL, 6:ALL+PSR, 7:ROLL+PSR, 8:ADSB {erase => targetTypeUnknown}
+
+RNG (Plot,Track)(1,48,250) double [NM] {erase=NotPresent(RNG,AZ)}
+AZ (Plot,Track)(1,48,250) double [dg] {erase=NotPresent(RNG,AZ)}
+
+SADDR (Plot,Track)(48,250) int {erase=NotPresent}
+CallSign (Plot,Track)(48,250) string {erase=NotPresent}
+UserText (Plot,Track)(48,250) string {erase=NotPresent}
+
+
+M3A (Plot,Track)(1,48,250) int - ULOZEN kazde cislo po 4 bitech .. print  hexa!   {erase=NotPresent}
+M3A_G (Plot,Track)(1,48,250) bool garbled {erase=>garbled=false}
+M3A_I (Plot,Track)(1,48,250) bool invalid {erase=>valid=true}
+M3A_T (Plot,Track)(1,48,250) bool tracked {erase=>tracked=false}
+... podobne  MC,M1,M2
+
+
+FL (Plot,Track)(1,48,250) double [100ft] {erase=NotPresent}
+FL_G (Plot,Track)(1,48,250) bool garbled {erase=>garbled=false}
+FL_I (Plot,Track)(1,48,250) bool invalid {erase=>valid=true}
+FL_25 (Plot,Track)(48,250) bool [yes/no] {erase=>25ftCapability=false}
+
+FlagSIM (Plot,Track)(1,48,250) bool  {erase=>false}
+FlagTST (Plot,Track)(1,48,250) bool  {erase=>false}
+FlagSPI (Plot,Track)(1,48,250) bool  {erase=>false}
+FlagRAB (Plot,Track)(1,48,250) bool  {erase=>false}
+
+BDS     (Plot,Track)(1,48,250) array[0..255] uint_64 (value & (1<<57)):NotPresent    {erase=>erase all BDS,BDS_AGE,RES_ADVISORY(BDS30)}
+BDSage  (Plot,Track)(1,48,250) array[0..255] int   (value negative):NotPresent  {erase=>erase all Age info}
+  pro zruseni vsech AGE a prevod do polozek bez AGE staci undef,BDSage
+  pro zruseni uplne vsech BDS staci undef,BDS
+
+WE[24/256] (Plot,Track) (48,250)  bool  {erase=erase all WarningError}
+    0:NO_DEF, 1:MULTIPATH, 2:SIDELOBE, 3:SPLIT, 4:SEC-TIME, 5:ANGEL, 6:VEHICLE, 7:FIXED_PSR, 8:SLOW_PSR, 9:LOW_Q_PSR, 10:PHANTOM, 11:NON_MATCH_M3A
+    12:MCIFL_ABNORMAL, 13:CLUTTER, 14:MAX_DOPPLER, 15:TRANSPONDER-ANOMALY, 16:DUP_MODE_S, 17:MODE_S_ERR_CORR, 18:MCIFL_UNDECODABLE, 19:BIRDS
+    20:FLOCK_OF_BIRDS, 21:MODE_1, 22:MODE_2, 23:WIND_TURBINE
+
+SSR_LEN      (Plot,Track) (48,250) double [dg] {erase=NotPresent} (RDFTargetCharacteristics->SsrRunlength)
+SSR_REP      (Plot,Track) (48,250) int {erase=NotPresent} (RDFTargetCharacteristics->SsrReplies)
+SSR_AMP      (Plot,Track) (48,250) double [dBm] {erase=NotPresent} (RDFTargetCharacteristics->SsrAmplitude)
+PSR_LEN      (Plot,Track) (48,250) double [dg] {erase=NotPresent} (RDFTargetCharacteristics->PsrRunlength)
+PSR_AMP      (Plot,Track) (48,250) double [dBm] {erase=NotPresent} (RDFTargetCharacteristics->PsrAmplitude)
+PSR_DIFF_RNG (Plot,Track) (48,250) int {erase=NotPresent} (RDFTargetCharacteristics->PsrSsrRangeDiff)
+PSR_DIFF_AZ  (Plot,Track) (48,250) int {erase=NotPresent} (RDFTargetCharacteristics->PsrSsrAzimuthDiff)
+
+
+PSR_Doppler (float ?? units)   DopplerSpeed.DopplerSpeed     {erase=erase DopplerSpeed.RawPresent=false}
+PSR_CalcDoppler (float ?? units) DopplerSpeed.CalculatedSpeed   {erase=erase DopplerSpeed.CalculatedPresent=false}
+PSR_CalcDoppler_V (bool) DopplerSpeed.CalculatedValid  {erase=erase DopplerSpeed.CalculatedPresent=false}
+MDS_MSP (bool)  CommCapabilityAndFlightStatus->ModeSSpecificService    {erase=erase CommCapabilityAndFlightStatus}
+MDS_Capa_CS (bool) CommCapabilityAndFlightStatus->IdentificationCapability  {erase=erase CommCapabilityAndFlightStatus}
+MDS_ACAS (bool) CommCapabilityAndFlightStatus->ACASOperational               {erase=erase CommCapabilityAndFlightStatus}
+MDS_Level :(int)  1,2,3,4,5    CommCapabilityAndFlightStatus->CommCapability {erase=erase CommCapabilityAndFlightStatus}
+MDS_FS : (int)   CommCapabilityAndFlightStatus->FlightStatus                 {erase=erase CommCapabilityAndFlightStatus}
+           0:AIRBORNE, 1:ON_GROUND, 2:AIRBORNE_ALERT, 3:ON_GROUND_ALERT, 4:ALERT_SPI, 5:SPI, 6:GENERAL_EMERGENCY,
+           7:LIFEGUARD, 8:MINIMUM_FUEL, 9:NO_COMMUNICATIONS, 10:UNLAWFUL_INTERFERENCE
+
+
+ -------  RDFTargetTrack -------
+
+TrNum     (Track)(1,48,250) int  {erase=NotPresent}
+TrNum_Tmp (Track)(1,48,250) bool {erase=>false}
+
+TrFlagInit   (Track)(1?,48,250) (bool) {erase=>false}
+TrFlagCancel (Track)(1,48,250) (bool) {erase=>false}
+TrFlagTent   (Track)(1?,48,250) (bool) {erase=>false}
+TrFlagCorr   (Track)(1?,48,250) (bool) {erase=>false}
+TrFlagCST    (Track)(1?,48,250) (bool) {erase=>false}
+TrFlagMono   (Track)(1?,48,250) (bool) {erase=>false}
+TrFlagDOU    (Track)(1?,48,250) (bool) {erase=>false}
+TrFlagMAH    (Track)(1?,48,250) (bool) {erase=>false}
+TrFlagSUP    (Track)(1?,48,250) (bool) {erase=>false}
+TrFlagPSR    (Track)(1?,48,250) (bool) {erase=>false}
+TrFlagSSR    (Track)(1?,48,250) (bool) {erase=>false}
+TrFlagMDS    (Track)(1?,48,250) (bool) {erase=>false}
+TrFlagTurn   (Track)(1?,48,250) (int ) {erase=>3:UNDETERMINED}
+          0:CONSTANT_COURSE, 1:RIGHT_TURN, 2:LEFT_TURN, 3:UNDETERMINED
+TrFlagSpeed  (Track)(1?,48,250) (int ) {erase=>3:UNDETERMINED}
+          0:CONSTANT_GROUNDSPEED, 1:INCREASING_GROUNDSPEED, 2:DECREASING_GROUNDSPEED, 3:UNDETERMINED
+TrFlagClimb  (Track)(1?,48,250) (int ) {erase=>3:UNKNOWN}
+          0:MAINTAINING, 1:CLIMBING, 2:DESCENDING, 3:UNKNOWN,
+TrClimb      (Track)(?1,48,250) double [m/s] {erase=NotPresent}
+TrX          (Track)(?1,48,250) double [NM] {erase=NotPresent(TrX,TrY)}
+TrY          (Track)(?1,48,250) double [NM] {erase=NotPresent(TrX,TrY)}
+TrSpeed      (Track)(?1,48,250) double [KT] {erase=NotPresent(TrSpeed,TrHeading)}
+TrHeading    (Track)(?1,48,250) double [dg] {erase=NotPresent(TrSpeed,TrHeading)}
+TrAccelX     (Track)(?1,48,250) double [m/s^2] {erase=NotPresent(TrAccelX,TrAccelY)}
+TrAccelY     (Track)(?1,48,250) double [m/s^2] {erase=NotPresent(TrAccelX,TrAccelY)}
+
+ -------  RDFRadarService -------
+
+
+ServiceTYPE     (Service)        (2,34) int 1=north, 2=sector
+NORTH_POS3D_LAT (Service-north)  (34)   double [deg]  {erase=NotPresent}
+NORTH_POS3D_LON (Service-north)  (34)   double [deg]  {erase=NotPresent}
+NORTH_POS3D_ALT (Service-north)  (34)   double [m]    {erase=NotPresent}
+NORTH_ROTSPD    (Service-north)  (34)   double [s]    {erase=NotPresent}
+AZ              (Service-sector) (34,2) double [deg]
+
+
+
+================ doplnit ========================
+
+---------------------------- astmerge ----------------------------------------------
+!!!!!!!!!!!!!!!!!!!!!!! udelat do astmerge moznost GlobalniPromenne ovladat pres LibCM !!!!!!!!!!!, pak si tam muzu napojit cm_gui_simple
+!!! pak by slo za behu menit nejake perametry a koukat na citace .....
+!!!!!!!
+!!! teoreticky i podminka by mohla byt promennou a pro Simple GUI by slo zadat cosi, aby se na tu podminku zobrazilo textview
+
+varianty:
+  1) jako do ted
+  2) globalni promenne jdou do LibCM ... frequence updatu? PARAM
+    i podminka je jednou z globalnich promennych, pres callback muze byt zupdatovana, tudiz zmeneny LibPARSER.set()
+      -- takze zavest Mutexy
+    - teoreticky by se taky mohl chtit pouzivat savefile, takze kdyztak parametry k nemu
+
+  -z{ParserRDFExpression} (like -C, but it is working via extra LibParserRDF, if first char is @, then expression is a LibCM variable in file -G
+  -l{port,period,savefilepath} LibCM serverport, period for updating GlobalVars to LibCM, if savefilepath is not empty, then savefile is used
+
+---- old ----
+  -Z{file} file containing ParserRDFExpression (like -C, but it is working via extra LibParserRDF
+  -z{ParserRDFExpression} (like -C, but it is working via extra LibParserRDF
+  -L{file} LoadMUPARSERfunctions from file (!Allways before parameter -z/Z)
+  (WILL BE) -l{expression} DefineMUPARSERfunctions from expression (!Allways before parameter -z/Z)
+  -G{file} Load GLOBAL variables from LibCM variable definition file (!Allways before parameter -z/Z)
+  -g{name,type,value} Set GLOBAL variable .. like: MyINT,int,5  MySTR,string,"my str" (!Allways before parameter -z/Z)
+  -V{outFile} Print variable named "PRINT" if is defined and not empty after each ParserRDFExpression to outFile .. can be /dev/stdout
+  -v{outFile,BeforeExit,TimePeriod,variable1,...,variableN} Print GLOBAL variables BefreExit[Y/N], TimePeriod[0=Never,other value is in second
+---- new ----
+  -Z{file} file containing ParserRDFExpression (like -C, but it is working via extra LibParserRDF
+  -z{ParserRDFExpression} (like -C, but it is working via extra LibParserRDF, if first char is @, then expression is a LibCM variable in file -G
+  -l{port,period,savefilepath} LibCM serverport, period for updating GlobalVars to LibCM, if savefilepath is not empty, then savefile is used
+  -L{file} LoadMUPARSERfunctions from file (!Allways before parameter -z/Z)
+  (WILL BE) -l{expression} DefineMUPARSERfunctions from expression (!Allways before parameter -z/Z)
+  -G{file} Load GLOBAL variables from LibCM variable definition file (!Allways before parameter -z/Z)
+  -g{name,type,value} Set GLOBAL variable .. like: MyINT,int,5  MySTR,string,"my str" (!Allways before parameter -z/Z)
+  -V{outFile} Print variable named "PRINT" if is defined and not empty after each ParserRDFExpression to outFile .. can be /dev/stdout
+  -v{outFile,BeforeExit,TimePeriod,variable1,...,variableN} Print GLOBAL variables BefreExit[Y/N], TimePeriod[0=Never,other value is in second
+
+

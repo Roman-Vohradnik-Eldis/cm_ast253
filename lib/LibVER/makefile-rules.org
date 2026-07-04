@@ -1,0 +1,835 @@
+#+TITLE: Makefile Rules
+#+OPTIONS: toc:2
+#+OPTIONS: num:2
+
+* Introduction
+
+This is a build system for C++ projects. It was created to replace
+handwritten makefiles, which are usually poorly written, slow, and
+hard to extend.
+
+We propose a build system which uses advanced features of GNU Make to
+provide an experience similar to build systems like CMake. At the same
+time, the system remains easy to customize, and it uses the familiar
+Make language.
+
+** Features
+
+- Simple configuration.
+- Separated configuration from the actual Makefile.
+- Libraries can be placed anywhere in the project.
+- Enables overriding of build options from the command line, e.g. ~make CXXFLAGS=-O0 -g~.
+- Enables partial builds (e.g. ~make libCMS libRDF~).
+- Enables parallel build of the whole project (no recursive Makefiles)
+- Supports out of tree build.
+- Creates ~compile_commands.json~.
+- No generated Makefiles.
+- Pretty output.
+
+* Overview
+
+** Creating minimal project
+
+To create a new project, we include ~LibVER~ in our project and create ~Rules.mk~ and ~Makefile~.
+
+#+BEGIN_SRC
+├── src
+│    ├── hello.cc
+│    └── Rules.mk
+├── LibVER
+└── Makefile
+#+END_SRC
+
+*** src/hello.cc
+
+#+begin_src c++
+  #include <cstdio>
+
+  int main()
+  {
+      printf("Hello\n");
+  }
+#+end_src
+
+
+*** src/Rules.mk
+
+In the configuration file, we tell the build system to create an
+executable ~hello~ from all source files.
+
+#+begin_src makefile
+TARGET_BINS=hello
+hello_SOURCES=*.cc
+#+end_src
+
+*** Makefile
+
+#+begin_src makefile
+TARGET_SUBDIRS=src
+
+BIN_DIR=bin
+BUILD_DIR=build
+
+include LibVER/Make.mk
+#+end_src
+
+** Adding a library
+
+If a static library is compatible with our build system, we add it as follows.
+
+#+BEGIN_SRC
+├── src
+│   ├── hello.cc
+│   └── Rules.mk
+├── LibVER
+├── LibCMS    <-- New library
+└── Makefile
+#+END_SRC
+
+*** Rules.mk
+
+#+begin_src makefile
+TARGET_BINS=hello
+hello_SOURCES=*.cc
+hello_LIBS=libCMS    # <-- New library
+#+end_src
+
+Note that ~libCMS~ is the /name/ of the library, not the path where it is
+located. This name is chosen by the library maintainer.
+
+*** Makefile
+
+#+begin_src makefile
+TARGET_SUBDIRS=src LibCMS   # <-- Add path to the new library
+
+BIN_DIR=bin
+BUILD_DIR=build
+
+include Make.mk
+#+end_src
+
+The library can be located anywhere in the project. In this example,
+we put it in the ~LibCMS~ directory (with capital ~L~).
+
+*** hello.cc
+
+Now, we can include header files of ~libCMS~ directly:
+
+#+begin_src c++
+  #include "CMSDebug.hh"
+
+  int main()
+  {
+      DEBUG("main", "Hello");
+  }
+#+end_src
+
+*** Using system libraries
+
+Additionally, we can use pkg-config to use libraries installed in the system.
+
+#+begin_src makefile
+TARGET_BINS=hello
+hello_SOURCES=*.cc
+hello_LIBS=libCMS
+hello_PKGS=sqlite3 gtk+-3.0  # <-- Add new libraries
+#+end_src
+
+** Creating a complex project
+
+We describe a project with the following structure:
+
+#+BEGIN_SRC
+├── lib/
+│   ├── LibVER/
+│   ├── LibCMS/
+│   └── LibRDF/
+├── alertor/
+└── gui/
+#+END_SRC
+
+To set up the build system, we modify the project as follows:
+
+1. The project shall contain a single ~Makefile~ in the project root.
+
+2. Each subdirectory of the project shall contain a file called
+   ~Rules.mk~. These rules describe what executables or libraries are
+   built in the subdirectory.
+
+3. Finally, ~Make.mk~ in LibVER contains the actual scripts of the build
+   system, and it should not be modified by the user or the project
+   maintainer.
+
+ #+BEGIN_SRC
+├── Makefile
+├── lib/
+│   ├── LibVER/
+│   │   ├── Make.mk
+│   │   └── Rules.mk
+│   ├── LibCMS/
+│   │   └── Rules.mk
+│   └── LibRDF/
+│       └── Rules.mk
+├── alertor/
+│   └── Rules.mk
+└── gui/
+    └── Rules.mk
+#+END_SRC
+
+*** Makefile
+
+The Makefile lists all the subdirectories containing ~Rules.mk~, in any
+order. The build system scans the subdirectories to collect build
+rules.
+
+#+BEGIN_SRC makefile
+TARGET_SUBDIRS=lib/LibCMS lib/LibRDF lib/LibVER alertor gui
+
+BIN_DIR=bin
+BUILD_DIR=build
+
+include lib/LibVER/Make.mk
+#+END_SRC
+
+*** ~lib/LibCMS/Rules.mk~
+
+ #+BEGIN_SRC makefile
+TARGET_LIBS=libCMS
+libCMS_SOURCES=*.c
+libCMS_PKS=glib-2.0
+#+END_SRC
+
+*** ~lib/LibRDF/Rules.mk~
+
+ #+BEGIN_SRC makefile
+TARGET_LIBS=libRDF
+libRDF_SOURCES=*.cc
+libRDF_LIBS=libCMS
+libRDF_PKGS=proj
+#+END_SRC
+
+*** ~gui/Rules.mk~
+
+ #+BEGIN_SRC makefile
+TARGET_BINS=alertor_gui
+alertor_gui_SOURCES=*.cc
+alertor_gui_LIBS=libCMS libVER
+alertor_gui_PKGS=gtk+-3.0 opengl glm epoxy
+#+END_SRC
+
+*** ~alertor/Rules.mk~
+
+ #+BEGIN_SRC makefile
+TARGET_BINS=alertor
+alertor_SOURCES=*.cc
+alertor_LIBS=libRDF libCMS libVER
+#+END_SRC
+
+** Make invocation
+
+To build all targets, run
+
+ #+BEGIN_SRC
+make
+#+END_SRC
+
+It is possible to build targets in parallel, because the Makefile
+knows the interdependencies of the whole project
+
+ #+BEGIN_SRC
+make -j8
+#+END_SRC
+
+*** Verbosity
+
+By default, ~make~ briefly lists all targets which are currently being
+built.  Use ~V=1~ to print all build commands. Using ~V=2~ is useful for
+debugging the build system.
+
+#+begin_example html
+$ make
+Build C++ LibCMS4/CMSText.o
+Build C++ LibCMS4/CMSUdp.o
+Arch bin/libCMS.a
+#+end_example
+
+#+begin_example
+$ make V=1
+Build C++ LibCMS4/CMSText.o
+g++ -std=c++11 -c -MMD -MP -MF LibCMS4/.d/CMSText.d -ILibVER -O0 -g -Wall -Wextr
+a -Wno-sign-compare -Wno-unused-parameter -ftemplate-backtrace-limit=0 -o LibCMS
+4/CMSText.o LibCMS4/CMSText.cc Build C++ LibCMS4/CMSUdp.o
+Build C++ LibCMS4/CMSUdp.o
+g++ -std=c++11 -c -MMD -MP -MF LibCMS4/.d/CMSUdp.d -ILibVER -O0 -g -Wall -Wextra
+ -Wno-sign-compare -Wno-unused-parameter -ftemplate-backtrace-limit=0 -o LibCMS4
+/CMSUdp.o LibCMS4/CMSUdp.cc
+Arch bin/libCMS.a
+ar rcs bin/libCMS.a LibCMS4/CMSBuffer.o LibCMS4/CMSClient.o LibCMS4/CMSCom.o Lib
+CMS4/CMSConfig.o LibCMS4/CMSDebug.o LibCMS4/CMSFile.o LibCMS4/CMSIP.o LibCMS4/CM
+SLocal.o LibCMS4/CMSMisc.o LibCMS4/CMSServer.o LibCMS4/CMSServer2.o LibCMS4/CMST
+ext.o LibCMS4/CMSUdp.o
+#+end_example
+
+#+begin_example
+$ make V=2
+... Very detailed ...
+#+end_example
+
+*** Build specific targets
+
+The user can list targets, either by their name or by the target
+path. The system also builds all their dependencies.
+
+ #+BEGIN_SRC
+make gui
+#+END_SRC
+
+*** Global compilation flags
+
+The user can override build flags from the command line. The project
+maintainer shall provide sensible defaults in the Makefile.
+
+ #+BEGIN_SRC
+make CXXFLAGS='-O0 -g -Wall -Wextra' LDFLAGS='-L/usr/local/bin'
+#+END_SRC
+
+To use custom compiler, run:
+
+ #+BEGIN_SRC
+make CXX=clang++ CC=clang
+#+END_SRC
+
+* Reference
+
+** Makefile options
+
+Before including Make.mk, the user can set global configuration
+variables.  When such variable is changed, the project is
+automatically rebuilt.
+
+*** ~TARGET_SUBDIRS~
+
+Specify directories (in any order) relative to the project root.  Each
+listed directory shall contain a file called ~Rules.mk~.
+
+The system builds all executables and libraries from each
+~Rules.mk~, see [[*~TARGET_BINS~]] and [[*~TARGET_LIBS~]].
+
+*** ~BUILD_DIR~
+
+This item is optional.
+
+By default, all ~.o~ files, static libraries, executables, ~.cmd~ files,
+~.d~ files are created along the source files, which pollutes the
+project.
+
+When ~BUILD_DIR~ is set, a directory structure is created in ~BUILD_DIR~
+which mirrors the project structure, and all temporary files are
+written there.
+
+*** ~BIN_DIR~
+
+This item is optional.
+
+By default, a ~bin~ directory is created in the project, where are
+executables and libraries are created.
+
+If ~BUILD_DIR~ is set, the are written to ~$(BUILD_DIR)/bin~.
+
+Use this option to override the default directory. For example:
+
+#+begin_src makefile
+BUILD_DIR=build
+BIN_DIR=bin
+#+end_src
+
+*** ~CXX~
+
+Set C++ compiler for the whole project.  Executables can override this
+option with [[*~mybin_CXX~]]. For example:
+
+#+begin_src makefile
+CXX=g++ -std=c++17
+#+end_src
+
+
+*** ~CC~
+
+Set C compiler for the whole project. Executables can override this
+option with [[*~mybin_CC~]].
+
+*** ~CXXFLAGS~
+
+Set CXXFLAGS for the whole project.
+
+Executables may append additional flags with [[*~mybin_CXXFLAGS~]].
+
+#+begin_src makefile
+CXXFLAGS=-O2 -g -Wall -Wextra -Wno-sign-compare -Wno-unused-parameter
+#+end_src
+
+
+*** ~LDFLAGS~
+
+Set LDFLAGS for the whole project.
+
+Executables may append additional flags with [[*~mybin_LDFLAGS~]].
+
+** Rules.mk options
+
+*** ~TARGET_BINS~
+
+Specify list of executables which are built in this directory.
+
+*** ~TARGET_LIBS~
+
+Specify list of libraries which are built in this directory.
+
+** Build options for executables
+
+*** ~mybin_SOURCES~
+
+Each target executable must provide a list of ~.c~, ~.cc~, or ~.cpp~
+sources.  Their paths are given relative to the directory containing
+~Rules.mk~. Wildcards are expanded, and they are the preferred way to
+define sources:
+
+#+begin_src makefile
+mybin_SOURCES=*.cc
+#+end_src
+
+#+begin_src makefile
+mybin_SOURCES=mysource.cc my_subdir/*.cc
+#+end_src
+
+Warning: Each source file in the project must be included in at most one
+~mybin_SOURCES~ or ~mylib_SOURCES~.
+
+*** ~mybin_ADDSOURCES~
+
+Similar to ~mybin_SOURCES~, but file names are not expanded using
+~$(wildcard ...)~.
+
+This is useful for generated sources, because wildcard on non-existent
+file expands to nothing.
+
+*** ~mybin_CXX~
+
+This item is optional. By default, it is set to ~$(CXX)~.
+
+When compiling ~.cc~ files of ~mybin_SOURCES~, use specified C++
+compiler. For example, setting ~mybin_CXX=$(CXX) -std=c++03~ forces
+the files to be compiled with the old C++ standard (even when the rest
+of the project is compiled with C++11 or later). You should not modify
+this variable.
+
+*** ~mybin_CC~
+
+Optional. By default, it is set to ~$(CC)~.
+
+When compiling ~.c~ files of ~mybin_SOURCES~, use specified C
+compiler. For example, if you want to compile ~.c~ sources with the
+C++ compiler, set ~mybin_CC=$(CXX) -xc++~.  You should not modify this
+variable.
+
+*** ~mybin_CXXFLAGS~
+
+This item is optional. By default, it is empty.
+
+Flags are provided to the compiler when building ~.o~ files from
+~mybin_SOURCES~. They are concatenated in the following order:
+
+1. Flags found by pkg-config. Packages are either listed in
+   ~mybin_PKGS~, or required by some library of ~mybin_LIBS~.
+
+2. Global ~CXXFLAGS~ supplied by the user, e.g. ~make CXXFLAGS='-O2 -g'~
+
+3. ~mybin_CXXFLAGS~.
+
+Note that ~CXXFLAGS~ are also passed to the C compiler.
+
+Example: Suppose that ~CXXFLAGS=-O2~ and ~mybin_CXXFLAGS=-O3~.  Then the
+compiler is called both flags, ~-O2 -O3~, where ~-O2~ is overriden by ~-O3~.
+
+*** ~mybin_LDFLAGS~
+
+This item is optional. By default, it is empty.
+
+Flags are used when linking ~.o~ and ~.a~ files. Flags are concatenated in
+the following order:
+
+1. Flags found by pkg-config. Packages are either listed in
+   ~mybin_PKGS~, or required by some library of ~mybin_LIBS~.
+
+2. ~LDFLAGS~ supplied by the user, e.g. ~make
+   LDFLAGS='-L/usr/local/lib'~
+
+3. ~mybin_LDFLAGS~
+
+*** ~mybin_LIBS~
+
+This item is optional. By default, it is empty.  It shall contain
+names of the libraries (i.e. defined by ~TARGET_LIBS~) which are used by
+the executable.
+
+The inclusion of a library has the following effects:
+
+- When compiling and linking the executable, the compiler uses
+  packages found by ~pkg-config~ which are required by ~mylib~ (see
+  ~mylib_PKGS~).
+
+- When building ~.o~ files, the compiler uses header files of ~mylib~.
+
+- The final executable is linked with ~mylib.a~
+
+*** ~mybin_PKGS~
+
+This item is optional. By default, it is empty.
+
+The build system will use ~pkg-config~ to find additional flags to be
+used when compiling and linking the executable.
+
+** Build options for libraries
+
+*** ~mylib_SOURCES~
+
+See [[*~mybin_SOURCES~]]
+
+*** ~mylib_ADDSOURCES~
+
+See [[*~mybin_ADDSOURCES~]]
+
+*** ~mylib_CXXFLAGS~
+
+See [[*~mybin_CXXFLAGS~]]
+
+*** ~mylib_CXX~
+
+See [[*~mybin_CXX~]]
+
+*** ~mylib_CC~
+
+See [[*~mybin_CC~]]
+
+*** ~mylib_LIBS~
+
+Specify libraries (defined in the project using ~TARGET_LIBS~) which
+are used by this library.
+
+The inclusion of a library has the following effects:
+
+- When compiling the library, the compiler uses packages found by
+  ~pkg-config~ which are required by ~otherlib~ (defined in
+  ~otherlib_PKGS~).
+
+- When building ~.o~ files, the compiler will use header files of ~otherlib~.
+
+*** ~mylib_PKGS~
+
+This item is optional, by default, it is empty.
+
+The build system will use ~pkg-config~ to find additional flags to be
+used when compiling the sources.
+
+Each library and executable using ~mylib~ (see ~mybin_LIBS~ and
+~mylib_LIBS~) will also be compiled and linked using these flags.
+
+*** ~mylib_INCLUDE~
+
+This item is optional.
+
+By default, library headers are assumed to be in the directory
+containg ~Rules.mk~. Use ~mylib_INCLUDE~ to change this path (relative the
+directory containg ~Rules.mk~). See [[*Library headers in separate directory]].
+
+* Examples
+
+** Configuring debug build
+
+The user can create multiple build profiles using standard Make conditionals.
+
+#+begin_src makefile
+ifdef DEBUG
+      CXXFLAGS='-O0 -g'
+else
+      CXXFLAGS='-02 -g'
+endif
+#+end_src
+
+Then run:
+
+#+begin_src
+make DEBUG=1
+#+end_src
+
+Alternatively, the user can use exported shell variable.
+
+#+begin_src
+export DEBUG=1
+make
+#+end_src
+
+** Library headers in separate directory
+
+Some users may prefer to keep headers in separate directory.
+
+#+BEGIN_SRC
+└── mylib
+      ├── Rules.mk
+      ├── include
+      │    ├── mylib.hh
+      │    └── utils.hh
+      └── src
+           └── mylib.cc
+#+END_SRC
+
+*** ~mylib/Rules.mk~
+
+#+BEGIN_SRC makefile
+TARGET_LIBS=mylib
+mylib_SOURCES=src/*.cc
+mylib_INCLUDE=include
+#+END_SRC
+
+** Using libraries without pkg-config
+
+The preferred way to use system libraries is to use pkg-config:
+
+#+BEGIN_SRC makefile
+TARGET_LIBS=mylib
+mylib_SOURCES=*.cc
+mylib_PKGS=sqlite3
+#+END_SRC
+
+One can provide these flags manually. This option is not recommended,
+because flags are not inherited by executables which uses our library.
+
+#+BEGIN_SRC makefile
+TARGET_LIBS=mylib
+mylib_SOURCES=*.cc
+mylib_CXXFLAGS=$(shell pkg-config --cflags sqlite3)
+mylib_LDFLAGS=$(shell pkg-config --libs sqlite3)
+#+END_SRC
+
+** Multiple executables with the same rules
+
+*** Rules.mk
+
+#+begin_src makefile
+TARGET_BINS=test1 test2 test3 test4 test5 test_drag test_io test_scroll test_conn
+
+define define_test
+$(1)_SOURCES=$(1).cc
+$(1)_LIBS=libstrips libRDF libFDP libCMS
+$(1)_LDFLAGS=-lpthread
+$(1)_PKGS=gtkmm-3.0 giomm-2.4
+endef
+
+$(foreach test,$(TARGET_BINS), $(eval $(call define_test,$(test))))
+#+end_src
+
+** Optional dependencies
+
+Example: LibCM can be configured to use the zstd compression library.
+
+The user can set ~USE_LIB_ZSTD=1~ in the Makefile. When enabled, all
+executables and libraries using LibCM are compiled a linked with zstd.
+
+*** Rules.mk
+
+#+begin_src makefile
+TARGET_LIBS=libCM
+
+libCM_SOURCES=*.cc
+libCM_PKGS=glib-2.0
+libCM_LIBS=libCMS
+
+ifdef USE_LIB_ZSTD
+libCM_PKGS+=zstd
+libCM_CXXFLAGS+=-DUSE_LIB_ZSTD
+endif
+#+end_src
+
+Source code
+
+#+begin_src c++
+  #ifdef USE_LIB_ZSTD
+
+  #include <zstd.h>
+  void compress(std::string const &data)
+  {
+      // do the compression
+  }
+
+  #else
+
+  void compress(std::string const &data)
+  {
+      throw std::runtime_error("Compression not supported, compile me with libzstd");
+  }
+
+  #endif
+#+end_src
+
+** MSAN
+
+MemorySanitizer is a detector of uninitialized reads.
+
+#+begin_src makefile
+ifeq ($(MSAN),1)
+
+# Use MSan libstdc++
+MY_STDLIB=/msan
+CXXFLAGS+=-nostdinc++ -I$(MY_STDLIB)/include -I$(MY_STDLIB)/include/c++/v1
+LDFLAGS+=-lc++abi -stdlib=libc++ -Wl,-rpath,$(MY_STDLIB)/lib
+
+# Our libraries first, then the system ones
+PKG_CONFIG=PKG_CONFIG_PATH=$(MY_STDLIB)/lib/pkgconfig:$(PKG_CONFIG_PATH) pkg-config
+
+# Compile with MSan
+CXX=clang++ -std=c++11
+CC=clang
+LDFLAGS+=-fsanitize=memory
+CXXFLAGS+=-O2 -g -fsanitize=memory -fno-omit-frame-pointer
+BUILD_DIR=build-msan
+
+endif
+#+end_src
+
+By default, clang++ uses ~libstdc++~ (the standard library of gcc).
+
+It is necessary to build the whole project with ~libc++~ (the standard
+library of LLVM), which must be build with ~-fsanitize=memory~:
+
+#+begin_src bash
+git clone --depth=1 https://github.com/llvm/llvm-project
+cd llvm-project
+mkdir build
+cd build
+cmake -GNinja ../llvm -DCMAKE_BUILD_TYPE=Release \
+      -DLLVM_ENABLE_PROJECTS="libcxx;libcxxabi" \
+      -DCMAKE_C_COMPILER=clang \
+      -DCMAKE_CXX_COMPILER=clang++ \
+      -DLLVM_USE_SANITIZER=MemoryWithOrigins
+cmake --build . -- cxx cxxabi
+cp llvm-project/build/lib/libc++*.so* /msan/lib/
+cp -r llvm-project/build/include/c++ /msan/include/
+#+end_src
+
+** USAN
+
+UndefinedBehaviorSanitizer (UBSan) is a fast undefined behavior
+detector.  UndefinedBehaviorSanitizer is not expected to produce false
+positives.
+
+All of the checks listed above other than:
+
+ - float-divide-by-zero,
+ - unsigned-integer-overflow,
+ - implicit-conversion,
+ - local-bounds
+ - nullability-* group
+
+#+begin_src  makefile
+ifeq ($(USAN),1)
+
+CXX=clang++ -std=c++11
+CC=clang
+LDFLAGS=-fsanitize=undefined
+CXXFLAGS=-O2 -g -fsanitize=undefined -fno-omit-frame-pointer -fno-sanitize=alignment
+BUILD_DIR=build-usan
+
+endif
+#+end_src
+
+** ASAN
+
+AddressSanitizer is a fast memory error detector. 
+
+- Out-of-bounds accesses to heap, stack and globals
+- Use-after-free
+- Use-after-return
+- Use-after-scope (clang flag ~-fsanitize-address-use-after-scope~)
+- Double-free, invalid free
+- Memory leaks (experimental)
+
+Optional:
+
+- ~-fsanitize-address-field-padding=1~
+
+
+#+begin_src makefile
+ifeq ($(ASAN),1)
+
+CXX=clang++ -std=c++11
+CC=clang
+LDFLAGS=-fsanitize=address
+CXXFLAGS=-O2 -g -fsanitize=address -fno-omit-frame-pointer
+BUILD_DIR=build-asan
+
+endif
+#+end_src
+
+** Compile commands
+
+The build system creates ~compile_commands.json~ for the whole project.
+
+See https://clang.llvm.org/docs/JSONCompilationDatabase.html
+
+Uses:
+
+- clangd LSP server: https://clangd.llvm.org/
+
+- clang-tidy: https://clang.llvm.org/extra/clang-tidy/
+
+** Cleaning the whole project
+
+Usually, there is no need to clean the project. The recommended option
+is use out-of-tree build. Set
+
+#+begin_src makefile
+BUILD_DIR=build
+BIN_DIR=bin
+#+end_src
+
+To clean the project, one can simply execute ~rm -r build bin~.
+
+Alternatively, the user can run ~make -B~, to unconditionally build all
+dependencies.
+
+** Building C sources
+
+The build system can build either C or C++ sources. For simplicity, C
+sources are build with CXXFLAGS, not with CFLAGS.
+
+** Install
+
+The build system does not define an ~install~ rule.  The following
+variables are available for the project maintainer:
+
+- ~ALL_TARGET_BINS~: all names from ~TARGET_BINS~
+- ~ALL_TARGET_LIBS~: all names from ~TARGET_LIBS~
+
+Example:
+
+#+begin_src makefile
+  .PHONY: install
+  install:
+          cp $(addprefix $(BIN_DIR)/,$(ALL_TARGET_BINS)) /usr/local/bin/
+#+end_src
+
+** Custom targets
+
+User-defined targets can added to ~all~.
+
+Example:
+
+#+begin_src makefile
+DOC=doc/cm.html doc/ref.html
+
+all: $(DOC)
+
+doc/%.html: doc/%.adoc
+	asciidoctor -a webfonts! -o $@ $<
+#+end_src
+

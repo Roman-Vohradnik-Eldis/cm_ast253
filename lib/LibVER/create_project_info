@@ -1,0 +1,109 @@
+#!/bin/bash
+
+set -eu -o pipefail
+
+if (( $# != 2 )); then
+    printf "Usage: $0 BUILD_DIR OUTFILE\n"
+    exit 1
+fi
+
+projdir=$1
+outfile=$2
+
+declare -A names
+
+# attributes[binname_ATTRIBUTE] = value
+declare -A attributes
+
+fail() {
+    printf "$@\n" 1>&2
+    exit 1
+}
+
+read_attributes() {
+    while read l; do
+        [[ $l =~ ^([-A-Za-z0-9_]+)_([^_=]+)' '*=(.*) ]] || { echo "Failed $l"; exit 1; }
+        local name=${BASH_REMATCH[1]}
+        local attribute=${BASH_REMATCH[2]}
+        local value=${BASH_REMATCH[3]}
+        names[$name]=1
+        attributes[${name}_$attribute]=$value
+    done
+}
+
+read_project_attributes() {
+    while read l; do
+        [[ $l =~ ([-A-Za-z0-9_]+)' '*=(.*) ]] || { echo "Failed $l"; exit 1; }
+        local name=${BASH_REMATCH[1]}
+        local value=${BASH_REMATCH[2]}
+        attributes[$name]=$value
+    done
+}
+
+print_attr() {
+    local name=$1
+    local attr=$2
+    printf "            .%s = \"%s\",\n" "$attr" "${attributes[${name}_${attr}]}"
+}
+
+print_target() {
+    local name=$1
+    printf "        TargetInfo{\n"
+    printf "            .%s = \"%s\",\n" "name" "$name"
+    print_attr "$name" "ROOT"
+    print_attr "$name" "INCLUDE"
+    print_attr "$name" "CC"
+    print_attr "$name" "CXX"
+    print_attr "$name" "LIBS"
+    print_attr "$name" "PKGS"
+    print_attr "$name" "CXXFLAGS"
+    print_attr "$name" "LDFLAGS"
+    printf "        },\n"
+}
+
+print_all() {
+    printf '#include "project_version.hh"\n'
+    printf '\n'
+    printf 'namespace VER {\n'
+    printf '\n'
+    printf "std::vector<TargetInfo> get_targets()\n"
+    printf "{\n"
+    printf "    return {\n"
+    for name in $(printf '%s\n' ${!names[@]} | sort); do
+        print_target "$name"
+    done
+    printf "    };\n"
+    printf "}\n"
+
+    printf 'ProjectInfo get_project_info()\n'
+    printf '{\n'
+    printf '    return ProjectInfo{\n'
+    printf '        .TARGET_BINS = {\n'
+    printf '            "%s",\n' ${attributes[TARGET_BINS]}
+    printf '        },\n'
+    printf '        .TARGET_LIBS = {\n'
+    printf '            "%s",\n' ${attributes[TARGET_LIBS]}
+    printf '        },\n'
+    printf '        .CXXFLAGS = "%s",\n' "${attributes[CXXFLAGS]}"
+    printf '        .LDFLAGS = "%s",\n' "${attributes[LDFLAGS]}"
+    printf '        .COMPILER_VERSION = "%s",\n' "${attributes[COMPILER_VERSION]}"
+    printf '        .OS_PRETTY_NAME = "%s",\n' "${attributes[OS_PRETTY_NAME]}"
+    printf '    };\n'
+    printf '}\n'
+    printf '\n'
+    printf '} // namespace VER\n'
+}
+
+read_attributes < "$projdir"/project_rules.txt
+read_project_attributes < "$projdir"/project_makefile.txt
+read_project_attributes < "$projdir"/project_targets.txt
+
+print_all > "$outfile".tmp
+
+if ! cmp -s "$outfile".tmp "$outfile"; then
+    printf "\e[32mUpdating $outfile\e[0m\n"
+    mv "$outfile".tmp "$outfile"
+else
+    # printf "Checking ProjectInfo: not changed\n"
+    rm "$outfile".tmp
+fi

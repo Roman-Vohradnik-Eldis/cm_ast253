@@ -1,0 +1,3 @@
+name:LibCMS
+version_file:cms_header.h
+version_string:ELDIS_CMS_VERSION
